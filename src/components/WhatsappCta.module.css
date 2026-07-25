@@ -2,30 +2,13 @@
   position: relative;
   width: 100%;
   height: 400px;
-  background: linear-gradient(90deg, #6c4632 0%, #a4765d 50%, #90654e 100%);
+  background: linear-gradient(135deg, #745C39 0%, #a2783d 100%);
+  border-top: none;
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-}
-
-.backgroundLeft {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 1;
-}
-
-.overlayLeft {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(164, 118, 93, 0.4) 0%, rgba(164, 118, 93, 1) 100%);
-  z-index: 2;
+  color: #121212;
 }
 
 .container {
@@ -54,33 +37,36 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: #121212;
 }
 
 .subtitle {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 2rem;
-  color: #e5e5e5;
+  color: #30241b;
 }
 
 .whatsappButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #25D366;
-  color: white;
-  font-weight: 600;
+  background-color: #121212;
+  color: #c5a059;
+  font-weight: 700;
   padding: 0.8rem 1.5rem;
-  border-radius: 50px;
+  border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .whatsappButton:hover {
-  background-color: #20bd5a;
+  background-color: #2a2a2a;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .imageRight {
@@ -108,15 +94,6 @@
     height: auto;
     padding: 3rem 0;
     flex-direction: column;
-  }
-
-  .backgroundLeft {
-    width: 100%;
-    height: 100%;
-  }
-
-  .overlayLeft {
-    background: linear-gradient(0deg, rgba(164, 118, 93, 0.9) 0%, rgba(164, 118, 93, 0.9) 100%);
   }
 
   .imageRight {

@@ -29,26 +29,14 @@ export default function AreaCard({ data }: AreaCardProps) {
         hover: { y: -8, transition: { duration: 0.3, ease: "easeOut" } }
       }}
     >
-      {/* Background Image Container */}
-      <div className={styles.bgImageWrapper}>
-        <Image
-          src={data.imageSrc}
-          alt={data.title}
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
-
-      {/* Floating Icon */}
-      <div className={styles.floatingIcon}>
-        <Image 
-          src={data.iconSrc} 
-          alt={`Ícone ${data.category}`}
-          width={40}
-          height={40}
-          className={styles.iconImage}
-        />
-      </div>
+      {/* Icon Image */}
+      <Image 
+        src={data.iconSrc} 
+        alt={`Ícone ${data.category}`}
+        width={80}
+        height={70}
+        className={styles.iconImage}
+      />
 
       {/* Card Content */}
       <div className={styles.content}>

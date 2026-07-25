@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './AreasSection.module.css';
 import AreaCard, { AreaData } from './AreaCard';
 
@@ -61,6 +62,26 @@ const areasData: AreaData[] = [
 export default function AreasSection() {
   return (
     <section className={styles.section}>
+      <div className={styles.topRightImage}>
+        <Image 
+          src="/assets/rostoDireita.webp" 
+          alt="Advogado Fonseca" 
+          width={750} 
+          height={1000} 
+          className={styles.rostoImage}
+        />
+      </div>
+
+      <div className={styles.bottomLeftImage}>
+        <Image 
+          src="/assets/rostoCarla.png" 
+          alt="Advogada Carla Fonseca" 
+          width={900} 
+          height={1200} 
+          className={styles.rostoCarlaImage}
+        />
+      </div>
+
       <div className={styles.header}>
         <span className={styles.subtitle}>COMO PODEMOS TE AJUDAR?</span>
         <h2 className={styles.title}>Conheça nossas áreas de atuação</h2>
@@ -80,6 +101,21 @@ export default function AreasSection() {
           </svg>
           SOLICITAR ANÁLISE DO EMBARGO
         </a>
+      </div>
+
+      {/* Marquee / Ticker Section */}
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeContent}>
+          {/* Repeat content to create the infinite scroll effect */}
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className={styles.marqueeItem}>
+              <span>FONSECA ADVOCACIA</span>
+              <Image src="/assets/icon.svg" alt="Ícone Fonseca" width={32} height={32} className={styles.marqueeIcon} />
+              <span>ASSESSORIA E CONSULTORIA JURÍDICA EM MATO GROSSO E EM TODO O BRASIL</span>
+              <Image src="/assets/icon.svg" alt="Ícone Fonseca" width={32} height={32} className={styles.marqueeIcon} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

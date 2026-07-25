@@ -11,15 +11,16 @@
 }
 
 .ctaBox {
-  background-color: rgba(74, 53, 37, 0.85); /* Fundo marrom semi-transparente */
+  background-color: #1a1a1a;
+  border: 1px solid rgba(197, 160, 89, 0.3);
   padding: 4rem 3rem;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .title {
-  color: #c19b54; /* Gold */
+  color: #c5a059; /* Gold */
   font-family: var(--font-playfair), serif;
   font-size: 2.2rem;
   font-weight: 600;

@@ -1,5 +1,5 @@
 .securitySection {
-  background-color: #111111;
+  background-color: #121212;
   /* Very dark background */
   padding: 3rem 12%;
   color: #fff;
@@ -35,13 +35,13 @@
 }
 
 .highlight {
-  color: #c49a45;
+  color: #c5a059;
   /* Gold color */
 }
 
 .absoluteImageContainer {
   position: absolute;
-  bottom: -122px;
+  bottom: 0;
   /* Pulls the image down further to compensate for transparent space at the bottom of the file */
   left: 50%;
   transform: translateX(-50%);
@@ -71,7 +71,7 @@
 .description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #c49a45;
+  color: #c5a059;
   /* Gold color */
   font-weight: 300;
 }

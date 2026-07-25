@@ -1,10 +1,13 @@
 .section {
-  background-color: #160e0c; /* Slightly distinct dark tone */
+  position: relative;
+  background-color: #121212;
   padding: 6rem 12%;
   color: #fff;
 }
 
 .header {
+  position: relative;
+  z-index: 2;
   text-align: center;
   margin-bottom: 5rem;
 }
@@ -13,7 +16,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #c49a45; /* Gold */
+  color: #c5a059; /* Gold */
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -27,7 +30,7 @@
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #c49a45;
+  background-color: #c5a059;
 }
 
 .title {
@@ -38,6 +41,8 @@
 }
 
 .grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -45,57 +50,144 @@
   margin: 0 auto;
 }
 
+.leafRight {
+  position: absolute;
+  right: 0;
+  top: 55%; /* Um pouco para baixo do meio */
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.5));
+}
+
+.lightBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4; /* Opacidade controlada para a luz */
+}
+
+.leafTopRight {
+  position: absolute;
+  right: 0;
+  top: -150px; /* Vaza para a seção de cima */
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.5));
+}
+
+.leafLeft {
+  position: absolute;
+  left: 0;
+  top: 15%; /* Mais para cima para equilibrar com a folha da direita */
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.5));
+}
+
+.leafImage {
+  object-fit: contain;
+  width: 300px;
+  height: auto;
+}
+
 .profileCard {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.85) 0%, rgba(15, 15, 15, 0.9) 100%);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.profileCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(197, 160, 89, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(197, 160, 89, 0.1);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4; /* Portrait ratio */
-  border-radius: 8px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  margin-bottom: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(196, 154, 69, 0.2);
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Sub-gradient at the bottom of the image for an elegant fade */
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/logoDourada.svg');
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 90%;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .imageWrapper::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30%;
-  background: linear-gradient(to top, rgba(22, 14, 12, 1), transparent);
+  height: 50%;
+  background: linear-gradient(to top, rgba(15, 15, 15, 1), transparent);
   pointer-events: none;
+}
+
+.cardContent {
+  padding: 1rem 2.5rem 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-top: -3rem;
 }
 
 .name {
   font-family: var(--font-playfair), serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: #fff;
 }
 
 .oab {
-  font-size: 0.9rem;
-  color: #c49a45; /* Gold */
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c5a059; /* Gold */
   font-weight: 600;
-  letter-spacing: 1px;
   margin-bottom: 1.5rem;
 }
 
 .bio {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: #d1cbc7;
   font-weight: 300;
-  text-align: justify;
+  text-align: center;
 }
 
 @media (max-width: 900px) {

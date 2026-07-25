@@ -1,5 +1,8 @@
 .problemSection {
-  background-color: #241814; /* Warm dark brown matching the image */
+  background-color: #121212;
+  background-image: url('/assets/fundo2.webp');
+  background-size: cover;
+  background-position: center;
   padding: 6rem 12%;
   color: #fff;
 }
@@ -16,7 +19,7 @@
 
 .subtitle {
   display: inline-block;
-  color: #b48e3e;
+  color: #c5a059;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -31,7 +34,7 @@
 }
 
 .highlight {
-  color: #b48e3e;
+  color: #c5a059;
   font-style: italic;
 }
 
@@ -50,10 +53,10 @@
 .problemItem {
   position: relative;
   padding: 1.5rem 0 1.5rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #ddd;
+  color: #a0aab2;
 }
 
 .problemItem::before {
@@ -61,7 +64,7 @@
   position: absolute;
   left: 0;
   top: 1.35rem;
-  color: #b48e3e;
+  color: #c5a059;
   font-size: 1.5rem;
   line-height: 1.1;
 }

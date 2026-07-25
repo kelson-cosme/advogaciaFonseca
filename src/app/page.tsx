@@ -19,7 +19,7 @@ export default function Home() {
         {/* Background Image */}
         <div className={styles.heroBackground}>
           <Image
-            src="/assets/fundoHero.webp"
+            src="/assets/fundoHero_new.webp"
             alt="Fundo Advocacia Fonseca"
             fill
             priority

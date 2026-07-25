@@ -1,5 +1,5 @@
 .instagramSection {
-  background-color: #1a1210; /* Very dark brown/black, matches theme */
+  background-color: #121212;
   padding: 6rem 12%;
   color: #fff;
 }
@@ -16,7 +16,7 @@
 
 .subtitle {
   display: inline-block;
-  color: #b48e3e;
+  color: #c5a059;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -41,17 +41,17 @@
 
 .card {
   display: block;
-  background-color: #241814;
+  background-color: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 160, 89, 0.2);
 }
 
 .imageWrapper {
@@ -59,7 +59,7 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background-color: #000;
+  background-color: #121212;
 }
 
 .overlay {
@@ -68,7 +68,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(18, 18, 18, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
 .date {
   display: block;
   font-size: 0.85rem;
-  color: #888;
+  color: #a0aab2;
   margin-bottom: 0.5rem;
 }
 
@@ -105,13 +105,13 @@
 
 .readMore {
   font-size: 0.9rem;
-  color: #b48e3e;
+  color: #c5a059;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .card:hover .readMore {
-  color: #d1a852;
+  color: #e6c265;
 }
 
 .actionContainer {
@@ -123,8 +123,8 @@
   display: inline-block;
   padding: 1rem 2rem;
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #b48e3e;
+  color: #c5a059;
+  border: 1px solid #c5a059;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
@@ -132,8 +132,8 @@
 }
 
 .followButton:hover {
-  background-color: #b48e3e;
-  color: #1a1210;
+  background-color: #c5a059;
+  color: #121212;
 }
 
 @media (max-width: 900px) {

@@ -1,12 +1,14 @@
 :root {
-  --primary-bg: #0a0f16;
-  --secondary-bg: #141c26;
-  --accent-gold: #d4af37;
-  --accent-gold-hover: #b8972e;
+  --primary-bg: #121212;
+  --secondary-bg: #1a1a1a;
+  --accent-gold: #c5a059;
+  --accent-gold-hover: #d4af37;
+  --accent-gold-light: #e5c158;
+  --accent-gold-dark: #9a7b38;
   --text-primary: #f8f9fa;
   --text-secondary: #a0aab2;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(20, 28, 38, 0.7);
+  --border-color: rgba(197, 160, 89, 0.2);
+  --glass-bg: rgba(18, 18, 18, 0.85);
 }
 
 * {

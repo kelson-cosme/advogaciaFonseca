@@ -125,12 +125,12 @@
 .featureIcon {
   width: 40px;
   height: 40px;
-  background-color: #e5d5b5; /* Pale gold/beige for icons */
+  background-color: #c5a059; /* Dourado */
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: #121212;
 }
 
 .featureText {

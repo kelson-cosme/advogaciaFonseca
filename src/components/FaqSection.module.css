@@ -1,6 +1,6 @@
 .faqSection {
   padding: 6rem 2rem;
-  background-color: #ffffff;
+  background-color: #121212;
   display: flex;
   justify-content: center;
 }
@@ -16,7 +16,7 @@
 }
 
 .subtitle {
-  color: #5c3b31; /* Maroon/brown matching reference */
+  color: #c5a059;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -26,7 +26,7 @@
 }
 
 .title {
-  color: #b38b4f; /* Gold */
+  color: #c5a059; /* Gold */
   font-family: var(--font-playfair), serif;
   font-size: 2.2rem;
   font-weight: 400;
@@ -37,11 +37,13 @@
 .faqList {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Small gap between items */
+  gap: 12px;
 }
 
 .faqItem {
-  background-color: #f5f5f5;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -59,17 +61,17 @@
 }
 
 .questionButton:hover {
-  background-color: #ededed;
+  background-color: rgba(197, 160, 89, 0.08);
 }
 
 .questionText {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: #333;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .icon {
-  color: #333;
+  color: #c5a059;
   transition: transform 0.3s ease;
   display: flex;
   align-items: center;
@@ -88,7 +90,7 @@
 .answerContent {
   padding: 0 1.5rem 1.2rem 1.5rem;
   font-size: 0.95rem;
-  color: #555;
+  color: #a0aab2;
   line-height: 1.6;
 }
 

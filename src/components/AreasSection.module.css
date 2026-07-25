@@ -1,13 +1,54 @@
 .section {
-  background-color: #1b1311; /* Dark brown matching Problem section */
-  padding: 6rem 12%;
+  position: relative;
+  background-color: #0a0a0a;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(232, 176, 97, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(162, 120, 61, 0.15) 0%, transparent 50%),
+    radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 30px 30px;
+  padding: 6rem 12% 8rem 12%;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+}
+
+
+
+
+
+.topRightImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rostoImage {
+  object-fit: contain;
+  object-position: top right;
+  opacity: 0.8; /* Subtle transparency so it blends into background */
+}
+
+.bottomLeftImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rostoCarlaImage {
+  object-fit: contain;
+  object-position: bottom left;
+  opacity: 0.8; /* Subtle transparency so it blends into background */
 }
 
 .header {
+  position: relative;
+  z-index: 3;
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -16,7 +57,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #c49a45; /* Gold */
+  color: #c5a059; /* Gold */
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -30,7 +71,7 @@
   display: block;
   width: 30px;
   height: 1px;
-  background-color: #c49a45;
+  background-color: #c5a059;
 }
 
 .title {
@@ -41,6 +82,8 @@
 }
 
 .grid {
+  position: relative;
+  z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -50,6 +93,8 @@
 }
 
 .ctaContainer {
+  position: relative;
+  z-index: 3;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -89,10 +134,62 @@
   }
   
   .section {
-    padding: 4rem 5%;
+    padding: 4rem 5% 6rem 5%;
   }
   
   .title {
     font-size: 2.5rem;
+  }
+}
+
+.marqueeContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to right, #b48e3e, #f1de86, #b48e3e);
+  padding: 0.4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.marqueeContent {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 40s linear infinite;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  color: #383233;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  font-family: var(--font-madetommy), sans-serif;
+  text-transform: uppercase;
+}
+
+.marqueeIcon {
+  color: #2c2f33;
+  flex-shrink: 0;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
   }
 }

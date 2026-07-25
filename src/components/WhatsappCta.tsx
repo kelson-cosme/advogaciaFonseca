@@ -5,17 +5,6 @@ import styles from './WhatsappCta.module.css';
 const WhatsappCta = () => {
   return (
     <section className={styles.ctaSection}>
-      <div className={styles.backgroundLeft}>
-        <Image
-          src="/assets/justica2.webp"
-          alt="Estátua da Justiça"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'left center' }}
-          quality={90}
-        />
-        <div className={styles.overlayLeft}></div>
-      </div>
-
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>

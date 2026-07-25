@@ -7,10 +7,10 @@ export default function SecuritySection() {
       {/* Absolute Image placed directly inside relative section */}
       <div className={styles.absoluteImageContainer}>
         <Image 
-          src="/assets/justica.webp" 
+          src="/assets/justica_new.webp" 
           alt="Dama da Justiça" 
-          width={400} 
-          height={600} 
+          width={360} 
+          height={540} 
           className={styles.justicaImage}
         />
       </div>
