@@ -1,0 +1,105 @@
+.problemSection {
+  background-color: #241814; /* Warm dark brown matching the image */
+  padding: 6rem 12%;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  display: inline-block;
+  color: #b48e3e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 400;
+}
+
+.highlight {
+  color: #b48e3e;
+  font-style: italic;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.problemList {
+  list-style: none;
+  flex: 1;
+}
+
+.problemItem {
+  position: relative;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.problemItem::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  color: #b48e3e;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.problemItem:last-child {
+  border-bottom: none;
+}
+
+.problemItem strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}

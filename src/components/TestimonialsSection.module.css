@@ -1,0 +1,213 @@
+.testimonialsSection {
+  background: radial-gradient(circle at center, #352115 0%, #150d08 100%);
+  padding: 6rem 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.badgeWrapper {
+  flex-shrink: 0;
+}
+
+.googleBadge {
+  background: linear-gradient(135deg, #f3da97, #d4af5b);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+  border: 4px solid #fff3d1;
+}
+
+/* Simulate the jagged edge of the badge with a pseudo element or just keep it simple for now */
+.googleBadge::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  border: 2px dashed #d4af5b;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.badgeTextTop {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.badgeTextMid {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+.badgeTextBot {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #4285F4; /* Google Blue */
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  color: #d3b47c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+}
+
+.navButton {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d3b47c;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.cardText {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.cardDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.cardAuthor {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dot {
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #d3b47c;
+}
+
+@media (max-width: 1024px) {
+  .cardsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card:last-child {
+    display: none; /* Hide 3rd card on medium screens for simplicity */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .cardsWrapper {
+    grid-template-columns: 1fr;
+  }
+  .card:nth-child(2) {
+    display: none; /* Only show 1 card on mobile */
+  }
+  .navButton {
+    display: none;
+  }
+}

@@ -1,0 +1,155 @@
+.card {
+  position: relative;
+  background-color: #2a221f; /* Fallback dark color */
+  border: 1px solid rgba(196, 154, 69, 0.3); /* Thin gold border */
+  border-radius: 4px;
+  overflow: visible; /* To allow floating icon to be visible */
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  min-height: 280px;
+  padding: 2.5rem;
+  padding-left: 3rem; /* Extra space on left for icon */
+  margin-left: 20px; /* Space for the floating icon outside the card box */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: #c49a45;
+  box-shadow: 0 0 30px rgba(196, 154, 69, 0.4), 0 0 10px rgba(196, 154, 69, 0.2) inset;
+}
+
+/* Background image overlay */
+.bgImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bgImageWrapper img {
+  transition: transform 0.5s ease !important;
+}
+
+.card:hover .bgImageWrapper img {
+  transform: scale(1.05) !important;
+}
+
+/* Removed background overlay as requested */
+
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.categoryTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c49a45; /* Gold */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.mainTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: #c49a45; /* Gold title */
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #d1cbc7;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.tagsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: auto; /* Push tags to bottom */
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(196, 154, 69, 0.2);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  background-color: #c49a45;
+  border-radius: 50%;
+}
+
+/* Floating Icon */
+.floatingIcon {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.iconImage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.verMaisContainer {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.verMaisButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #c49a45; /* Gold */
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.verMaisButton svg {
+  transition: transform 0.2s ease;
+}
+
+.verMaisButton:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .tagsGrid {
+    grid-template-columns: 1fr;
+  }
+}

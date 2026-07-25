@@ -1,0 +1,98 @@
+.section {
+  background-color: #1b1311; /* Dark brown matching Problem section */
+  padding: 6rem 12%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c49a45; /* Gold */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: #c49a45;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 4rem;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: #25d366; /* WhatsApp Green */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #1ebe56;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsappIcon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 4rem 5%;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
