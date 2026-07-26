@@ -95,12 +95,19 @@
     max-width: 800px;
   }
 
-  .centerImageWrapper {
-    min-height: 400px;
+  .absoluteImageContainer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    margin: -1rem 0;
   }
 
-  .imagePlaceholder {
-    height: 400px;
+  .justicaImage {
+    width: 250px;
+    height: auto;
   }
 }

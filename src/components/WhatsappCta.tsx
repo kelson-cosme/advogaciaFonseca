@@ -10,7 +10,7 @@ const WhatsappCta = () => {
           src="/assets/fundo3.webp"
           alt="Fundo"
           fill
-          style={{ objectFit: 'contain', objectPosition: 'left' }}
+          className={styles.bgImage}
           quality={90}
         />
       </div>
@@ -18,11 +18,11 @@ const WhatsappCta = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>
-            Não deixe problemas jurídicos<br />
+            Não deixe problemas jurídicos<br className={styles.desktopBreak} />
             comprometerem seu patrimônio.
           </h2>
           <p className={styles.subtitle}>
-            Solicite agora uma análise personalizada e tenha a tranquilidade que sua<br />
+            Solicite agora uma análise personalizada e tenha a tranquilidade que sua<br className={styles.desktopBreak} />
             propriedade merece.
           </p>
           <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>

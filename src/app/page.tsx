@@ -37,9 +37,7 @@ export default function Home() {
           </div>
 
           <h1 className={styles.heroTitle}>
-            Advocacia Especializada em<br />
-            Regularização Fundiária, Ambiental<br />
-            e Urbana em Mato Grosso
+            Advocacia Especializada em Regularização Fundiária, Ambiental e Urbana em Mato Grosso
           </h1>
 
           <p className={styles.heroSubtitle}>

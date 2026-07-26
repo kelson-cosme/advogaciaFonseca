@@ -21,6 +21,11 @@
   z-index: 1;
 }
 
+.bgImage {
+  object-fit: contain;
+  object-position: left;
+}
+
 .container {
   position: relative;
   z-index: 3;
@@ -120,19 +125,23 @@
 }
 
 @media (max-width: 768px) {
+  .desktopBreak {
+    display: none;
+  }
+
+  .bgImage {
+    object-fit: cover !important;
+    object-position: 100% center !important;
+  }
+
   .ctaSection {
     height: auto;
-    padding: 3rem 0;
+    padding: 4rem 0;
     flex-direction: column;
   }
 
   .imageRight {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    right: auto;
-    bottom: auto;
-    margin-top: 2rem;
+    display: none;
   }
 
   .imageLeft {

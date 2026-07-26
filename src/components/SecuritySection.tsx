@@ -4,25 +4,24 @@ import styles from './SecuritySection.module.css';
 export default function SecuritySection() {
   return (
     <section className={styles.securitySection}>
-      {/* Absolute Image placed directly inside relative section */}
-      <div className={styles.absoluteImageContainer}>
-        <Image 
-          src="/assets/justica_new.webp" 
-          alt="Dama da Justiça" 
-          width={360} 
-          height={540} 
-          className={styles.justicaImage}
-        />
-      </div>
-
       <div className={styles.container}>
-        
         {/* Left Text */}
         <div className={styles.leftContent}>
           <h2 className={styles.title}>
-            Segurança jurídica para proteger <span className={styles.highlight}>seu <br />
-            patrimônio, sua família e o seu futuro.</span>
+            Segurança jurídica para proteger <br />
+            <span className={styles.highlight}>seu patrimônio, sua família e o seu futuro.</span>
           </h2>
+        </div>
+
+        {/* Image - will be relative on mobile to sit in the middle */}
+        <div className={styles.absoluteImageContainer}>
+          <Image 
+            src="/assets/justica_new.webp" 
+            alt="Dama da Justiça" 
+            width={360} 
+            height={540} 
+            className={styles.justicaImage}
+          />
         </div>
 
         {/* Right Text */}
