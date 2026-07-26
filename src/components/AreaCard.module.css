@@ -42,7 +42,8 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #c5a059; /* Gold */
+  color: #c5a059;
+  /* Gold */
   margin-bottom: 0.4rem;
   font-weight: 600;
   font-family: var(--font-inter), sans-serif;
@@ -70,7 +71,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.7rem;
-  margin-top: auto; /* Push tags to bottom */
+  margin-top: auto;
+  /* Push tags to bottom */
 }
 
 .tag {
@@ -104,7 +106,8 @@
   gap: 0.5rem;
   background: transparent;
   border: none;
-  color: #c5a059; /* Gold */
+  color: #c5a059;
+  /* Gold */
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -124,5 +127,13 @@
 @media (max-width: 768px) {
   .tagsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .mainTitle {
+    font-size: 1.9rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
   }
 }
