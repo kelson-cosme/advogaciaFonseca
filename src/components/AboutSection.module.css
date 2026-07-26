@@ -99,10 +99,8 @@
 
 .profileCard {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, rgba(30, 30, 30, 0.85) 0%, rgba(15, 15, 15, 0.9) 100%);
-  backdrop-filter: blur(15px);
+  width: 100%;
+  aspect-ratio: 4 / 5;
   border: 1px solid rgba(197, 160, 89, 0.15);
   border-radius: 4px;
   overflow: hidden;
@@ -117,14 +115,12 @@
 }
 
 .imageWrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  margin-bottom: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  height: 100%;
+  z-index: 1;
 }
 
 .imageWrapper::before {
@@ -143,26 +139,27 @@
   z-index: 0;
 }
 
-.imageWrapper::after {
-  content: '';
+.cardContent {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(15, 15, 15, 1), transparent);
-  pointer-events: none;
-}
-
-.cardContent {
-  padding: 1rem 2.5rem 3rem 2.5rem;
+  height: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
-  position: relative;
   z-index: 2;
-  margin-top: -3rem;
+  background: linear-gradient(to top, rgba(15, 15, 15, 1) 0%, rgba(15, 15, 15, 0) 50%);
+  transition: all 0.4s ease;
+}
+
+.profileCard:hover .cardContent {
+  justify-content: center;
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(5px);
 }
 
 .name {
@@ -179,6 +176,11 @@
   letter-spacing: 2px;
   color: #c5a059; /* Gold */
   font-weight: 600;
+  margin-bottom: 0;
+  transition: margin 0.4s ease;
+}
+
+.profileCard:hover .oab {
   margin-bottom: 1.5rem;
 }
 
@@ -188,6 +190,49 @@
   color: #d1cbc7;
   font-weight: 300;
   text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transform: translateY(20px);
+}
+
+.profileCard:hover .bio {
+  opacity: 1;
+  max-height: 400px; /* Suficiente para o texto */
+  transform: translateY(0);
+}
+
+.seeMoreButton {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.8rem;
+  background: transparent;
+  color: #c5a059;
+  border: 1px solid #c5a059;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.profileCard:hover .seeMoreButton {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.seeMoreButton:hover {
+  background: linear-gradient(to right, #dca853, #b88636);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(184, 134, 54, 0.4);
 }
 
 @media (max-width: 900px) {

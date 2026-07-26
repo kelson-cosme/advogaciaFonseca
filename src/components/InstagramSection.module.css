@@ -2,16 +2,38 @@
   background-color: #121212;
   padding: 6rem 12%;
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.textColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.imageColumn {
+  flex: 1.5;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
@@ -28,15 +50,20 @@
   font-size: 2.8rem;
   font-family: var(--font-playfair), serif;
   font-weight: 400;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+.actionContainer {
+  text-align: left;
+  margin-top: 2rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 0;
 }
 
 .card {
@@ -114,11 +141,6 @@
   color: #e6c265;
 }
 
-.actionContainer {
-  text-align: center;
-  margin-top: 3rem;
-}
-
 .followButton {
   display: inline-block;
   padding: 1rem 2rem;
@@ -136,12 +158,26 @@
   color: #121212;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .textColumn {
+    align-items: center;
+  }
+  .header, .actionContainer {
+    text-align: center;
+  }
   .title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 }
 

@@ -12,26 +12,41 @@
 
 .header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
 }
 
-.subtitle {
-  color: #c5a059;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.title {
-  color: #c5a059; /* Gold */
+.titleBackground {
+  position: absolute;
   font-family: var(--font-playfair), serif;
-  font-size: 2.2rem;
+  font-size: 8rem;
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(180deg, rgba(197, 160, 89, 0.95) 0%, rgba(197, 160, 89, 0) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: 1;
+  letter-spacing: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.titleForeground {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
   font-weight: 400;
-  text-transform: uppercase;
+  color: #e0e0e0;
   letter-spacing: 1px;
+  margin-top: 50px;
 }
 
 .faqList {
@@ -95,7 +110,11 @@
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 1.8rem;
+  .titleBackground {
+    font-size: 4rem;
+  }
+  .titleForeground {
+    font-size: 1.4rem;
+    margin-top: 25px;
   }
 }

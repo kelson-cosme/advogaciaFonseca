@@ -1,5 +1,9 @@
 .coverageSection {
   background-color: #121212; /* Dark background */
+  background-image: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.4)), url('/assets/fundo6.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 8rem 12%;
   color: #fff;
 }

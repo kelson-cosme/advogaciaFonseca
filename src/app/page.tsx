@@ -6,6 +6,7 @@ import AreasSection from "@/components/AreasSection";
 import AboutSection from "@/components/AboutSection";
 import WhatsappCta from "@/components/WhatsappCta";
 import InstagramSection from "@/components/InstagramSection";
+import InstagramBannerSection from "@/components/InstagramBannerSection";
 import CoverageSection from "@/components/CoverageSection";
 import AgroCtaSection from "@/components/AgroCtaSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -113,9 +114,10 @@ export default function Home() {
       <ProblemSection />
       <SecuritySection />
       <AreasSection />
-      <AboutSection />
       <WhatsappCta />
-      <InstagramSection />
+      <AboutSection />
+      <InstagramBannerSection />
+      {/* <InstagramSection /> */}
       <CoverageSection />
       <AgroCtaSection />
       <TestimonialsSection />

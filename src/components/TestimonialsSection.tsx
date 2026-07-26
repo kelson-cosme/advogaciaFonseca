@@ -35,15 +35,6 @@ const TestimonialsSection = () => {
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.header}>
-          <div className={styles.badgeWrapper}>
-            <Image 
-              src="/assets/selo.webp" 
-              alt="Selo 5 estrelas do Google" 
-              width={140} 
-              height={140} 
-              style={{ objectFit: 'contain' }}
-            />
-          </div>
         <div className={styles.headerText}>
           <span className={styles.subtitle}>NOTA MÁXIMA NAS AVALIAÇÕES</span>
           <h2 className={styles.title}>O que dizem nossos clientes</h2>

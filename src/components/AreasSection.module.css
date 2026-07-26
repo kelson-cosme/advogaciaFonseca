@@ -29,7 +29,9 @@
 .rostoImage {
   object-fit: contain;
   object-position: top right;
-  opacity: 0.8; /* Subtle transparency so it blends into background */
+  opacity: 0.8;
+  transform: scale(0.65);
+  transform-origin: top right;
 }
 
 .bottomLeftImage {
@@ -43,7 +45,9 @@
 .rostoCarlaImage {
   object-fit: contain;
   object-position: bottom left;
-  opacity: 0.8; /* Subtle transparency so it blends into background */
+  opacity: 0.8;
+  transform: scale(0.65);
+  transform-origin: bottom left;
 }
 
 .header {

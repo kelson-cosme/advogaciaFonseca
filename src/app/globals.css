@@ -17,9 +17,20 @@
   margin: 0;
 }
 
+html {
+  zoom: 0.8;
+  --zoom-level: 0.8;
+}
+
+@media (max-width: 1366px) {
+  html {
+    zoom: 0.67;
+    --zoom-level: 0.67;
+  }
+}
+
 html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--primary-bg);
   color: var(--text-primary);

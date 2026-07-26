@@ -38,6 +38,7 @@ export default function AboutSection() {
               os melhores resultados para seus clientes. Dedicação, ética e 
               resultados são os pilares de sua atuação diária.
             </p>
+            <a href="#" className={styles.seeMoreButton}>Ver mais</a>
           </div>
         </div>
 
@@ -60,6 +61,7 @@ export default function AboutSection() {
               no atendimento humanizado, prioriza a proteção do patrimônio e dos 
               direitos de cada cliente.
             </p>
+            <a href="#" className={styles.seeMoreButton}>Ver mais</a>
           </div>
         </div>
       </div>

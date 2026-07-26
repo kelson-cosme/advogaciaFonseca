@@ -5,11 +5,11 @@ import styles from './FaqSection.module.css';
 const faqs = [
   {
     question: "O que é regularização fundiária?",
-    answer: "A regularização fundiária é o processo que engloba medidas jurídicas, urbanísticas, ambientais e sociais destinadas à incorporação dos núcleos urbanos informais ao ordenamento territorial urbano e à titulação de seus ocupantes."
+    answer: "A regularização fundiária é o processo jurídico que legaliza um imóvel que ainda não possui escritura ou registro em cartório. Ela permite que o morador ou proprietário obtenha documentação definitiva do imóvel, garantindo segurança jurídica e valorização da propriedade."
   },
   {
     question: "Quem pode pedir a regularização de um imóvel?",
-    answer: "A regularização pode ser solicitada pelos proprietários, posseiros, herdeiros ou qualquer pessoa que tenha interesse legítimo no imóvel, dependendo da situação específica e da legislação local."
+    answer: "Pode solicitar a regularização quem mora ou possui um imóvel sem escritura registrada, seja em área urbana ou rural. Isso inclui casos de contrato de compra e venda, posse antiga, herança sem inventário ou ocupação consolidada ao longo do tempo."
   },
   {
     question: "Qual a vantagem de regularizar um imóvel?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Quando é obrigatório fazer inventário?",
-    answer: "O inventário é obrigatório sempre que uma pessoa falece deixando bens, direitos ou dívidas, para que seja feita a transferência legal do patrimônio aos herdeiros."
+    answer: "O inventário é obrigatório sempre que uma pessoa falece e deixa bens, direitos ou dívidas. Esse procedimento serve para identificar o patrimônio, pagar eventuais débitos e realizar a partilha entre os herdeiros. No Brasil, o prazo legal para iniciar o inventário é de até 60 dias após o falecimento, podendo haver multa se ultrapassar esse prazo."
   },
   {
     question: "Inventário precisa sempre ser feito na Justiça?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: "O que acontece se a família não fizer o inventário?",
-    answer: "A ausência do inventário impede a venda legal dos bens, bloqueia contas bancárias do falecido e pode gerar multas sobre o imposto de transmissão (ITCMD), além de acumular pendências para as próximas gerações."
+    answer: "Sem inventário, os bens ficam legalmente bloqueados em nome da pessoa falecida. Isso impede vender, transferir ou regularizar imóveis e outros patrimônios. Além disso, podem surgir problemas jurídicos futuros, conflitos entre herdeiros e multas tributárias, especialmente relacionadas ao imposto de transmissão causa mortis (ITCMD)."
   }
 ];
 
@@ -57,8 +57,8 @@ const FaqSection = () => {
     <section className={styles.faqSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.subtitle}>FAQs</span>
-          <h2 className={styles.title}>PERGUNTAS FREQUENTES</h2>
+          <div className={styles.titleBackground}>DÚVIDAS</div>
+          <h2 className={styles.titleForeground}>Perguntas Frequentes</h2>
         </div>
 
         <div className={styles.faqList}>

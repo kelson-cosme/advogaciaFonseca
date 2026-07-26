@@ -1,0 +1,118 @@
+.section {
+  position: relative;
+  background-color: #121212; /* Fundo escuro */
+  padding: 0 12%;
+}
+
+.lightBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 30%;
+  height: 350px;
+  margin-top: -70px; /* Faz a imagem "sair" da seção no topo */
+  z-index: 5;
+  align-self: flex-end;
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c5a059; /* Gold */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #c5a059;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.followButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #dca853, #b88636);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.followButton:hover {
+  background: linear-gradient(to right, #e8b664, #c99645);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 0 5%;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 400px;
+    margin-top: -80px;
+  }
+
+  .content {
+    width: 100%;
+    align-items: center;
+  }
+
+  .subtitle::before {
+    display: none;
+  }
+}

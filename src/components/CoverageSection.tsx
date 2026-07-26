@@ -68,8 +68,8 @@ const CoverageSection = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/assets/irmasOlhandoPc3.webp" 
-              alt="Atendimento Digital"
+              src="/assets/Mapa.webp" 
+              alt="Atendimento Digital em Todo o Brasil"
               fill
               style={{ objectFit: 'contain' }}
             />
