@@ -3,7 +3,7 @@ import styles from './AboutSection.module.css';
 
 export default function AboutSection() {
   return (
-    <section className={styles.section} id="equipe">
+    <section className={styles.section} id="sobre">
       <div className={styles.lightBackground}>
         <Image 
           src="/assets/luz.webp" 

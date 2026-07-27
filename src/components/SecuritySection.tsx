@@ -3,7 +3,7 @@ import styles from './SecuritySection.module.css';
 
 export default function SecuritySection() {
   return (
-    <section className={styles.securitySection}>
+    <section id="diferenciais" className={styles.securitySection}>
       <div className={styles.container}>
         {/* Left Text */}
         <div className={styles.leftContent}>

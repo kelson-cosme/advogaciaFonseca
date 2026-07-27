@@ -4,7 +4,7 @@ import styles from './WhatsappCta.module.css';
 
 const WhatsappCta = () => {
   return (
-    <section className={styles.ctaSection}>
+    <section id="contato" className={styles.ctaSection}>
       <div className={styles.ctaBackground}>
         <Image
           src="/assets/fundo3.webp"

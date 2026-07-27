@@ -61,7 +61,7 @@ const areasData: AreaData[] = [
 
 export default function AreasSection() {
   return (
-    <section className={styles.section}>
+    <section id="areas" className={styles.section}>
       <div className={styles.topRightImage}>
         <Image 
           src="/assets/rostoDireita.webp" 

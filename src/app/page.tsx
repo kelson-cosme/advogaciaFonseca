@@ -55,7 +55,7 @@ export default function Home() {
             <button className={styles.secondaryButton}>CONHECER NOSSAS ÁREAS</button>
           </div>
 
-          <div className={styles.features}>
+          {/* <div className={styles.features}>
             <div className={styles.featureItem}>
               <div className={styles.featureIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -90,7 +90,7 @@ export default function Home() {
               </div>
               <span className={styles.featureText}>PARCERIA<br />TRANSPARENTE</span>
             </div>
-          </div>
+          </div> */}
 
         </div>
         {/* Marquee / Ticker Section */}
