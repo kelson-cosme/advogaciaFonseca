@@ -65,16 +65,6 @@ const CoverageSection = () => {
           </div>
         </div>
 
-        <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/assets/Mapa.webp" 
-              alt="Atendimento Digital em Todo o Brasil"
-              fill
-              style={{ objectFit: 'contain' }}
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

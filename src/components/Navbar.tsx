@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image 
-            src="/assets/logo.svg" 
+            src="/assets/logoDourada.svg" 
             alt="Advocacia Fonseca Logo" 
             width={200} 
             height={50}

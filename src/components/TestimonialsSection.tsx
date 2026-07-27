@@ -6,18 +6,49 @@ import styles from './TestimonialsSection.module.css';
 const testimonials = [
   {
     id: 1,
-    text: "Fizeram a partilha dos imóveis da família sem aquele clima pesado de brigas. Conduziram tudo com muito equilíbrio e respeito.",
-    author: "Larissa F."
+    text: "Profissionais de altíssima competência. Resolveram todos meus problemas com transparência e objetividade. Indico de olhos fechados.",
+    author: "Félix Amorim dos Santos",
+    image: "/assets/felix.png"
   },
   {
     id: 2,
-    text: "Precisei de ajuda com um despejo por falta de pagamento que estava travado há meses. Foi resolvido bem mais rápido do que eu esperava.",
-    author: "Gustavo P."
+    text: "As melhores!",
+    author: "Lazaro Andre.",
+    image: "/assets/lazaro.png"
   },
   {
     id: 3,
-    text: "A escritura do meu imóvel estava com pendências antigas de registro. Regularizaram tudo e finalmente consigo dormir tranquila.",
-    author: "Beatriz M."
+    text: "Excelente",
+    author: "francielly maria",
+    image: "/assets/francieli.png"
+  },
+  {
+    id: 4,
+    text: "Profissionais incríveis com toda a atenção e dedicação ao nosso caso. Recomendo muito!",
+    author: "Camila Ferreira Silva"
+  },
+  {
+    id: 5,
+    text: "As melhores Advogadas da cidade, muito profissionalismo e experiência!",
+    author: "Jorge Leandro Lima",
+    image: "/assets/jeorge.png"
+  },
+  {
+    id: 6,
+    text: "Excelente profissional. Parabéns pelo trabalho",
+    author: "Mateus Boa Sorte"
+  },
+  {
+    id: 7,
+    text: "Parabéns ótimo trabalho",
+    author: "Wil Paz",
+    image: "/assets/wil.png"
+  },
+  {
+    id: 8,
+    text: "Sou cliente a anos, cuida dos meus interesses jurídicos com",
+    author: "Gilda Cristiane",
+    image: "/assets/gilda.png"
   }
 ];
 
@@ -32,6 +63,35 @@ const StarRating = () => (
 );
 
 const TestimonialsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsVisible, setCardsVisible] = useState(3);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setCardsVisible(1);
+      } else if (window.innerWidth <= 1024) {
+        setCardsVisible(2);
+      } else {
+        setCardsVisible(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, testimonials.length - cardsVisible);
+
+  const next = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const prev = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.header}>
@@ -42,24 +102,40 @@ const TestimonialsSection = () => {
       </div>
 
       <div className={styles.carouselContainer}>
-        <button className={styles.navButton} aria-label="Anterior">
+        <button className={styles.navButton} onClick={prev} aria-label="Anterior">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
 
-        <div className={styles.cardsWrapper}>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className={styles.card}>
+        <div className={styles.carouselWindow}>
+          <div 
+            className={styles.cardsWrapper}
+            style={{ transform: `translateX(calc(-${currentIndex} * (100% + 1.5rem) / var(--cards-visible)))` }}
+          >
+          {testimonials.map((testimonial, index) => (
+            <div key={`${testimonial.id}-${index}`} className={styles.card}>
               <StarRating />
               <p className={styles.cardText}>{testimonial.text}</p>
               <div className={styles.cardDivider}></div>
-              <p className={styles.cardAuthor}>{testimonial.author}</p>
+              <div className={styles.cardFooter}>
+                {testimonial.image ? (
+                  <div className={styles.authorImage}>
+                    <Image src={testimonial.image} alt={testimonial.author} width={40} height={40} className={styles.avatar} />
+                  </div>
+                ) : (
+                  <div className={styles.authorImagePlaceholder}>
+                    {testimonial.author.charAt(0)}
+                  </div>
+                )}
+                <p className={styles.cardAuthor}>{testimonial.author}</p>
+              </div>
             </div>
           ))}
+          </div>
         </div>
 
-        <button className={styles.navButton} aria-label="Próximo">
+        <button className={styles.navButton} onClick={next} aria-label="Próximo">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
@@ -67,11 +143,13 @@ const TestimonialsSection = () => {
       </div>
 
       <div className={styles.pagination}>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
-        <span className={`${styles.dot} ${styles.activeDot}`}></span>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
+        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+          <span 
+            key={index} 
+            className={`${styles.dot} ${index === currentIndex ? styles.activeDot : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></span>
+        ))}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 .coverageSection {
-  background-color: #121212; /* Dark background */
-  background-image: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.4)), url('/assets/fundo6.webp');
+  background-color: #121212;
+  /* Dark background */
+  background-image: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.4)), url('/assets/fundo7.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -142,15 +143,17 @@
 
 .logoBadge {
   position: absolute;
-  bottom: 20px; /* Movido mais para cima */
+  bottom: 20px;
+  /* Movido mais para cima */
   left: -10px;
-  background: rgba(217, 217, 217, 0.01); /* D9D9D9 com 1% de opacidade */
+  background: rgba(217, 217, 217, 0.01);
+  /* D9D9D9 com 1% de opacidade */
   backdrop-filter: blur(82.4px);
   -webkit-backdrop-filter: blur(82.4px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 1.5rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,11 +163,13 @@
   .container {
     flex-direction: column;
   }
+
   .imageContainer {
     justify-content: center;
     width: 100%;
     margin-top: 2rem;
   }
+
   .logoBadge {
     left: 20px;
     bottom: -20px;
@@ -174,15 +179,20 @@
 @media (max-width: 768px) {
   .coverageSection {
     padding: 4rem 2rem;
+    background-position: 84% center;
   }
+
   .title {
     font-size: 2.5rem;
   }
+
   .actions {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .logoBadge {
-    display: none; /* Hide badge on mobile if it gets too messy */
+    display: none;
+    /* Hide badge on mobile if it gets too messy */
   }
 }
