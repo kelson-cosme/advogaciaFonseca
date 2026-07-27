@@ -30,7 +30,7 @@
   object-fit: contain;
   object-position: top right;
   opacity: 0.8;
-  transform: scale(0.65);
+  transform: scale(1.05);
   transform-origin: top right;
 }
 
@@ -46,7 +46,7 @@
   object-fit: contain;
   object-position: bottom left;
   opacity: 0.8;
-  transform: scale(0.65);
+  transform: scale(0.58);
   transform-origin: bottom left;
 }
 

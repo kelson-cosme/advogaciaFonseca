@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './ProblemSection.module.css';
+import documentosImg from '../../public/assets/documentos.webp';
 
 export default function ProblemSection() {
   const problems = [
@@ -7,7 +8,7 @@ export default function ProblemSection() {
     <><strong>(CAR)</strong> com inconsistências ou necessidade de atualização.</>,
     <>Inventário que impede a transferência ou <strong>utilização do patrimônio.</strong></>,
     <><strong>Conflitos familiares</strong> envolvendo bens ou <strong>sucessão.</strong></>,
-    <>Benefício previdenciário negado ou em análise prolongada.</>,
+    <><strong>Benefício previdenciário negado</strong> ou em análise prolongada.</>,
     <>Necessidade de orientação jurídica: <strong>compra, venda ou regularização de um imóvel.</strong></>,
   ];
 
@@ -29,14 +30,15 @@ export default function ProblemSection() {
               </li>
             ))}
           </ul>
-
-          <div className={styles.imageWrapper}>
-            {/* O usuário deve enviar a imagem dos documentos posteriormente */}
-            <div className={styles.imagePlaceholder}>
-              <span>[Coloque a imagem dos documentos aqui]</span>
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className={styles.rightBackgroundImageWrapper}>
+        <Image 
+          src={documentosImg}
+          alt="Fundo Documentos"
+          className={styles.documentosBgImage}
+        />
       </div>
     </section>
   );

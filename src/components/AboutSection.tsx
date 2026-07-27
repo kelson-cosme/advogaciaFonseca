@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import styles from './AboutSection.module.css';
+import cimoneImg from '../../public/assets/cimone.webp';
+import carlaImg from '../../public/assets/carla.webp';
 
 export default function AboutSection() {
   return (
@@ -14,8 +16,8 @@ export default function AboutSection() {
       </div>
 
       <div className={styles.header}>
-        <span className={styles.subtitle}>NOSSO TIME</span>
-        <h2 className={styles.title}>Especialistas prontas para te defender</h2>
+        <span className={styles.subtitle}>Nossa Equipe</span>
+        <h2 className={styles.title}>Especialistas com formação sólida e experiência para a sua segurança jurídica.</h2>
       </div>
 
       <div className={styles.grid}>
@@ -23,22 +25,20 @@ export default function AboutSection() {
         <div className={styles.profileCard}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/assets/cimone.webp" 
+              src={cimoneImg} 
               alt="Dra. Cimone" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              style={{ width: '100%', height: 'auto', display: 'block' }} 
             />
           </div>
           <div className={styles.cardContent}>
-            <h3 className={styles.name}>Dra. Cimone</h3>
-            <span className={styles.oab}>OAB/MT 000.000</span>
+            <h3 className={styles.name}>Dra. Cimone Fonseca</h3>
+            <span className={styles.infoText}>+10 anos de experiência</span>
+            <span className={styles.infoText}>Especialista em Inventário</span>
+            <span className={styles.oab}>OAB/MT 25561</span>
             <p className={styles.bio}>
-              Especialista com vasta experiência em demandas complexas. 
-              Atua com foco estratégico para garantir segurança jurídica e 
-              os melhores resultados para seus clientes. Dedicação, ética e 
-              resultados são os pilares de sua atuação diária.
+              Atuação estratégica em inventários e questões patrimoniais, com segurança jurídica, sensibilidade e conhecimento nas áreas cível, familiar e ambiental.
             </p>
-            <a href="#" className={styles.seeMoreButton}>Ver mais</a>
+            <a href="#" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</a>
           </div>
         </div>
 
@@ -46,22 +46,20 @@ export default function AboutSection() {
         <div className={styles.profileCard}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/assets/carla.webp" 
+              src={carlaImg} 
               alt="Dra. Carla" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              style={{ width: '100%', height: 'auto', display: 'block' }} 
             />
           </div>
           <div className={styles.cardContent}>
-            <h3 className={styles.name}>Dra. Carla</h3>
-            <span className={styles.oab}>OAB/MT 000.000</span>
+            <span className={styles.oab}>OAB/MT nº 18972</span>
+            <h3 className={styles.name}>Dra. Carla Fonseca</h3>
+            <span className={styles.infoText}>+12 anos de experiência</span>
+            <span className={styles.infoText}>Especialista em regularização Urbana, Fundiária e Ambiental</span>
             <p className={styles.bio}>
-              Profissional dedicada à excelência no atendimento e na construção de 
-              soluções inovadoras para conflitos. Com sólida formação e foco 
-              no atendimento humanizado, prioriza a proteção do patrimônio e dos 
-              direitos de cada cliente.
+              Atuação estratégica na regularização urbana, fundiária e ambiental, com segurança jurídica para proteger imóveis, propriedades e patrimônios.
             </p>
-            <a href="#" className={styles.seeMoreButton}>Ver mais</a>
+            <a href="#" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</a>
           </div>
         </div>
       </div>

@@ -19,9 +19,9 @@ const Footer = () => {
               />
             </div>
             <p className={styles.addressText}>
-              Edifício Empresarial XYZ, Sala 100<br />
-              Rua Exemplo de Endereço, 123, Bairro Centro<br />
-              Cuiabá/MT - CEP 78000-000
+              Fonseca Advocacia<br />
+              Rua 13 de Junho, 1150 - Centro<br />
+              Cuiabá - MT, 78020-170
             </p>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
             <h4 className={styles.columnTitle}>LOCALIZAÇÃO</h4>
             <div className={styles.mapContainer}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.085350352721!2d-56.0957585!3d-15.5870023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db1a8682f6e57%3A0xcda6b08ed8b90ed0!2sCuiab%C3%A1%2C%20MT!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                src="https://maps.google.com/maps?q=Rua%2013%20de%20Junho,%201150%20-%20Centro,%20Cuiab%C3%A1%20-%20MT&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -65,7 +65,7 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <a href="#" className={styles.directionsLink}>Como chegar</a>
+            <a href="https://maps.app.goo.gl/FUXGwWz1uWbBdeTG6" target="_blank" rel="noopener noreferrer" className={styles.directionsLink}>Como chegar</a>
           </div>
         </div>
 

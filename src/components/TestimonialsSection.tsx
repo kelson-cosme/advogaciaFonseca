@@ -95,6 +95,9 @@ const TestimonialsSection = () => {
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.header}>
+        <div className={styles.badgeWrapper}>
+          <Image src="/assets/selo.webp" alt="Selo de Avaliações" width={120} height={120} style={{ objectFit: 'contain' }} />
+        </div>
         <div className={styles.headerText}>
           <span className={styles.subtitle}>NOTA MÁXIMA NAS AVALIAÇÕES</span>
           <h2 className={styles.title}>O que dizem nossos clientes</h2>
