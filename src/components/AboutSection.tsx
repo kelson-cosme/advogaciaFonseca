@@ -17,7 +17,7 @@ export default function AboutSection() {
 
       <div className={styles.header}>
         <span className={styles.subtitle}>Nossa Equipe</span>
-        <h2 className={styles.title}>Especialistas com formação sólida e experiência para a sua segurança jurídica.</h2>
+        <h2 className={styles.title}>Especialistas com formação sólida e experiência<br />para a sua segurança jurídica.</h2>
       </div>
 
       <div className={styles.grid}>
@@ -52,10 +52,10 @@ export default function AboutSection() {
             />
           </div>
           <div className={styles.cardContent}>
-            <span className={styles.oab}>OAB/MT nº 18972</span>
             <h3 className={styles.name}>Dra. Carla Fonseca</h3>
             <span className={styles.infoText}>+12 anos de experiência</span>
             <span className={styles.infoText}>Especialista em regularização Urbana, Fundiária e Ambiental</span>
+            <span className={styles.oab}>OAB/MT nº 18972</span>
             <p className={styles.bio}>
               Atuação estratégica na regularização urbana, fundiária e ambiental, com segurança jurídica para proteger imóveis, propriedades e patrimônios.
             </p>

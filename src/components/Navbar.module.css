@@ -62,22 +62,33 @@
   width: 100%;
 }
 
-.contactButton {
-  padding: 0.6rem 1.5rem;
-  background-color: transparent;
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
-  border-radius: 4px;
-  font-size: 0.95rem;
+.whatsappButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #2bd86b; /* Green matching the image */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
   font-weight: 500;
+  letter-spacing: 1.5px;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.contactButton:hover {
-  background-color: var(--accent-gold);
-  color: #121212;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+.whatsappButton:hover {
+  background-color: #21ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(43, 216, 107, 0.4);
+}
+
+.whatsappIcon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
 }
 
 .mobileMenuButton {
@@ -170,12 +181,10 @@
     font-family: var(--font-playfair), serif;
   }
 
-  .contactButton {
-    font-size: 1.2rem;
-    padding: 1rem 2.5rem;
+  .whatsappButton {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
     margin-top: 2rem;
-    border-radius: 50px;
-    letter-spacing: 1px;
   }
 
   .navLinksOpen {
