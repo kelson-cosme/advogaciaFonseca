@@ -1,7 +1,6 @@
 .card {
   position: relative;
-  background: linear-gradient(135deg, rgba(30, 30, 30, 0.85) 0%, rgba(15, 15, 15, 0.9) 100%);
-  backdrop-filter: blur(15px);
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(15, 15, 15, 1) 100%);
   border: 1px solid rgba(197, 160, 89, 0.2);
   border-radius: 20px;
   overflow: hidden;
@@ -13,6 +12,7 @@
   margin-left: 0;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  will-change: transform;
 }
 
 .card:hover {

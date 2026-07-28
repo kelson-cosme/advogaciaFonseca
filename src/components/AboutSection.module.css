@@ -243,4 +243,10 @@
   .title {
     font-size: 2.2rem;
   }
+
+  .leafTopRight {
+    transform: scale(0.5);
+    transform-origin: top right;
+    top: -100px;
+  }
 }

@@ -22,6 +22,14 @@ export default function ProblemSection() {
           </h2>
         </div>
 
+        <div className={styles.rightBackgroundImageWrapper}>
+          <Image 
+            src={documentosImg}
+            alt="Documentos e processos"
+            className={styles.documentosBgImage}
+          />
+        </div>
+
         <div className={styles.content}>
           <ul className={styles.problemList}>
             {problems.map((problem, index) => (
@@ -31,14 +39,6 @@ export default function ProblemSection() {
             ))}
           </ul>
         </div>
-      </div>
-
-      <div className={styles.rightBackgroundImageWrapper}>
-        <Image 
-          src={documentosImg}
-          alt="Documentos e processos"
-          className={styles.documentosBgImage}
-        />
       </div>
     </section>
   );

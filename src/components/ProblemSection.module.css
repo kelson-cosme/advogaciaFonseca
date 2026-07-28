@@ -105,10 +105,27 @@
 }
 
 @media (max-width: 900px) {
+  .problemSection {
+    padding: 4rem 5%;
+  }
   .content {
     flex-direction: column;
   }
   .title {
     font-size: 2.2rem;
+  }
+  .problemList {
+    max-width: 100%;
+  }
+  .rightBackgroundImageWrapper {
+    position: relative;
+    top: auto;
+    transform: none;
+    right: auto;
+    max-width: 100%;
+    margin: 2rem auto 2rem auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
   }
 }

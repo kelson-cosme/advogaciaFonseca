@@ -1,9 +1,23 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './AgroCtaSection.module.css';
+import fundoImg from '../../public/assets/fundo6.webp';
 
 const AgroCtaSection = () => {
   return (
     <section className={styles.agroCtaSection}>
+      <div className={styles.backgroundWrapper}>
+        <Image
+          src={fundoImg}
+          alt="Fundo Agro"
+          fill
+          priority
+          quality={100}
+          unoptimized
+          style={{ objectFit: 'cover' }}
+        />
+        <div className={styles.overlay}></div>
+      </div>
       <div className={styles.container}>
         <div className={styles.ctaBox}>
           <h2 className={styles.title}>
