@@ -1,0 +1,553 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import styles from "./page.module.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AnimatedStatItem from "@/components/AnimatedStatItem";
+import FadeIn from "@/components/FadeIn";
+
+const lawyers = {
+  carla: {
+    heroBadge: "ADVOCACIA AGROFLORESTAL",
+    heroTitle: "Segurança jurídica\npara a sua propriedade",
+    heroSubtitle: "Especialista em Regularização Ambiental,\nFundiária e Urbana em Mato Grosso",
+    heroButtonText: "Fale com a especialista!",
+    image: "/assets/heroCarla.webp",
+    stats: [
+      { value: "+500", label: "CASOS ATENDIDOS" },
+      { value: "15+", label: "ANOS DE EXPERIÊNCIA" },
+      { value: "98%", label: "SATISFAÇÃO DOS CLIENTES" },
+      { value: "R$50M+", label: "EM DÍVIDAS RENEGOCIADAS" }
+    ],
+    aboutImage: "/assets/draCarla.webp",
+    aboutOverline: "CONHEÇA A SUA ADVOGADA",
+    aboutTitleNormal: "Dra. Carla Rachel ",
+    aboutTitleHighlight: "Fonseca",
+    aboutBio: [
+      "Com mais de 12 anos de atuação na advocacia, construí minha trajetória com foco na Regularização Ambiental, Fundiária e Urbana, auxiliando proprietários de imóveis rurais e urbanos na resolução de pendências ambientais, documentais e registrais.",
+      "Minha atuação reúne conhecimentos em Direito Ambiental, Urbanístico, Notarial e Registral, com atenção às particularidades de cada caso e foco na segurança jurídica da propriedade."
+    ],
+    aboutQualifications: [
+      {
+        icon: (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        ),
+        title: "Graduada em Direito pela Universidade de Cuiabá - UNIC",
+        subtitle: ""
+      },
+      {
+        icon: (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        ),
+        title: "Pós-graduação em Processo Civil e Direito Ambiental",
+        subtitle: "Fundação Escola Superior do Ministério Público de Mato Grosso"
+      },
+      {
+        icon: (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2M18 14h-8M15 18h-5"/></svg>
+        ),
+        title: "Sócia-proprietária da Fonseca Advocacia.",
+        subtitle: "Atuação em Mato Grosso e todo o Brasil"
+      }
+    ],
+    aboutOabTop: "OAB/MT",
+    aboutOabBottom: "Nº 18972",
+    ctaTitle: "Regularizar hoje é proteger o\nseu patrimônio amanhã!",
+    ctaSubtitle: "Estou pronta para ajudar você a resolver pendências ambientais, fundiárias e urbanas\ncom segurança jurídica e acompanhamento em todas as etapas.",
+    ctaButtonText: "Agende uma Reunião",
+    ctaBackground: "/assets/apertoDeMao.webp",
+    problemsTitle: "Você está enfrentando\nalgumas destas situações?",
+    problemsList: [
+      "Recebeu uma multa ou auto de infração ambiental?",
+      "Sua propriedade está com embargo ambiental?",
+      "O CAR está pendente, suspenso ou com informações inconsistentes?",
+      "Precisa regularizar o licenciamento ambiental da propriedade?",
+      "O crédito rural foi negado por pendências ambientais/documentais?",
+      "Seu imóvel rural ainda não possui matrícula regularizada?",
+      "A matrícula apresenta divergência de área, limites ou titularidade?",
+      "Comprou um imóvel por contrato de compra e venda, mas ele ainda não está em seu nome?",
+      "Possui um imóvel urbano sem escritura ou registro?",
+      "Precisa realizar usucapião, adjudicação compulsória ou retificação de matrícula?"
+    ],
+    problemsButtonText: "QUERO ANALISAR MEU CASO",
+    areasOverline: "ÁREAS DE ATUAÇÃO",
+    areasTitleNormal1: "Soluções jurídicas para ",
+    areasTitleHighlight: "proteger",
+    areasTitleNormal2: " a sua propriedade",
+    areasList: [
+      {
+        number: "01",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>,
+        title: "Embargo Ambiental",
+        description: "Atuo na análise do termo de embargo e na definição das medidas administrativas ou judiciais cabíveis para regularizar a situação da área."
+      },
+      {
+        number: "02",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>,
+        title: "Multas e Crimes Ambientais",
+        description: "Presto orientação em autos de infração, multas, investigações e processos relacionados a possíveis crimes ambientais."
+      },
+      {
+        number: "03",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>,
+        title: "Licenciamento Ambiental e CAR",
+        description: "Auxílio na regularização do Cadastro Ambiental Rural, no licenciamento de atividades e na solução de pendências ambientais da propriedade."
+      },
+      {
+        number: "04",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
+        title: "Crédito Rural",
+        description: "Analiso pendências ambientais e documentais que podem dificultar a aprovação de crédito rural e outras operações financeiras."
+      },
+      {
+        number: "05",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>,
+        title: "Regularização Fundiária",
+        description: "Atuo na análise de matrículas, registros, posse, limites e demais documentos necessários para a regularização jurídica de imóveis rurais."
+      },
+      {
+        number: "06",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
+        title: "Regularização Urbana",
+        description: "Auxílio quem comprou um imóvel por contrato de compra e venda, mas ainda não realizou a escritura ou o registro em seu nome."
+      }
+    ],
+    areasButtonText: "Fale com a especialista!",
+    locationOverline: "PRATICIDADE",
+    locationTitleNormal1: "Atendimento presencial em Cuiabá - MT\nou ",
+    locationTitleHighlight: "online para todo o Brasil!",
+    locationDescription: "A Fonseca Advocacia também realiza atendimentos online para clientes de outras cidades e estados, com reuniões por videochamada, envio de documentos e acompanhamento durante todo o processo.",
+    locationButton1Text: "VER ENDEREÇO",
+    locationButton2Text: "AGENDAR REUNIÃO",
+    docsOverline: "FALE COM A ESPECIALISTA AGORA",
+    docsTitleNormal1: "Envie os documentos pelo WhatsApp e\n",
+    docsTitleHighlight: "receba uma análise inicial",
+    docsTitleNormal2: " do seu caso.",
+    docsDescription: "Faço uma primeira avaliação da situação para identificar possíveis pendências ambientais, fundiárias ou registrais. A partir daí, definimos juntos a melhor estratégia para a regularização do imóvel.",
+    docsButtonText: "Enviar pelo WhatsApp",
+    docsDisclaimer: "Cada caso é analisado de forma individual."
+  },
+  cimone: {
+    heroBadge: "DIREITO DE FAMÍLIA",
+    heroTitle: "Protegendo o seu\npatrimônio familiar", 
+    heroSubtitle: "Especialista em Inventários e Sucessões\nem Mato Grosso",
+    heroButtonText: "Fale com a especialista!",
+    image: "/assets/cimone.webp",
+    stats: [
+      { value: "+300", label: "CASOS RESOLVIDOS" },
+      { value: "8+", label: "ANOS DE EXPERIÊNCIA" },
+      { value: "99%", label: "SATISFAÇÃO DOS CLIENTES" },
+      { value: "100%", label: "COMPROMISSO E ÉTICA" }
+    ],
+    aboutImage: "/assets/cimone.webp",
+    aboutOverline: "CONHEÇA A SUA ADVOGADA",
+    aboutTitleNormal: "Dra. Cimone ",
+    aboutTitleHighlight: "Fonseca",
+    aboutBio: [
+      "Atuação estratégica em inventários e questões patrimoniais, com segurança jurídica, sensibilidade e conhecimento nas áreas cível, familiar e ambiental.",
+      "Com mais de 8 anos de experiência, resolvo conflitos familiares e sucessórios de forma assertiva e humanizada, garantindo a proteção do seu patrimônio."
+    ],
+    aboutQualifications: [
+      {
+        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+        title: "Especialista em Inventário e Sucessões",
+        subtitle: "Atuação especializada na área familiar"
+      }
+    ],
+    aboutOabTop: "OAB/MT",
+    aboutOabBottom: "Nº 25561",
+    ctaTitle: "Proteja o futuro da sua família\ncom segurança jurídica!",
+    ctaSubtitle: "Estou pronta para ajudar você a resolver questões familiares e sucessórias\ncom sensibilidade e foco na proteção do seu patrimônio.",
+    ctaButtonText: "Agende uma Reunião",
+    ctaBackground: "/assets/apertoDeMao.webp",
+    problemsTitle: "Você está enfrentando\nalgumas destas situações?",
+    problemsList: [
+      "Precisa realizar o inventário de um ente querido, mas não sabe por onde começar?",
+      "Há divergências entre os herdeiros sobre a partilha dos bens?",
+      "O patrimônio familiar está irregular e gerando conflitos?",
+      "Deseja fazer um planejamento sucessório para evitar brigas no futuro?",
+      "Precisa de ajuda com divórcio, pensão alimentícia ou guarda dos filhos?"
+    ],
+    problemsButtonText: "QUERO ANALISAR MEU CASO",
+    areasOverline: "ÁREAS DE ATUAÇÃO",
+    areasTitleNormal1: "Soluções jurídicas para ",
+    areasTitleHighlight: "proteger",
+    areasTitleNormal2: " a sua família",
+    areasList: [
+      {
+        number: "01",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+        title: "Inventário e Partilha",
+        description: "Atuação ágil e segura em inventários judiciais e extrajudiciais, garantindo a proteção do patrimônio e os direitos de todos os herdeiros."
+      },
+      {
+        number: "02",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+        title: "Planejamento Sucessório",
+        description: "Organização do patrimônio em vida, utilizando testamentos, doações e holdings para evitar conflitos e reduzir custos."
+      },
+      {
+        number: "03",
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>,
+        title: "Divórcio e Separação",
+        description: "Assessoria completa em divórcios consensuais e litigiosos, garantindo partilha justa e proteção aos envolvidos."
+      }
+    ],
+    areasButtonText: "Fale com a especialista!",
+    locationOverline: "PRATICIDADE",
+    locationTitleNormal1: "Atendimento presencial em Cuiabá - MT\nou ",
+    locationTitleHighlight: "online para todo o Brasil!",
+    locationDescription: "A Fonseca Advocacia também realiza atendimentos online para clientes de outras cidades e estados, com reuniões por videochamada, envio de documentos e acompanhamento durante todo o processo.",
+    locationButton1Text: "VER ENDEREÇO",
+    locationButton2Text: "AGENDAR REUNIÃO",
+    docsOverline: "FALE COM A ESPECIALISTA AGORA",
+    docsTitleNormal1: "Envie os documentos pelo WhatsApp e\n",
+    docsTitleHighlight: "receba uma análise inicial",
+    docsTitleNormal2: " do seu caso.",
+    docsDescription: "Faço uma primeira avaliação do seu caso para identificar a melhor solução jurídica para você e sua família. A partir daí, definimos juntos a melhor estratégia a ser seguida.",
+    docsButtonText: "Enviar pelo WhatsApp",
+    docsDisclaimer: "Cada caso é analisado de forma individual."
+  }
+};
+
+interface Props {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function LawyerPage({ params }: Props) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const lawyer = lawyers[slug as keyof typeof lawyers];
+
+  if (!lawyer) {
+    notFound();
+  }
+
+  return (
+    <main className={styles.container}>
+      <Navbar />
+      
+      <section className={styles.hero}>
+        <div className={styles.heroBackground}>
+          <Image 
+            src={lawyer.image} 
+            alt={lawyer.heroTitle} 
+            fill
+            priority
+            quality={90}
+            unoptimized={true}
+            style={{ objectFit: 'cover', objectPosition: 'center bottom' }} 
+          />
+        </div>
+
+        <div className={styles.heroContent}>
+          {lawyer.heroBadge && (
+            <div className={styles.badge}>
+              <span className={styles.badgeDot}></span>
+              {lawyer.heroBadge}
+            </div>
+          )}
+          
+          {lawyer.heroTitle && (
+            <h1 className={styles.heroTitle}>
+              {lawyer.heroTitle.split('\n').map((line, i) => (
+                <span key={i}>{line}<br /></span>
+              ))}
+            </h1>
+          )}
+
+          {lawyer.heroSubtitle && (
+            <p className={styles.heroSubtitle}>
+              {lawyer.heroSubtitle.split('\n').map((line, i) => (
+                <span key={i}>{line}<br /></span>
+              ))}
+            </p>
+          )}
+
+          {lawyer.heroButtonText && (
+            <Link href="#contato" className={styles.heroButton}>
+              <svg className={styles.whatsappIcon} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              {lawyer.heroButtonText}
+            </Link>
+          )}
+        </div>
+      </section>
+
+      {lawyer.stats && (
+        <section className={styles.statsSection}>
+          <div className={styles.statsContainer}>
+            {lawyer.stats.map((stat, index) => (
+              <AnimatedStatItem
+                key={index}
+                stat={stat}
+                index={index}
+                itemClassName={styles.statItem}
+                valueClassName={styles.statValue}
+                labelClassName={styles.statLabel}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {lawyer.aboutTitleNormal && (
+        <section className={styles.aboutSection} id="sobre-advogada">
+          <div className={styles.aboutContainer}>
+            
+            {/* Lado Esquerdo - Foto com Moldura */}
+            <div className={styles.aboutImageCol}>
+              <FadeIn direction="right" duration={1}>
+                <div className={styles.aboutImageWrapper}>
+                  <div className={styles.aboutImageInner}>
+                    {lawyer.aboutImage && (
+                      <Image 
+                        src={lawyer.aboutImage}
+                        alt={lawyer.aboutTitleNormal}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    )}
+                    
+                    <div className={styles.oabBox}>
+                      <span className={styles.oabGold}>{lawyer.aboutOabTop}</span>
+                      <span className={styles.oabWhite}>{lawyer.aboutOabBottom}</span>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Lado Direito - Conteúdo */}
+            <div className={styles.aboutContentCol}>
+              <FadeIn direction="left" delay={0.2} duration={1}>
+                <span className={styles.aboutOverline}>{lawyer.aboutOverline}</span>
+                
+                <h2 className={styles.aboutTitle}>
+                  {lawyer.aboutTitleNormal} 
+                  <span className={styles.aboutTitleHighlight}>{lawyer.aboutTitleHighlight}</span>
+                </h2>
+
+                <div className={styles.aboutBio}>
+                  {lawyer.aboutBio?.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+
+                {lawyer.aboutQualifications && (
+                  <div className={styles.qualificationsList}>
+                    {lawyer.aboutQualifications.map((qual, index) => (
+                      <div key={index} className={styles.qualificationItem}>
+                        <div className={styles.qualificationIcon}>
+                          {qual.icon}
+                        </div>
+                        <div className={styles.qualificationText}>
+                          <span className={styles.qualificationTitle}>{qual.title}</span>
+                          {qual.subtitle && (
+                            <span className={styles.qualificationSubtitle}>{qual.subtitle}</span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <Link href="#contato" className={styles.outlineButton}>
+                  ENTRE EM CONTATO
+                </Link>
+              </FadeIn>
+            </div>
+            
+          </div>
+        </section>
+      )}
+
+      {lawyer.ctaTitle && (
+        <section className={styles.ctaSection}>
+          {lawyer.ctaBackground && (
+            <div className={styles.ctaBackgroundWrapper}>
+              <Image 
+                src={lawyer.ctaBackground}
+                alt="Background"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+              <div className={styles.ctaOverlay}></div>
+            </div>
+          )}
+          
+          <div className={styles.ctaContainer}>
+            <FadeIn direction="up">
+              <h2 className={styles.ctaTitle}>
+                {lawyer.ctaTitle.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+              </h2>
+              
+              <hr className={styles.ctaDivider} />
+              
+              <p className={styles.ctaSubtitle}>
+                {lawyer.ctaSubtitle.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+              </p>
+              
+              <Link href="#contato" className={styles.ctaButton}>
+                <svg className={styles.ctaIcon} viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                {lawyer.ctaButtonText}
+              </Link>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {lawyer.problemsTitle && (
+        <section className={styles.problemsSection}>
+          <div className={styles.problemsContainer}>
+            <FadeIn direction="up">
+              <h2 className={styles.problemsTitle}>
+                {lawyer.problemsTitle.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+              </h2>
+            </FadeIn>
+
+            <div className={styles.problemsGrid}>
+              {lawyer.problemsList?.map((problem, index) => (
+                <FadeIn key={index} direction="up" delay={index * 0.1}>
+                  <div className={styles.problemItem}>
+                    <svg className={styles.problemIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <p className={styles.problemText}>{problem}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            <FadeIn direction="up" delay={0.2}>
+              <Link href="#contato" className={styles.problemsButton}>
+                <svg className={styles.problemsButtonIcon} viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                {lawyer.problemsButtonText}
+              </Link>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {lawyer.areasList && (
+        <section className={styles.areasSection}>
+          <div className={styles.areasContainer}>
+            <FadeIn direction="up">
+              <div className={styles.areasHeader}>
+                <span className={styles.areasOverline}>{lawyer.areasOverline}</span>
+                <h2 className={styles.areasTitle}>
+                  {lawyer.areasTitleNormal1}
+                  <span className={styles.areasTitleHighlight}>{lawyer.areasTitleHighlight}</span>
+                  {lawyer.areasTitleNormal2}
+                </h2>
+                <hr className={styles.areasDivider} />
+              </div>
+            </FadeIn>
+
+            <div className={styles.areasGrid}>
+              {lawyer.areasList.map((area, index) => (
+                <FadeIn key={index} direction="up" delay={index * 0.1}>
+                  <div className={styles.areaItem}>
+                    <span className={styles.areaNumber}>{area.number}</span>
+                    <div className={styles.areaHeaderTop}>
+                      <div className={styles.areaIconBox}>
+                        {area.icon}
+                      </div>
+                      <h3 className={styles.areaTitle}>{area.title}</h3>
+                    </div>
+                    <p className={styles.areaDescription}>{area.description}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            <FadeIn direction="up" delay={0.2}>
+              <div className={styles.areasFooter}>
+                <Link href="#contato" className={styles.areasButton}>
+                  <svg className={styles.areasButtonIcon} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                  </svg>
+                  {lawyer.areasButtonText}
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {lawyer.locationTitleNormal1 && (
+        <section className={styles.locationSection}>
+          <div className={styles.locationContainer}>
+            <FadeIn direction="up">
+              <span className={styles.locationOverline}>{lawyer.locationOverline}</span>
+              <h2 className={styles.locationTitle}>
+                {lawyer.locationTitleNormal1.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+                <strong>{lawyer.locationTitleHighlight}</strong>
+              </h2>
+              <p className={styles.locationDescription}>{lawyer.locationDescription}</p>
+              
+              <div className={styles.locationButtons}>
+                <Link href="#endereco" className={styles.locationBtnOutline}>
+                  {lawyer.locationButton1Text}
+                </Link>
+                <Link href="#contato" className={styles.locationBtnSolid}>
+                  {lawyer.locationButton2Text}
+                  <span className={styles.locationBtnArrow}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {lawyer.docsTitleNormal1 && (
+        <section className={styles.docsSection}>
+          <div className={styles.docsContainer}>
+            <FadeIn direction="up">
+              <span className={styles.docsOverline}>{lawyer.docsOverline}</span>
+              <h2 className={styles.docsTitle}>
+                {lawyer.docsTitleNormal1.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+                <span className={styles.docsTitleHighlight}>{lawyer.docsTitleHighlight}</span>
+                {lawyer.docsTitleNormal2}
+              </h2>
+              <p className={styles.docsDescription}>{lawyer.docsDescription}</p>
+              
+              <Link href="#contato" className={styles.docsButton}>
+                <svg className={styles.docsButtonIcon} viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 1.764.457 3.42 1.258 4.887l-1.39 4.382 4.545-1.332A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 14.16c-.227.64-1.312 1.205-1.802 1.284-.44.07-.98.15-2.915-.653-2.337-.966-3.842-3.35-3.93-3.468-.088-.117-.938-1.25-.938-2.385s.59-1.696.8-1.922c.197-.216.428-.27.57-.27.142 0 .285 0 .408.006.126.006.295-.047.46.353.175.422.595 1.455.648 1.56.053.106.088.23.018.37-.07.14-.105.228-.21.345-.106.117-.223.252-.316.345-.105.105-.216.222-.094.433.123.21.547.904 1.176 1.465.81.724 1.492.946 1.703 1.05.21.106.333.088.456-.052.123-.14.526-.607.666-.818.14-.21.28-.175.474-.105.193.07 1.228.58 1.44.685.21.105.35.158.4.246.053.088.053.51-.174 1.15z"/>
+                </svg>
+                {lawyer.docsButtonText}
+              </Link>
+              
+              <p className={styles.docsDisclaimer}>{lawyer.docsDisclaimer}</p>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      <Footer />
+    </main>
+  );
+}

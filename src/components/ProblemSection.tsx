@@ -36,7 +36,7 @@ export default function ProblemSection() {
       <div className={styles.rightBackgroundImageWrapper}>
         <Image 
           src={documentosImg}
-          alt="Fundo Documentos"
+          alt="Documentos e processos"
           className={styles.documentosBgImage}
         />
       </div>

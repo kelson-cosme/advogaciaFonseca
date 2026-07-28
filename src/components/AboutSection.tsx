@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './AboutSection.module.css';
 import cimoneImg from '../../public/assets/cimone.webp';
 import carlaImg from '../../public/assets/carla.webp';
@@ -32,13 +33,13 @@ export default function AboutSection() {
           </div>
           <div className={styles.cardContent}>
             <h3 className={styles.name}>Dra. Cimone Fonseca</h3>
-            <span className={styles.infoText}>+10 anos de experiência</span>
+            <span className={styles.infoText}>+8 anos de experiência</span>
             <span className={styles.infoText}>Especialista em Inventário</span>
             <span className={styles.oab}>OAB/MT 25561</span>
             <p className={styles.bio}>
               Atuação estratégica em inventários e questões patrimoniais, com segurança jurídica, sensibilidade e conhecimento nas áreas cível, familiar e ambiental.
             </p>
-            <a href="#" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</a>
+            <Link href="/advogada/cimone" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</Link>
           </div>
         </div>
 
@@ -59,7 +60,7 @@ export default function AboutSection() {
             <p className={styles.bio}>
               Atuação estratégica na regularização urbana, fundiária e ambiental, com segurança jurídica para proteger imóveis, propriedades e patrimônios.
             </p>
-            <a href="#" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</a>
+            <Link href="/advogada/carla" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import SplashScreen from "@/components/SplashScreen";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -47,9 +49,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${georgia.variable} ${madeTommy.variable}`}>
-      <body>
-        <Navbar />
-        {children}
+      <body suppressHydrationWarning>
+        <SmoothScrolling>
+          <SplashScreen />
+          <Navbar />
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

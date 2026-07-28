@@ -22,10 +22,28 @@ html {
   --zoom-level: 0.8;
 }
 
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  zoom: 1.25; /* Cancela o zoom: 0.8 do HTML (1 / 0.8 = 1.25) */
+}
+
 @media (max-width: 1366px) {
   html {
     zoom: 0.67;
     --zoom-level: 0.67;
+  }
+  .splash-overlay {
+    zoom: 1.49253; /* Cancela o zoom: 0.67 do HTML (1 / 0.67) */
   }
 }
 

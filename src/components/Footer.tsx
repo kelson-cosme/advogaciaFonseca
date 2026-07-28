@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className={styles.bottomBar}>
           <p className={styles.disclaimerText}>
-            OAB-MT 0000 - Responsável técnico: Nome do Advogado
+            Desenvolvido por <a href="https://vivoxmarketing.com.br/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Vivox Web</a>
           </p>
           <p className={styles.copyrightText}>
             © {new Date().getFullYear()} Fonseca Advocacia. Todos os direitos reservados. Política de Privacidade - Termos de Uso
