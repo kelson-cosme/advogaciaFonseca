@@ -3,11 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isLightMode = pathname?.includes('/advogada/carla');
 
   const toggleMenu = () => {
     if (window.innerWidth <= 768) {
@@ -44,7 +47,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} ${isMenuOpen ? styles.navbarOpen : ''}`}>
+    <nav className={`${styles.navbar} ${isLightMode ? styles.themeLight : styles.themeDark} ${isScrolled ? (isLightMode ? styles.scrolledLight : styles.scrolledDark) : ''} ${isMenuOpen ? styles.navbarOpen : ''}`}>
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image 

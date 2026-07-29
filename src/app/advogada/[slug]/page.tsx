@@ -300,7 +300,6 @@ export default async function LawyerPage({ params }: Props) {
 
   return (
     <main className={`${styles.container} ${styles[`theme_${slug}`]}`}>
-      <Navbar />
       
       <section className={styles.hero}>
         <div className={styles.heroBackground}>

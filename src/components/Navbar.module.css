@@ -15,7 +15,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.navbar.scrolled {
+.navbar.themeLight .navLink {
+  color: #1a1a1a;
+}
+
+.navbar.themeDark .navLink {
+  color: var(--text-primary);
+}
+
+.navbar.scrolledLight {
   padding: 0.8rem 12%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
@@ -24,8 +32,21 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
-.navbar.scrolled .navLink {
+.navbar.scrolledLight .navLink {
   color: #1a1a1a;
+}
+
+.navbar.scrolledDark {
+  padding: 0.8rem 12%;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scrolledDark .navLink {
+  color: var(--text-primary);
 }
 
 .logoContainer {
@@ -40,7 +61,6 @@
 }
 
 .navLink {
-  color: #1a1a1a;
   font-size: 0.95rem;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -147,7 +167,8 @@
     padding: 1rem 5%;
   }
 
-  .navbar.scrolled {
+  .navbar.scrolledLight,
+  .navbar.scrolledDark {
     padding: 1rem 5%;
   }
 
@@ -177,7 +198,9 @@
     transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .navLink {
+  .navbarOpen .navLink,
+  .navbar.themeLight.navbarOpen .navLink,
+  .navbar.themeDark.navbarOpen .navLink {
     color: var(--text-primary);
     font-size: 1.8rem;
     margin-bottom: 2rem;
