@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedStatItem from "@/components/AnimatedStatItem";
 import FadeIn from "@/components/FadeIn";
+import AnimatedSteps from "@/components/AnimatedSteps";
+import AnimatedAreas from "@/components/AnimatedAreas";
 
 const lawyers = {
   carla: {
@@ -72,6 +74,7 @@ const lawyers = {
     ],
     problemsButtonText: "QUERO ANALISAR MEU CASO",
     areasOverline: "ÁREAS DE ATUAÇÃO",
+    areasBackground: "/assets/fundoSolucaoCarla.webp",
     areasTitleNormal1: "Soluções jurídicas para ",
     areasTitleHighlight: "proteger",
     areasTitleNormal2: " a sua propriedade",
@@ -115,6 +118,7 @@ const lawyers = {
     ],
     areasButtonText: "Fale com a especialista!",
     locationOverline: "PRATICIDADE",
+    locationBackground: "/assets/fundoBrasilCarla_v4.webp",
     locationTitleNormal1: "Atendimento presencial em Cuiabá - MT\nou ",
     locationTitleHighlight: "online para todo o Brasil!",
     locationDescription: "A Fonseca Advocacia também realiza atendimentos online para clientes de outras cidades e estados, com reuniões por videochamada, envio de documentos e acompanhamento durante todo o processo.",
@@ -126,7 +130,34 @@ const lawyers = {
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma primeira avaliação da situação para identificar possíveis pendências ambientais, fundiárias ou registrais. A partir daí, definimos juntos a melhor estratégia para a regularização do imóvel.",
     docsButtonText: "Enviar pelo WhatsApp",
-    docsDisclaimer: "Cada caso é analisado de forma individual."
+    docsDisclaimer: "Cada caso é analisado de forma individual.",
+    stepsOverline: "ETAPAS DO ATENDIMENTO",
+    stepsTitleNormal1: "Do primeiro contato à ",
+    stepsTitleHighlight: "regularização",
+    stepsList: [
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+        title: "Contato Inicial",
+        description: "Agende uma reunião por WhatsApp."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>,
+        title: "Análise documental",
+        description: "Estudo aprofundado da situação jurídica."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>,
+        title: "Estratégia Jurídica",
+        description: "Elaboração do plano de ação personalizado com objetivos claros."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>,
+        title: "Execução e Resultado",
+        description: "Atuação com acompanhamento constante até a solução definitiva."
+      }
+    ],
+    stepsCtaText: "Pronto para resolver sua situação com segurança jurídica?",
+    stepsButtonText: "Fale com a Dra. Carla Fonseca"
   },
   cimone: {
     heroBadge: "DIREITO DE FAMÍLIA",
@@ -207,7 +238,34 @@ const lawyers = {
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma primeira avaliação do seu caso para identificar a melhor solução jurídica para você e sua família. A partir daí, definimos juntos a melhor estratégia a ser seguida.",
     docsButtonText: "Enviar pelo WhatsApp",
-    docsDisclaimer: "Cada caso é analisado de forma individual."
+    docsDisclaimer: "Cada caso é analisado de forma individual.",
+    stepsOverline: "ETAPAS DO ATENDIMENTO",
+    stepsTitleNormal1: "Do primeiro contato à ",
+    stepsTitleHighlight: "resolução",
+    stepsList: [
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+        title: "Contato Inicial",
+        description: "Agende uma reunião por WhatsApp."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>,
+        title: "Análise documental",
+        description: "Estudo aprofundado da situação jurídica."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>,
+        title: "Estratégia Jurídica",
+        description: "Elaboração do plano de ação personalizado com objetivos claros."
+      },
+      {
+        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>,
+        title: "Execução e Resultado",
+        description: "Atuação com acompanhamento constante até a solução definitiva."
+      }
+    ],
+    stepsCtaText: "Pronto para resolver sua situação com segurança jurídica?",
+    stepsButtonText: "Fale com a Dra. Cimone Fonseca"
   }
 };
 
@@ -247,12 +305,12 @@ export default async function LawyerPage({ params }: Props) {
           {lawyer.heroBadge && (
             <div className={styles.badge}>
               <span className={styles.badgeDot}></span>
-              {lawyer.heroBadge}
+              <span className={styles.goldGradientText}>{lawyer.heroBadge}</span>
             </div>
           )}
           
           {lawyer.heroTitle && (
-            <h1 className={styles.heroTitle}>
+            <h1 className={`${styles.heroTitle} ${styles.goldGradientText}`}>
               {lawyer.heroTitle.split('\n').map((line, i) => (
                 <span key={i}>{line}<br /></span>
               ))}
@@ -446,61 +504,29 @@ export default async function LawyerPage({ params }: Props) {
       )}
 
       {lawyer.areasList && (
-        <section className={styles.areasSection}>
-          <div className={styles.areasContainer}>
-            <FadeIn direction="up">
-              <div className={styles.areasHeader}>
-                <span className={styles.areasOverline}>{lawyer.areasOverline}</span>
-                <h2 className={styles.areasTitle}>
-                  {lawyer.areasTitleNormal1}
-                  <span className={styles.areasTitleHighlight}>{lawyer.areasTitleHighlight}</span>
-                  {lawyer.areasTitleNormal2}
-                </h2>
-                <hr className={styles.areasDivider} />
-              </div>
-            </FadeIn>
-
-            <div className={styles.areasGrid}>
-              {lawyer.areasList.map((area, index) => (
-                <FadeIn key={index} direction="up" delay={index * 0.1}>
-                  <div className={styles.areaItem}>
-                    <span className={styles.areaNumber}>{area.number}</span>
-                    <div className={styles.areaHeaderTop}>
-                      <div className={styles.areaIconBox}>
-                        {area.icon}
-                      </div>
-                      <h3 className={styles.areaTitle}>{area.title}</h3>
-                    </div>
-                    <p className={styles.areaDescription}>{area.description}</p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-
-            <FadeIn direction="up" delay={0.2}>
-              <div className={styles.areasFooter}>
-                <Link href="#contato" className={styles.areasButton}>
-                  <svg className={styles.areasButtonIcon} viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-                  </svg>
-                  {lawyer.areasButtonText}
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-        </section>
+        <AnimatedAreas lawyer={lawyer} />
       )}
 
       {lawyer.locationTitleNormal1 && (
-        <section className={styles.locationSection}>
+        <section className={`${styles.locationSection} ${lawyer.locationBackground ? styles.hasBackground : ''}`}>
+          {lawyer.locationBackground && (
+            <div className={styles.locationBackgroundWrapper}>
+              <img 
+                src={lawyer.locationBackground}
+                alt="Background"
+                className={styles.locationBackgroundImage}
+              />
+            </div>
+          )}
           <div className={styles.locationContainer}>
             <FadeIn direction="up">
               <span className={styles.locationOverline}>{lawyer.locationOverline}</span>
               <h2 className={styles.locationTitle}>
-                {lawyer.locationTitleNormal1.split('\n').map((line, i) => (
-                  <span key={i}>{line}<br /></span>
-                ))}
-                <strong>{lawyer.locationTitleHighlight}</strong>
+                <span className={styles.locationTitleTop}>{lawyer.locationTitleNormal1.split('\n')[0]}</span>
+                {lawyer.locationTitleNormal1.split('\n')[1] && (
+                  <span className={styles.locationTitleMiddle}>{lawyer.locationTitleNormal1.split('\n')[1].trim()}</span>
+                )}
+                <span className={styles.locationTitleHighlight}>{lawyer.locationTitleHighlight}</span>
               </h2>
               <p className={styles.locationDescription}>{lawyer.locationDescription}</p>
               
@@ -518,6 +544,10 @@ export default async function LawyerPage({ params }: Props) {
             </FadeIn>
           </div>
         </section>
+      )}
+
+      {lawyer.stepsList && (
+        <AnimatedSteps lawyer={lawyer} />
       )}
 
       {lawyer.docsTitleNormal1 && (

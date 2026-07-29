@@ -4,6 +4,7 @@ import AreaCard, { AreaData } from './AreaCard';
 import rostoCarlaImg from '../../public/assets/rostoCarla.webp';
 import rostoCimoneImg from '../../public/assets/rostoCimone.webp';
 
+
 const areasData: AreaData[] = [
   {
     id: 'rurais',
