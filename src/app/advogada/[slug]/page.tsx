@@ -552,6 +552,15 @@ export default async function LawyerPage({ params }: Props) {
 
       {lawyer.docsTitleNormal1 && (
         <section className={styles.docsSection}>
+          <div className={styles.docsBackgroundRight}>
+            <Image
+              src="/assets/ctaWhatsapp_v2.webp"
+              alt="Detalhe Whatsapp"
+              fill
+              className={styles.docsBgImageRight}
+              quality={90}
+            />
+          </div>
           <div className={styles.docsContainer}>
             <FadeIn direction="up">
               <span className={styles.docsOverline}>{lawyer.docsOverline}</span>
