@@ -508,11 +508,11 @@ export default async function LawyerPage({ params }: Props) {
       )}
 
       {lawyer.locationTitleNormal1 && (
-        <section className={`${styles.locationSection} ${lawyer.locationBackground ? styles.hasBackground : ''}`}>
-          {lawyer.locationBackground && (
+        <section className={`${styles.locationSection} ${(lawyer as any).locationBackground ? styles.hasBackground : ''}`}>
+          {(lawyer as any).locationBackground && (
             <div className={styles.locationBackgroundWrapper}>
               <img 
-                src={lawyer.locationBackground}
+                src={(lawyer as any).locationBackground}
                 alt="Background"
                 className={styles.locationBackgroundImage}
               />
