@@ -14,20 +14,20 @@ export default function ProblemSection() {
 
   return (
     <section className={styles.problemSection}>
+      <div className={styles.rightBackgroundImageWrapper}>
+        <Image 
+          src={documentosImg}
+          alt="Documentos e processos"
+          className={styles.documentosBgImage}
+        />
+      </div>
+
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.subtitle}>— O PROBLEMA</span>
           <h2 className={styles.title}>
             Seu <span className={styles.highlight}>patrimônio ou direitos</span> estão passando por isso?
           </h2>
-        </div>
-
-        <div className={styles.rightBackgroundImageWrapper}>
-          <Image 
-            src={documentosImg}
-            alt="Documentos e processos"
-            className={styles.documentosBgImage}
-          />
         </div>
 
         <div className={styles.content}>
