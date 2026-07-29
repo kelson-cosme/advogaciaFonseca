@@ -15,6 +15,13 @@ const lawyers = {
     heroTitle: "Segurança jurídica\npara a sua propriedade",
     heroSubtitle: "Especialista em Regularização Ambiental,\nFundiária e Urbana em Mato Grosso",
     heroButtonText: "Fale com a especialista!",
+    marqueeItems: [
+      "REGULARIZAÇÃO AMBIENTAL",
+      "REGULARIZAÇÃO FUNDIÁRIA",
+      "REGULARIZAÇÃO URBANA",
+      "DIREITO AMBIENTAL E AGRONEGÓCIO",
+      "DEFESA CONTRA EMBARGOS E MULTAS"
+    ],
     image: "/assets/heroCarla.webp",
     stats: [
       { value: "+500", label: "CASOS ATENDIDOS" },
@@ -125,7 +132,7 @@ const lawyers = {
     locationButton1Text: "VER ENDEREÇO",
     locationButton2Text: "AGENDAR REUNIÃO",
     docsOverline: "FALE COM A ESPECIALISTA AGORA",
-    docsTitleNormal1: "Envie os documentos pelo WhatsApp e\n",
+    docsTitleNormal1: "Envie os documentos pelo WhatsApp e ",
     docsTitleHighlight: "receba uma análise inicial",
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma primeira avaliação da situação para identificar possíveis pendências ambientais, fundiárias ou registrais. A partir daí, definimos juntos a melhor estratégia para a regularização do imóvel.",
@@ -164,6 +171,13 @@ const lawyers = {
     heroTitle: "Protegendo o seu\npatrimônio familiar", 
     heroSubtitle: "Especialista em Inventários e Sucessões\nem Mato Grosso",
     heroButtonText: "Fale com a especialista!",
+    marqueeItems: [
+      "INVENTÁRIO E PARTILHA",
+      "PLANEJAMENTO SUCESSÓRIO",
+      "DIVÓRCIO E SEPARAÇÃO",
+      "PENSÃO ALIMENTÍCIA",
+      "GUARDA DE FILHOS"
+    ],
     image: "/assets/cimone.webp",
     stats: [
       { value: "+300", label: "CASOS RESOLVIDOS" },
@@ -285,7 +299,7 @@ export default async function LawyerPage({ params }: Props) {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={`${styles.container} ${styles[`theme_${slug}`]}`}>
       <Navbar />
       
       <section className={styles.hero}>
@@ -305,12 +319,12 @@ export default async function LawyerPage({ params }: Props) {
           {lawyer.heroBadge && (
             <div className={styles.badge}>
               <span className={styles.badgeDot}></span>
-              <span className={styles.goldGradientText}>{lawyer.heroBadge}</span>
+              <span className={styles.badgeText}>{lawyer.heroBadge}</span>
             </div>
           )}
           
           {lawyer.heroTitle && (
-            <h1 className={`${styles.heroTitle} ${styles.goldGradientText}`}>
+            <h1 className={`${styles.heroTitle} ${styles.darkGreenGradientText}`}>
               {lawyer.heroTitle.split('\n').map((line, i) => (
                 <span key={i}>{line}<br /></span>
               ))}
@@ -334,27 +348,37 @@ export default async function LawyerPage({ params }: Props) {
             </Link>
           )}
         </div>
+
+        {lawyer.marqueeItems && (
+          <div className={styles.marqueeContainer}>
+            <div className={styles.marqueeContent}>
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className={styles.marqueeItem}>
+                  {lawyer.marqueeItems.map((item: string, j: number) => (
+                    <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '2rem', paddingRight: '2rem' }}>
+                      <span>{item}</span>
+                      <Image src="/assets/icon.svg" alt="Ícone Fonseca" width={32} height={32} className={styles.marqueeIcon} />
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
-      {lawyer.stats && (
-        <section className={styles.statsSection}>
-          <div className={styles.statsContainer}>
-            {lawyer.stats.map((stat, index) => (
-              <AnimatedStatItem
-                key={index}
-                stat={stat}
-                index={index}
-                itemClassName={styles.statItem}
-                valueClassName={styles.statValue}
-                labelClassName={styles.statLabel}
-              />
-            ))}
-          </div>
-        </section>
-      )}
+      
 
       {lawyer.aboutTitleNormal && (
         <section className={styles.aboutSection} id="sobre-advogada">
+          <div className={styles.aboutBackgroundWrapper}>
+            <Image
+              src="/assets/folhagem.webp"
+              alt="Fundo Folhagem"
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
           <div className={styles.aboutContainer}>
             
             {/* Lado Esquerdo - Foto com Moldura */}
@@ -467,6 +491,15 @@ export default async function LawyerPage({ params }: Props) {
 
       {lawyer.problemsTitle && (
         <section className={styles.problemsSection}>
+          <div className={styles.problemsBackgroundWrapper}>
+            <Image
+              src="/assets/fundo8.webp"
+              alt="Fundo Problemas"
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+            <div className={styles.problemsOverlay}></div>
+          </div>
           <div className={styles.problemsContainer}>
             <FadeIn direction="up">
               <h2 className={styles.problemsTitle}>
@@ -499,6 +532,23 @@ export default async function LawyerPage({ params }: Props) {
                 {lawyer.problemsButtonText}
               </Link>
             </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {lawyer.stats && (
+        <section className={styles.statsSection}>
+          <div className={styles.statsContainer}>
+            {lawyer.stats.map((stat, index) => (
+              <AnimatedStatItem
+                key={index}
+                stat={stat}
+                index={index}
+                itemClassName={styles.statItem}
+                valueClassName={styles.statValue}
+                labelClassName={styles.statLabel}
+              />
+            ))}
           </div>
         </section>
       )}
@@ -552,6 +602,16 @@ export default async function LawyerPage({ params }: Props) {
 
       {lawyer.docsTitleNormal1 && (
         <section className={styles.docsSection}>
+          <div className={styles.docsBackgroundLeft}>
+            <Image
+              src="/assets/fundo9.webp"
+              alt="Detalhe Esquerdo"
+              fill
+              className={styles.docsBgImageLeft}
+              quality={90}
+              unoptimized={true}
+            />
+          </div>
           <div className={styles.docsBackgroundRight}>
             <Image
               src="/assets/ctaWhatsapp_v2.webp"
