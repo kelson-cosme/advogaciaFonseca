@@ -34,10 +34,10 @@ export default function AboutSection() {
           <div className={styles.cardContent}>
             <h3 className={styles.name}>Dra. Cimone Fonseca</h3>
             <span className={styles.infoText}>+8 anos de experiência</span>
-            <span className={styles.infoText}>Especialista em Inventário</span>
+            <span className={styles.infoText}>Família & Previdenciário (Inventário, Divórcio e Sucessões)</span>
             <span className={styles.oab}>OAB/MT 25561</span>
             <p className={styles.bio}>
-              Atuação estratégica em inventários e questões patrimoniais, com segurança jurídica, sensibilidade e conhecimento nas áreas cível, familiar e ambiental.
+              Atuação dedicada em Direito de Família e Previdenciário, com especialidade destacada em Inventários, Divórcios e Sucessões para a proteção do patrimônio familiar.
             </p>
             <Link href="/advogada/cimone" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</Link>
           </div>
