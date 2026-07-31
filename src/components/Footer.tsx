@@ -29,24 +29,23 @@ const Footer = () => {
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>CONTATO</h4>
             <div className={styles.contactInfo}>
-              <p>(65) 3000-0000</p>
-              <p>WhatsApp: (65) 99999-9999</p>
-              <p>@fonseca.advocacia</p>
+              <p>(65) 99995-4884</p>
+              <p>carla@fonsecaadvogados.com.br</p>
+              <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.socialIcon}>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@advocaciafonseca.cf</span>
+              </a>
             </div>
 
             <h4 className={styles.columnTitle}>HORÁRIO DE ATENDIMENTO</h4>
             <div className={styles.hoursInfo}>
               <div className={styles.hourRow}>
-                <span>Segunda a sexta</span>
-                <span>08:00 às 18:00</span>
-              </div>
-              <div className={styles.hourRow}>
-                <span>Sábado</span>
-                <span>Fechado</span>
-              </div>
-              <div className={styles.hourRow}>
-                <span>Domingo</span>
-                <span>Fechado</span>
+                <span>Segunda à sexta</span>
+                <span>8:00 - 18:00</span>
               </div>
             </div>
           </div>

@@ -49,6 +49,26 @@
   gap: 0.5rem;
 }
 
+.socialLink {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+}
+
+.socialLink:hover {
+  color: #c5a059;
+  transform: translateX(4px);
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
 .hoursInfo {
   display: flex;
   flex-direction: column;

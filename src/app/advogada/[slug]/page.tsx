@@ -25,9 +25,9 @@ const lawyers = {
     ],
     image: "/assets/heroCarla.webp",
     stats: [
-      { value: "+500", label: "CASOS ATENDIDOS" },
-      { value: "15+", label: "ANOS DE EXPERIÊNCIA" },
-      { value: "98%", label: "SATISFAÇÃO DOS CLIENTES" },
+      { value: "+8Mil", label: "CASOS ATENDIDOS" },
+      { value: "12+", label: "ANOS DE EXPERIÊNCIA" },
+      { value: "99%", label: "SATISFAÇÃO DOS CLIENTES" },
       { value: "R$500M+", label: "EM DÍVIDAS RENEGOCIADAS" }
     ],
     aboutImage: "/assets/draCarla.webp",
@@ -169,7 +169,7 @@ const lawyers = {
   },
   cimone: {
     heroBadge: "DIREITO DE FAMÍLIA E PREVIDENCIÁRIO",
-    heroTitle: "Soluções jurídicas seguras\npara a sua família e patrimônio", 
+    heroTitle: "Soluções jurídicas para\na sua família e seu patrimônio", 
     heroSubtitle: "Especialista em Direito de Família, Previdenciário, Inventários, Divórcios e Sucessões em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
     heroButtonText: "Fale com a especialista!",
     marqueeItems: [
@@ -221,7 +221,7 @@ const lawyers = {
     aboutOabTop: "OAB/MT",
     aboutOabBottom: "Nº 25561",
     ctaTitle: "Você não precisa enfrentar\nesse momento sozinho.",
-    ctaSubtitle: "Atuação estratégica em Inventários, Divórcios e Direito Previdenciário, com atendimento humanizado e acompanhamento em cada etapa.",
+    ctaSubtitle: "Atuação especializada em Inventários, Divórcios e Direito Previdenciário, com atendimento humanizado e acompanhamento em cada etapa.",
     ctaButtonText: "Agende uma Reunião",
     ctaBackground: "/assets/fundo12.webp",
     problemsTitle: "Você está enfrentando\nalgumas destas situações?",
@@ -545,7 +545,7 @@ export default async function LawyerPage({ params }: Props) {
       )}
 
       {lawyer.problemsTitle && (
-        <section className={styles.problemsSection}>
+        <section className={styles.problemsSection} id="situacoes">
           <div className={styles.problemsBackgroundWrapper}>
             <Image
               src={(lawyer as any).problemsBackground || "/assets/fundo8.webp"}

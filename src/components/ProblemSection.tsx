@@ -13,7 +13,7 @@ export default function ProblemSection() {
   ];
 
   return (
-    <section className={styles.problemSection}>
+    <section className={styles.problemSection} id="sua-situacao">
       <div className={styles.rightBackgroundImageWrapper}>
         <Image 
           src={documentosImg}

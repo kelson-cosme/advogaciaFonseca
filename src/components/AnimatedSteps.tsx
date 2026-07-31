@@ -47,7 +47,7 @@ export default function AnimatedSteps({ lawyer }: { lawyer: any }) {
   if (!lawyer.stepsList) return null;
 
   return (
-    <section className={styles.stepsSection}>
+    <section className={styles.stepsSection} id="etapas">
       <div className={styles.stepsContainer}>
         <FadeIn direction="up">
           <div className={styles.stepsHeader}>

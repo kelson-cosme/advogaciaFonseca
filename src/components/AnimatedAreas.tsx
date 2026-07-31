@@ -55,7 +55,7 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
   if (!lawyer.areasList) return null;
 
   return (
-    <section className={styles.areasSection}>
+    <section className={styles.areasSection} id="areas">
       {lawyer.areasBackground && (
         <div className={styles.areasBackgroundWrapper}>
           <Image 
