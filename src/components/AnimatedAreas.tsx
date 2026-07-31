@@ -133,9 +133,6 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
                     cursor: 'pointer',
                     position: 'relative',
                     zIndex: 1,
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    boxShadow: 'none',
                     height: '100%'
                   }}
                 >

@@ -109,11 +109,32 @@
 }
 
 @media (max-width: 900px) {
+  .footer {
+    padding: 3.5rem 1.5rem 2rem 1.5rem;
+    font-size: 1.15rem;
+  }
   .grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  .columnTitle {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+  .addressText,
+  .contactInfo p,
+  .hourRow span {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .directionsLink {
+    font-size: 1.1rem;
+  }
   .hoursInfo {
     max-width: 100%;
+  }
+  .bottomBar {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
