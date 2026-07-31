@@ -14,7 +14,7 @@ const lawyers = {
   carla: {
     heroBadge: "ADVOCACIA AGROFLORESTAL",
     heroTitle: "Segurança jurídica\npara a sua propriedade",
-    heroSubtitle: "Especialista em Regularização Ambiental,\nFundiária e Urbana em Mato Grosso",
+    heroSubtitle: "Especialista em Regularização Ambiental, Fundiária e Urbana em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
     heroButtonText: "Fale com a especialista!",
     marqueeItems: [
       "REGULARIZAÇÃO AMBIENTAL",
@@ -137,7 +137,7 @@ const lawyers = {
     docsTitleHighlight: "análise inicial",
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma primeira avaliação da situação para identificar possíveis pendências ambientais, fundiárias ou registrais. A partir daí, definimos juntos a melhor estratégia para a regularização do imóvel.",
-    docsButtonText: "Enviar para a Dra. Carla",
+    docsButtonText: "Enviar para Dra Carla Fonseca",
     docsDisclaimer: "Cada caso é analisado de forma individual.",
     stepsOverline: "ETAPAS DO ATENDIMENTO",
     stepsTitleNormal1: "Do primeiro contato à ",
@@ -170,7 +170,7 @@ const lawyers = {
   cimone: {
     heroBadge: "DIREITO DE FAMÍLIA E PREVIDENCIÁRIO",
     heroTitle: "Soluções jurídicas seguras\npara a sua família e patrimônio", 
-    heroSubtitle: "Dra. Cimone Fonseca — Especialista em Direito de Família e Previdenciário\nCom foco estratégico em Inventários, Divórcios e Sucessões",
+    heroSubtitle: "Especialista em Direito de Família, Previdenciário, Inventários, Divórcios e Sucessões em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
     heroButtonText: "Fale com a especialista!",
     marqueeItems: [
       "INVENTÁRIO E PARTILHA",
@@ -426,9 +426,21 @@ export default async function LawyerPage({ params }: Props) {
           </div>
           <div className={styles.aboutContainer}>
             
+            {/* Header no Mobile (fica acima da foto no mobile) */}
+            <div className={styles.aboutHeaderMobile}>
+              <FadeIn direction="up" duration={1}>
+                <span className={styles.aboutOverline}>{lawyer.aboutOverline}</span>
+                <h2 className={styles.aboutTitle}>
+                  {lawyer.aboutTitleNormal} 
+                  <span className={styles.aboutTitleHighlight}>{lawyer.aboutTitleHighlight}</span>
+                  <span className={styles.aboutOabInline}> — {lawyer.aboutOabTop} {lawyer.aboutOabBottom}</span>
+                </h2>
+              </FadeIn>
+            </div>
+
             {/* Lado Esquerdo - Foto com Moldura */}
             <div className={styles.aboutImageCol}>
-              <FadeIn direction="right" duration={1}>
+              <FadeIn direction="right" duration={1} width="100%">
                 <div className={styles.aboutImageWrapper}>
                   <div className={styles.aboutImageInner}>
                     {lawyer.aboutImage && (
@@ -447,13 +459,15 @@ export default async function LawyerPage({ params }: Props) {
             {/* Lado Direito - Conteúdo */}
             <div className={styles.aboutContentCol}>
               <FadeIn direction="left" delay={0.2} duration={1}>
-                <span className={styles.aboutOverline}>{lawyer.aboutOverline}</span>
-                
-                <h2 className={styles.aboutTitle}>
-                  {lawyer.aboutTitleNormal} 
-                  <span className={styles.aboutTitleHighlight}>{lawyer.aboutTitleHighlight}</span>
-                  <span className={styles.aboutOabInline}> — {lawyer.aboutOabTop} {lawyer.aboutOabBottom}</span>
-                </h2>
+                <div className={styles.aboutHeaderDesktop}>
+                  <span className={styles.aboutOverline}>{lawyer.aboutOverline}</span>
+                  
+                  <h2 className={styles.aboutTitle}>
+                    {lawyer.aboutTitleNormal} 
+                    <span className={styles.aboutTitleHighlight}>{lawyer.aboutTitleHighlight}</span>
+                    <span className={styles.aboutOabInline}> — {lawyer.aboutOabTop} {lawyer.aboutOabBottom}</span>
+                  </h2>
+                </div>
 
                 <div className={styles.aboutBio}>
                   {lawyer.aboutBio?.map((paragraph, index) => (
