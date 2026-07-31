@@ -28,7 +28,7 @@ const lawyers = {
       { value: "+500", label: "CASOS ATENDIDOS" },
       { value: "15+", label: "ANOS DE EXPERIÊNCIA" },
       { value: "98%", label: "SATISFAÇÃO DOS CLIENTES" },
-      { value: "R$50M+", label: "EM DÍVIDAS RENEGOCIADAS" }
+      { value: "R$500M+", label: "EM DÍVIDAS RENEGOCIADAS" }
     ],
     aboutImage: "/assets/draCarla.webp",
     aboutOverline: "CONHEÇA A SUA ADVOGADA",
@@ -82,7 +82,7 @@ const lawyers = {
     ],
     problemsButtonText: "Falar com uma especialista",
     areasOverline: "ÁREAS DE ATUAÇÃO",
-    areasBackground: "/assets/fundoSolucaoCarla.webp",
+    areasBackground: "/assets/fundoSolucaoCarla.webp?v=2",
     areasTitleNormal1: "Soluções jurídicas para ",
     areasTitleHighlight: "proteger",
     areasTitleNormal2: " a sua propriedade",

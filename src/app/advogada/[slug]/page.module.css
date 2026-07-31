@@ -91,6 +91,60 @@
   color: #0b1710;
 }
 
+/* Caixa quadrada para a seção Praticidade (Dra. Carla) */
+.theme_carla.locationSection.hasBackground .locationContainer,
+.theme_carla .locationContainer {
+  max-width: 780px;
+  width: calc(100% - 3rem);
+  margin: 4rem auto;
+  padding: 3.5rem 3rem;
+  background: linear-gradient(135deg, rgba(24, 46, 34, 0.92) 0%, rgba(12, 22, 16, 0.96) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 16px; /* Borda arredondada */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.theme_carla .locationOverline {
+  color: #d4af37;
+}
+
+.theme_carla .locationTitleTop {
+  color: #ffffff;
+}
+
+.theme_carla .locationTitleMiddle {
+  color: #d4af37;
+}
+
+.theme_carla .locationDescription {
+  color: #d1dad4;
+}
+
+.theme_carla .locationBtnOutline {
+  border-color: #d4af37;
+  color: #d4af37;
+  border-radius: 4px;
+}
+
+.theme_carla .locationBtnOutline:hover {
+  background-color: #d4af37;
+  color: #0c1610;
+}
+
+.theme_carla .locationBtnSolid {
+  background: linear-gradient(135deg, #e8c985 0%, #d7ac61 50%, #c9a038 100%);
+  color: #0c1610;
+  border-radius: 4px;
+}
+
+.theme_carla .locationBtnArrow {
+  background-color: #0c1610;
+  color: #d4af37;
+}
+
 .theme_cimone {
   /* Identidade Visual: Vinho/Bordô, OffWhite e CTA Dourado */
   --theme-main: #581424; /* Vinho / Bordô nobre */
@@ -257,7 +311,8 @@
   color: #d4af37;
 }
 
-.theme_cimone .docsOverline::before {
+.theme_cimone .docsOverline::before,
+.theme_cimone .docsOverline::after {
   background-color: #d4af37;
 }
 
@@ -1505,6 +1560,7 @@
 .docsOverline {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   color: #25D366; /* Verde WhatsApp */
   font-size: 0.75rem;
@@ -1514,7 +1570,8 @@
   margin-bottom: 1.5rem;
 }
 
-.docsOverline::before {
+.docsOverline::before,
+.docsOverline::after {
   content: "";
   display: block;
   width: 40px;
@@ -1530,6 +1587,7 @@
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
   color: #ffffff;
+  text-align: center;
 }
 
 .docsTitleHighlight {
@@ -1567,6 +1625,9 @@
   margin-bottom: 2rem;
   max-width: 650px;
   font-weight: 300;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .docsButton {

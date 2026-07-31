@@ -62,7 +62,8 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
             src={lawyer.areasBackground}
             alt="Background"
             fill
-            style={{ objectFit: 'cover' }}
+            unoptimized={true}
+            style={{ objectFit: 'cover', objectPosition: '75% top', transform: 'scale(1.35) translateX(6%)', transformOrigin: 'top center' }}
           />
           <div className={styles.areasOverlay}></div>
         </div>
