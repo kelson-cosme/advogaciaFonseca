@@ -35,16 +35,15 @@ export default function Home() {
         <div className={styles.heroContent}>
 
           <div className={styles.badge}>
-            Atendimento presencial no Mato Grosso e online em todo o Brasil.
+            Atendimento presencial e online em todo o Brasil.
           </div>
 
           <h1 className={styles.heroTitle}>
-            Advocacia Especializada em Regularização Fundiária, Ambiental e Urbana em Mato Grosso
+            Escritório de advocacia especializada em Cuiabá, Mato Grosso
           </h1>
 
           <p className={styles.heroSubtitle}>
-            Segurança jurídica para Direito Ambiental, Imobiliário,<br />
-            Família, Inventários, Previdenciário e Aéreo.
+            Segurança jurídica para Direito Ambiental, Imobiliário, Família, Inventários e Previdenciário.
           </p>
 
           <div className={styles.heroActions}>
