@@ -1,14 +1,22 @@
 .theme_carla {
-  --theme-main: #2b7a4b; /* Verde Principal Mais Elegante */
+  --theme-main: #2b7a4b;
+  /* Verde Principal Mais Elegante */
   --theme-main-hover: #1e5c36;
-  --theme-accent: #d4af37; /* Dourado Clássico */
+  --theme-accent: #d4af37;
+  /* Dourado Clássico */
   --theme-accent-dark: #b5952f;
-  --theme-dark-bg: #121c17; /* Fundo Verde Escuro */
-  --theme-darker-bg: #0a120d; /* Fundo Verde Mais Escuro ainda */
-  --theme-problems-bg: #15241b; /* Fundo Verde para a seção de problemas */
-  --theme-problems-item-bg: #1b2e23; /* Cards de problemas */
-  --theme-problems-border: #2b7a4b; /* Borda Verde/Dourada */
-  --theme-problems-icon: #d4af37; /* Ícone Dourado */
+  --theme-dark-bg: #121c17;
+  /* Fundo Verde Escuro */
+  --theme-darker-bg: #0a120d;
+  /* Fundo Verde Mais Escuro ainda */
+  --theme-problems-bg: #15241b;
+  /* Fundo Verde para a seção de problemas */
+  --theme-problems-item-bg: #1b2e23;
+  /* Cards de problemas */
+  --theme-problems-border: #2b7a4b;
+  /* Borda Verde/Dourada */
+  --theme-problems-icon: #d4af37;
+  /* Ícone Dourado */
 }
 
 .theme_carla .heroTitle {
@@ -102,7 +110,8 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 16px; /* Borda arredondada */
+  border-radius: 16px;
+  /* Borda arredondada */
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
 }
@@ -147,16 +156,24 @@
 
 .theme_cimone {
   /* Identidade Visual: Vinho/Bordô, OffWhite e CTA Dourado */
-  --theme-main: #581424; /* Vinho / Bordô nobre */
+  --theme-main: #581424;
+  /* Vinho / Bordô nobre */
   --theme-main-hover: #430d1a;
-  --theme-accent: #d4af37; /* Dourado Clássico para CTAs e destaques */
+  --theme-accent: #d4af37;
+  /* Dourado Clássico para CTAs e destaques */
   --theme-accent-dark: #b89328;
-  --theme-dark-bg: #28090f; /* Fundo Vinho Escuro */
-  --theme-darker-bg: #1c0509; /* Fundo Vinho Profundo */
-  --theme-problems-bg: #23070c; /* Fundo Seção Problemas */
-  --theme-problems-item-bg: #330c14; /* Cards de Problemas */
-  --theme-problems-border: #631728; /* Borda Vinho */
-  --theme-problems-icon: #d4af37; /* Ícone Dourado */
+  --theme-dark-bg: #28090f;
+  /* Fundo Vinho Escuro */
+  --theme-darker-bg: #1c0509;
+  /* Fundo Vinho Profundo */
+  --theme-problems-bg: #23070c;
+  /* Fundo Seção Problemas */
+  --theme-problems-item-bg: #330c14;
+  /* Cards de Problemas */
+  --theme-problems-border: #631728;
+  /* Borda Vinho */
+  --theme-problems-icon: #d4af37;
+  /* Ícone Dourado */
 }
 
 .theme_cimone .heroButton {
@@ -235,7 +252,9 @@
   background-color: #d4af37;
 }
 
-@media (max-width: 1440px), (max-height: 850px) {
+@media (max-width: 1440px),
+(max-height: 850px) {
+
   .theme_carla .heroTitle,
   .theme_cimone .heroTitle {
     font-size: 3.2rem;
@@ -415,7 +434,8 @@
   height: calc(100vh / var(--zoom-level, 0.8));
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alinhado à esquerda */
+  justify-content: flex-start;
+  /* Alinhado à esquerda */
 }
 
 .heroBackground {
@@ -492,7 +512,8 @@
 
 .heroSubtitle {
   font-size: 1.5rem;
-  color: #111111; /* Quase preto para alto contraste no fundo claro */
+  color: #111111;
+  /* Quase preto para alto contraste no fundo claro */
   line-height: 1.6;
   margin-bottom: 3rem;
   max-width: 700px;
@@ -504,7 +525,8 @@
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2rem;
-  background-color: var(--theme-main); /* Verde estilo Whatsapp do print */
+  background-color: var(--theme-main);
+  /* Verde estilo Whatsapp do print */
   color: #ffffff;
   border: none;
   border-radius: 50px;
@@ -559,7 +581,8 @@
   font-family: var(--font-playfair), serif;
   font-size: 3.5rem;
   font-weight: 600;
-  color: #1a1a1a; /* Escuro para contrastar com dourado */
+  color: #1a1a1a;
+  /* Escuro para contrastar com dourado */
   margin-bottom: 0.5rem;
   line-height: 1;
 }
@@ -588,7 +611,8 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.7; /* Opacidade aumentada para 70% */
+  opacity: 0.7;
+  /* Opacidade aumentada para 70% */
 }
 
 .aboutHeaderMobile {
@@ -619,7 +643,8 @@
 
 .aboutImageWrapper {
   position: relative;
-  border: 1px solid color-mix(in srgb, var(--theme-accent) 50%, transparent); /* Borda fina dourada */
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 50%, transparent);
+  /* Borda fina dourada */
   padding: 0;
 }
 
@@ -632,18 +657,19 @@
   margin-top: 1.5rem;
   margin-bottom: -1.5rem;
   margin-right: -1.5rem;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .oabBox {
   position: absolute;
   bottom: -1.5rem;
   right: -1.5rem;
-  background-color: var(--theme-dark-bg); /* Verde/Preto escuro do print */
+  background-color: var(--theme-dark-bg);
+  /* Verde/Preto escuro do print */
   padding: 1.5rem 2rem;
   z-index: 3;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .oabGold {
@@ -804,7 +830,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: color-mix(in srgb, var(--theme-accent-dark) 70%, transparent); /* Amarelo escuro com transparência para ver a foto */
+  background-color: color-mix(in srgb, var(--theme-accent-dark) 70%, transparent);
+  /* Amarelo escuro com transparência para ver a foto */
   z-index: 2;
 }
 
@@ -860,7 +887,7 @@
 .ctaButton:hover {
   background-color: #4a453c;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .ctaIcon {
@@ -893,7 +920,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(14, 20, 17, 0.2); /* Overlay escuro para garantir leitura */
+  background-color: rgba(14, 20, 17, 0.2);
+  /* Overlay escuro para garantir leitura */
   z-index: 1;
 }
 
@@ -927,14 +955,16 @@
   margin-bottom: 4rem;
 }
 
-.problemsGrid > div {
+.problemsGrid>div {
   height: 100%;
 }
 
 .problemItem {
   height: 100%;
-  background-color: var(--theme-problems-item-bg); /* Um pouco mais claro que o fundo */
-  border-left: 2px solid var(--theme-problems-border); /* Borda vinho/marrom */
+  background-color: var(--theme-problems-item-bg);
+  /* Um pouco mais claro que o fundo */
+  border-left: 2px solid var(--theme-problems-border);
+  /* Borda vinho/marrom */
   padding: 1.2rem 1.5rem;
   display: flex;
   align-items: center;
@@ -944,13 +974,15 @@
 .problemIcon {
   width: 18px;
   height: 18px;
-  color: var(--theme-problems-icon); /* Vermelho/Marrom claro */
+  color: var(--theme-problems-icon);
+  /* Vermelho/Marrom claro */
   flex-shrink: 0;
 }
 
 .problemText {
   font-size: 0.95rem;
-  color: #dcdcdc; /* Branco/Cinza claro */
+  color: #dcdcdc;
+  /* Branco/Cinza claro */
   line-height: 1.5;
 }
 
@@ -958,7 +990,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  background-color: var(--theme-accent); /* Dourado */
+  background-color: var(--theme-accent);
+  /* Dourado */
   color: #1a1a1a;
   padding: 1.2rem 2.5rem;
   border-radius: 4px;
@@ -984,7 +1017,8 @@
 
 /* Areas Section */
 .areasSection {
-  background-color: var(--theme-darker-bg); /* Verde super escuro */
+  background-color: var(--theme-darker-bg);
+  /* Verde super escuro */
   padding: 6rem 2rem;
   color: #ffffff;
   position: relative;
@@ -1007,7 +1041,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(14, 20, 17, 0.45); /* Overlay escuro sobre a imagem */
+  background-color: rgba(14, 20, 17, 0.45);
+  /* Overlay escuro sobre a imagem */
   z-index: 2;
 }
 
@@ -1024,7 +1059,7 @@
   width: 300px;
   height: auto;
   opacity: 0.9;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
 
 .leafBottomLeft {
@@ -1040,10 +1075,11 @@
   width: 350px;
   height: auto;
   opacity: 0.9;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
 
 @media (max-width: 1024px) {
+
   .leafTopRight,
   .leafBottomLeft {
     display: none;
@@ -1113,7 +1149,7 @@
   margin-bottom: 4rem;
 }
 
-.areasGrid > div {
+.areasGrid>div {
   display: flex;
   height: 100%;
 }
@@ -1122,7 +1158,8 @@
   position: relative;
   padding: 3.5rem 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  margin: -1px; /* collapse borders */
+  margin: -1px;
+  /* collapse borders */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1135,7 +1172,8 @@
   left: 2.5rem;
   font-family: var(--font-playfair), serif;
   font-size: 2.2rem;
-  color: color-mix(in srgb, var(--theme-accent) 20%, transparent); /* Dourado bem transparente */
+  color: color-mix(in srgb, var(--theme-accent) 20%, transparent);
+  /* Dourado bem transparente */
   z-index: 1;
 }
 
@@ -1247,7 +1285,8 @@
 
 /* Location Section */
 .locationSection {
-  background-color: #eff1f4; /* Fundo cinza/azulado claro */
+  background-color: #eff1f4;
+  /* Fundo cinza/azulado claro */
   padding: 6rem 2rem;
   text-align: center;
   color: #333333;
@@ -1353,7 +1392,8 @@
   align-items: center;
   justify-content: center;
   padding: 1.2rem 2.5rem;
-  border: 1px solid #1a2530; /* Azul escuro */
+  border: 1px solid #1a2530;
+  /* Azul escuro */
   color: #1a2530;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -1372,8 +1412,10 @@
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 0.6rem 0.6rem 0.6rem 2rem; /* padding reduzido na direita para acomodar o círculo */
-  background-color: #132030; /* Azul escuro quase preto */
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
+  /* padding reduzido na direita para acomodar o círculo */
+  background-color: #132030;
+  /* Azul escuro quase preto */
   color: #ffffff;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -1393,7 +1435,8 @@
 .locationBtnArrow {
   width: 40px;
   height: 40px;
-  background-color: var(--theme-accent); /* Dourado */
+  background-color: var(--theme-accent);
+  /* Dourado */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1479,7 +1522,8 @@
 
 .stepsLine {
   position: absolute;
-  top: 30px; /* Center of the 60px icon box */
+  top: 30px;
+  /* Center of the 60px icon box */
   left: 12.5%;
   width: 75%;
   height: 1px;
@@ -1582,9 +1626,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
   }
-  
+
   .stepsLine {
-    display: none; /* Esconde a linha horizontal no mobile pois as bolinhas quebram a linha */
+    display: none;
+    /* Esconde a linha horizontal no mobile pois as bolinhas quebram a linha */
   }
 }
 
@@ -1654,7 +1699,8 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  color: #25D366; /* Verde WhatsApp */
+  color: #25D366;
+  /* Verde WhatsApp */
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1777,45 +1823,57 @@
     padding: 0 5%;
     margin-top: 50px;
   }
+
   .heroTitle {
     font-size: 3.5rem;
   }
+
   .heroSubtitle {
     font-size: 1.2rem;
   }
+
   .statsContainer {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .statItem:nth-child(2) {
     border-right: none;
   }
+
   .statItem {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 2.5rem 1rem;
   }
+
   .statItem:nth-last-child(-n+2) {
     border-bottom: none;
   }
+
   .statValue {
     font-size: 2.8rem;
   }
+
   .aboutContainer {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .aboutHeaderMobile {
     display: block;
     grid-column: 1 / -1;
     margin-bottom: 0.5rem;
   }
+
   .aboutHeaderDesktop {
     display: none;
   }
+
   .aboutOabInline {
     display: block;
     margin-left: 0;
     margin-top: 0.4rem;
   }
+
   .aboutImageCol {
     max-width: 450px;
     width: 100%;
@@ -1825,10 +1883,12 @@
     padding-top: 0.2rem;
     box-sizing: border-box;
   }
+
   .aboutImageWrapper {
     width: 100%;
     position: relative;
   }
+
   .aboutImageInner {
     width: 100%;
     position: relative;
@@ -1838,24 +1898,30 @@
     margin-bottom: -1rem;
     margin-right: -1rem;
   }
+
   .aboutTitle {
     font-size: 2.5rem;
   }
+
   .ctaTitle {
     font-size: 2rem;
   }
+
   .ctaDivider {
     width: 200px;
   }
+
   .problemsTitle {
     font-size: 2.5rem;
     margin-bottom: 3rem;
   }
+
   .problemsGrid {
     grid-template-columns: 1fr;
     grid-auto-flow: row;
     grid-template-rows: auto;
   }
+
   .areasGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1866,10 +1932,12 @@
     align-items: flex-end;
     padding-bottom: 4.5rem;
   }
+
   .heroContent {
     margin-top: auto;
     padding-bottom: 1rem;
   }
+
   .heroBackground::after {
     content: "";
     position: absolute;
@@ -1881,27 +1949,44 @@
     pointer-events: none;
     z-index: 2;
   }
+
   .theme_carla .heroBackground img {
     object-position: 75% bottom !important;
   }
-  .theme_carla .heroButton {
+
+  .theme_cimone .heroBackground img {
+    object-position: 80% bottom !important;
+    transform: scale(1.15) !important;
+    transform-origin: bottom center !important;
+  }
+
+  .theme_carla .heroButton,
+  .theme_cimone .heroButton {
     padding: 1.1rem 2.4rem;
     font-size: 1.05rem;
     font-weight: 700;
   }
+
+  .aboutBio {
+    margin-bottom: 2.2rem;
+  }
+
   .aboutBio p {
     font-size: 1.4rem;
     line-height: 1.7;
     text-align: justify;
   }
+
   .qualificationTitle {
     font-size: 1.25rem;
     line-height: 1.4;
   }
+
   .qualificationSubtitle {
     font-size: 1.05rem;
     line-height: 1.4;
   }
+
   .areasSection {
     width: calc(100% - 2rem);
     margin: 3rem auto;
@@ -1912,6 +1997,7 @@
     border: 1px solid rgba(212, 175, 55, 0.3);
     box-sizing: border-box;
   }
+
   .theme_carla.locationSection.hasBackground .locationContainer,
   .theme_carla .locationContainer,
   .theme_cimone.locationSection.hasBackground .locationContainer,
@@ -1924,9 +2010,11 @@
     padding: 2.5rem 1.5rem !important;
     box-sizing: border-box !important;
   }
+
   .docsBackgroundRight {
     display: none;
   }
+
   .docsBgImageLeft {
     object-fit: cover !important;
     object-position: center !important;
@@ -1938,69 +2026,116 @@
   .heroTitle {
     font-size: 2.4rem;
   }
+
   .heroContent {
     margin-top: auto;
   }
+
   .statsContainer {
     grid-template-columns: 1fr;
   }
+
   .statItem {
     border-right: none !important;
     padding: 2rem 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
+
   .statItem:last-child {
     border-bottom: none;
   }
+
   .ctaTitle {
     font-size: 3rem;
     line-height: 1.15;
   }
+
   .ctaSubtitle {
     font-size: 1.2rem;
     line-height: 1.6;
   }
+
+  .theme_cimone .ctaOverlay {
+    display: none !important;
+  }
+
+  .theme_cimone .ctaTitle,
+  .theme_cimone .ctaSubtitle {
+    color: var(--theme-main);
+  }
+
+  .theme_cimone .ctaDivider {
+    background-color: var(--theme-main);
+    opacity: 0.3;
+  }
+
+  .theme_cimone .ctaSection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.65) 50%, rgba(255,255,255,0.1) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .theme_cimone .ctaContainer {
+    z-index: 3;
+  }
+
   .problemsTitle {
     font-size: 3rem;
     line-height: 1.15;
   }
+
   .problemText {
     font-size: 1.2rem;
     line-height: 1.5;
   }
+
   .problemIcon {
     width: 22px;
     height: 22px;
   }
+
   .problemItem {
     padding: 1.2rem 1.4rem;
   }
+
   .areasGrid {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     border: none;
   }
+
   .areasTitle {
     font-size: 3rem;
     line-height: 1.15;
   }
+
   .areaTitle {
     font-size: 1.35rem;
     line-height: 1.3;
   }
+
   .areaDescription {
     font-size: 1rem;
     line-height: 1.55;
   }
+
   .areaIconBox {
     width: 38px;
     height: 38px;
   }
+
   .areaIconBox svg {
     width: 18px;
     height: 18px;
   }
+
   .areaItem {
     padding: 1.8rem 1.5rem;
     background: rgba(12, 22, 16, 0.88);
@@ -2012,47 +2147,65 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
   }
+
+  .theme_cimone .areaItem {
+    background: rgba(60, 8, 20, 0.88);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(88, 20, 36, 0.45);
+  }
+
   .locationTitleTop {
     font-size: 1.6rem;
     line-height: 1.25;
   }
+
   .locationTitleHighlight {
     font-size: 2.2rem;
     line-height: 1.15;
   }
+
   .locationDescription {
     font-size: 1.15rem;
     line-height: 1.65;
   }
+
   .locationButtons {
     flex-direction: column;
     width: 100%;
   }
-  .locationBtnOutline, .locationBtnSolid {
+
+  .locationBtnOutline,
+  .locationBtnSolid {
     width: 100%;
     justify-content: center;
     text-align: center;
   }
+
   .docsTitle {
     font-size: 3rem;
     line-height: 1.15;
   }
+
   .stepsTitle {
     font-size: 3rem;
     line-height: 1.15;
   }
+
   .stepTitle {
     font-size: 1.35rem;
   }
+
   .stepDescription {
     font-size: 1.1rem;
     max-width: 320px;
     line-height: 1.55;
   }
+
   .stepIconBox {
     width: 70px;
     height: 70px;
   }
+
   .stepIconBox svg {
     width: 28px;
     height: 28px;
@@ -2107,6 +2260,11 @@
 }
 
 @keyframes scrollMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
 }
