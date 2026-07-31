@@ -11,6 +11,86 @@
   --theme-problems-icon: #d4af37; /* Ícone Dourado */
 }
 
+.theme_carla .heroTitle {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: initial;
+  background-clip: unset;
+  color: #ffffff;
+  filter: none;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.theme_carla .heroSubtitle {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.theme_carla .badge {
+  border-color: #d4af37;
+  background-color: rgba(10, 18, 13, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.theme_carla .badgeText {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.theme_carla .badgeDot {
+  background-color: #d4af37;
+}
+
+/* Identidade Visual Verde para a seção Sobre da Dra. Carla */
+.theme_carla .aboutSection {
+  background: linear-gradient(135deg, #0b1710 0%, #14281b 50%, #0b1710 100%);
+  color: #ffffff;
+}
+
+.theme_carla .aboutBackgroundWrapper {
+  opacity: 0.15;
+}
+
+.theme_carla .aboutTitle {
+  color: #ffffff;
+}
+
+.theme_carla .aboutTitleHighlight {
+  color: #d4af37;
+}
+
+.theme_carla .aboutOabInline {
+  color: #d4af37;
+}
+
+.theme_carla .aboutBio p {
+  color: #d1dad4;
+}
+
+.theme_carla .qualificationItem {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #d4af37;
+  backdrop-filter: blur(8px);
+}
+
+.theme_carla .qualificationTitle {
+  color: #ffffff;
+}
+
+.theme_carla .qualificationSubtitle {
+  color: #a5b8ab;
+}
+
+.theme_carla .outlineButton {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.theme_carla .outlineButton:hover {
+  background-color: #d4af37;
+  color: #0b1710;
+}
+
 .theme_cimone {
   /* Identidade Visual: Vinho/Bordô, OffWhite e CTA Dourado */
   --theme-main: #581424; /* Vinho / Bordô nobre */
@@ -471,6 +551,16 @@
   color: var(--theme-accent);
   font-style: italic;
   font-weight: 700;
+}
+
+.aboutOabInline {
+  font-size: 1.15rem;
+  font-family: var(--font-inter), sans-serif;
+  color: #D4AF37;
+  font-weight: 500;
+  font-style: normal;
+  margin-left: 0.5rem;
+  white-space: nowrap;
 }
 
 .aboutBio {

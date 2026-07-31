@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -64,7 +65,7 @@ const lawyers = {
     aboutOabBottom: "Nº 18972",
     ctaTitle: "Regularizar hoje é proteger o\nseu patrimônio amanhã!",
     ctaSubtitle: "Estou pronta para ajudar você a resolver pendências ambientais, fundiárias e urbanas\ncom segurança jurídica e acompanhamento em todas as etapas.",
-    ctaButtonText: "Agende uma Reunião",
+    ctaButtonText: "Falar com a Dra. Carla Fonseca",
     ctaBackground: "/assets/apertoDeMao.webp",
     problemsTitle: "Você está enfrentando\nalgumas destas situações?",
     problemsList: [
@@ -79,7 +80,7 @@ const lawyers = {
       "Possui um imóvel urbano sem escritura ou registro?",
       "Precisa realizar usucapião, adjudicação compulsória ou retificação de matrícula?"
     ],
-    problemsButtonText: "QUERO ANALISAR MEU CASO",
+    problemsButtonText: "Falar com uma especialista",
     areasOverline: "ÁREAS DE ATUAÇÃO",
     areasBackground: "/assets/fundoSolucaoCarla.webp",
     areasTitleNormal1: "Soluções jurídicas para ",
@@ -132,11 +133,11 @@ const lawyers = {
     locationButton1Text: "VER ENDEREÇO",
     locationButton2Text: "AGENDAR REUNIÃO",
     docsOverline: "FALE COM A ESPECIALISTA AGORA",
-    docsTitleNormal1: "Envie os documentos pelo WhatsApp e ",
-    docsTitleHighlight: "receba uma análise inicial",
+    docsTitleNormal1: "Envie os documentos pelo WhatsApp\npara uma ",
+    docsTitleHighlight: "análise inicial",
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma primeira avaliação da situação para identificar possíveis pendências ambientais, fundiárias ou registrais. A partir daí, definimos juntos a melhor estratégia para a regularização do imóvel.",
-    docsButtonText: "Enviar pelo WhatsApp",
+    docsButtonText: "Enviar para a Dra. Carla",
     docsDisclaimer: "Cada caso é analisado de forma individual.",
     stepsOverline: "ETAPAS DO ATENDIMENTO",
     stepsTitleNormal1: "Do primeiro contato à ",
@@ -184,7 +185,7 @@ const lawyers = {
       { value: "+300", label: "CASOS RESOLVIDOS" },
       { value: "8+", label: "ANOS DE EXPERIÊNCIA" },
       { value: "99%", label: "SATISFAÇÃO DOS CLIENTES" },
-      { value: "100%", label: "COMPROMISSO E ÉTICA" }
+      { value: "+500", label: "AUXÍLIOS CONCEDIDOS" }
     ],
     aboutImage: "/assets/draCimoneSobre.webp",
     aboutOverline: "CONHEÇA A SUA ADVOGADA",
@@ -292,11 +293,11 @@ const lawyers = {
     docsOverline: "FALE COM A ESPECIALISTA AGORA",
     docsBackgroundLeft: "/assets/fundo14.webp",
     docsBackgroundRight: "/assets/fundo13.webp",
-    docsTitleNormal1: "Envie os documentos pelo WhatsApp e ",
-    docsTitleHighlight: "receba uma análise inicial",
+    docsTitleNormal1: "Envie os documentos pelo WhatsApp\npara uma ",
+    docsTitleHighlight: "análise inicial",
     docsTitleNormal2: " do seu caso.",
     docsDescription: "Faço uma avaliação inicial do seu caso para identificar a melhor solução jurídica em inventário, divórcio ou previdência. Definimos juntos os próximos passos com clareza.",
-    docsButtonText: "Enviar pelo WhatsApp",
+    docsButtonText: "Enviar para a Dra. Cimone",
     docsDisclaimer: "Cada caso é analisado de forma individual.",
     stepsOverline: "ETAPAS DO ATENDIMENTO",
     stepsTitleNormal1: "Do primeiro contato à ",
@@ -438,11 +439,6 @@ export default async function LawyerPage({ params }: Props) {
                         style={{ objectFit: 'cover' }}
                       />
                     )}
-                    
-                    <div className={styles.oabBox}>
-                      <span className={styles.oabGold}>{lawyer.aboutOabTop}</span>
-                      <span className={styles.oabWhite}>{lawyer.aboutOabBottom}</span>
-                    </div>
                   </div>
                 </div>
               </FadeIn>
@@ -456,6 +452,7 @@ export default async function LawyerPage({ params }: Props) {
                 <h2 className={styles.aboutTitle}>
                   {lawyer.aboutTitleNormal} 
                   <span className={styles.aboutTitleHighlight}>{lawyer.aboutTitleHighlight}</span>
+                  <span className={styles.aboutOabInline}> — {lawyer.aboutOabTop} {lawyer.aboutOabBottom}</span>
                 </h2>
 
                 <div className={styles.aboutBio}>
@@ -669,8 +666,11 @@ export default async function LawyerPage({ params }: Props) {
             <FadeIn direction="up">
               <span className={styles.docsOverline}>{lawyer.docsOverline}</span>
               <h2 className={styles.docsTitle}>
-                {lawyer.docsTitleNormal1.split('\n').map((line, i) => (
-                  <span key={i}>{line}<br /></span>
+                {lawyer.docsTitleNormal1.split('\n').map((line, i, arr) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </React.Fragment>
                 ))}
                 <span className={styles.docsTitleHighlight}>{lawyer.docsTitleHighlight}</span>
                 {lawyer.docsTitleNormal2}

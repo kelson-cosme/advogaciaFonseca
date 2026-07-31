@@ -27,7 +27,7 @@ export default function SecuritySection() {
         {/* Right Text */}
         <div className={styles.rightContent}>
           <p className={styles.description}>
-            Na Fonseca Advocacia, cada caso é conduzido com estratégia e responsabilidade, buscando soluções jurídicas que ofereçam segurança, tranquilidade e respaldo para cada decisão.
+            Na Fonseca Advocacia, cada caso é conduzido com excelência, buscando soluções jurídicas que ofereçam segurança, tranquilidade e respaldo para cada decisão.
           </p>
         </div>
 
