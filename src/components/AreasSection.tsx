@@ -62,24 +62,32 @@ const areasData: AreaData[] = [
   }
 ];
 
-export default function AreasSection() {
+type Props = {
+  hideFaces?: boolean;
+};
+
+export default function AreasSection({ hideFaces = false }: Props) {
   return (
     <section id="areas" className={styles.section}>
-      <div className={styles.topRightImage}>
-        <Image
-          src={rostoCimoneImg}
-          alt="Advogada Cimone Fonseca"
-          className={styles.rostoImage}
-        />
-      </div>
+      {!hideFaces && (
+        <>
+          <div className={styles.topRightImage}>
+            <Image
+              src={rostoCimoneImg}
+              alt="Advogada Cimone Fonseca"
+              className={styles.rostoImage}
+            />
+          </div>
 
-      <div className={styles.bottomLeftImage}>
-        <Image
-          src={rostoCarlaImg}
-          alt="Advogada Carla Fonseca"
-          className={styles.rostoCarlaImage}
-        />
-      </div>
+          <div className={styles.bottomLeftImage}>
+            <Image
+              src={rostoCarlaImg}
+              alt="Advogada Carla Fonseca"
+              className={styles.rostoCarlaImage}
+            />
+          </div>
+        </>
+      )}
 
       <div className={styles.header}>
         <span className={styles.subtitle}>COMO PODEMOS TE AJUDAR?</span>

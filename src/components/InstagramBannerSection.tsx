@@ -2,12 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './InstagramBannerSection.module.css';
 
-const InstagramBannerSection = () => {
+type Props = {
+  leftBackgroundImage?: string;
+};
+
+const InstagramBannerSection = ({ leftBackgroundImage = "/assets/fundoEsquerda.webp" }: Props = {}) => {
   return (
     <section className={styles.section}>
       <div className={styles.lightBackground}>
         <Image 
-          src="/assets/fundoEsquerda.webp" 
+          src={leftBackgroundImage} 
           alt="Fundo da seção esquerdo" 
           fill 
           style={{ objectFit: 'contain', objectPosition: 'left' }} 

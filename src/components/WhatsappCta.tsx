@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './WhatsappCta.module.css';
 
-const WhatsappCta = () => {
+const WhatsappCta = ({ hideImageRight = false }: { hideImageRight?: boolean }) => {
   return (
     <section id="contato" className={styles.ctaSection}>
       <div className={styles.ctaBackground}>
@@ -34,15 +34,17 @@ const WhatsappCta = () => {
         </div>
       </div>
 
-      <div className={styles.imageRight}>
-        <Image
-          src="/assets/irmas.webp"
-          alt="Especialistas Advocacia"
-          fill
-          style={{ objectFit: 'contain', objectPosition: 'bottom right' }}
-          quality={90}
-        />
-      </div>
+      {!hideImageRight && (
+        <div className={styles.imageRight}>
+          <Image
+            src="/assets/irmas.webp"
+            alt="Especialistas Advocacia"
+            fill
+            style={{ objectFit: 'contain', objectPosition: 'bottom right' }}
+            quality={90}
+          />
+        </div>
+      )}
     </section>
   );
 };
