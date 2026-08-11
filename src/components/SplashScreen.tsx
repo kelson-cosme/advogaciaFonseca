@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from 'next/navigation';
 import gsap from "gsap";
 
 export default function SplashScreen() {
   const [show, setShow] = useState(true);
+  const pathname = usePathname();
   
   const containerRef = useRef<HTMLDivElement>(null);
   const svgWrapperRef = useRef<HTMLDivElement>(null);
@@ -96,7 +98,9 @@ export default function SplashScreen() {
     };
   }, []);
 
-  if (!show) return null;
+  const isLinksBio = pathname?.includes('/links-bio');
+
+  if (!show || isLinksBio) return null;
 
   return (
     <div

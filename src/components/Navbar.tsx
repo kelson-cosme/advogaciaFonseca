@@ -13,6 +13,7 @@ export default function Navbar() {
   const isLightMode = pathname?.includes('/advogada/carla');
   const isCarla = pathname?.includes('/advogada/carla');
   const isCimone = pathname?.includes('/advogada/cimone');
+  const isLinksBio = pathname?.includes('/links-bio');
 
   const toggleMenu = () => {
     if (window.innerWidth <= 768) {
@@ -47,6 +48,8 @@ export default function Navbar() {
       document.documentElement.style.overflow = '';
     };
   }, [isMenuOpen]);
+
+  if (isLinksBio) return null;
 
   return (
     <nav className={`${styles.navbar} ${isLightMode ? styles.themeLight : styles.themeDark} ${isScrolled ? (isLightMode ? styles.scrolledLight : styles.scrolledDark) : ''} ${isMenuOpen ? styles.navbarOpen : ''}`}>
