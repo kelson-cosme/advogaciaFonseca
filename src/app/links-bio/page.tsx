@@ -127,6 +127,19 @@ export default function LinksBio() {
             priority
           />
         </Link>
+
+        <Link href="https://wa.me/5565999954884?text=Ol%C3%A1%21%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Fonseca%20Advocacia." target="_blank" rel="noopener noreferrer" className={styles.cardLink} style={{ marginTop: '-1rem' }}>
+          <Image
+            src="/assets/cardLink7.webp"
+            alt="Sétimo card"
+            width={1000}
+            height={500}
+            className={styles.cardImage}
+            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
+            priority
+            unoptimized
+          />
+        </Link>
       </div>
     </main>
     <Footer />
