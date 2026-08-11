@@ -8,20 +8,31 @@ export default function LinksBio() {
   return (
     <>
     <main className={styles.container}>
-      <div className={styles.profileSection}>
-        <div className={styles.imageWrapper}>
-          <Image
-            src="/assets/logoDourada.svg"
-            alt="Advocacia Fonseca"
-            width={120}
-            height={60}
-            className={styles.profileImage}
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
+      <div className={styles.bannerContainer}>
+        <Image
+          src="/assets/banner2.webp"
+          alt="Banner Fonseca Advocacia"
+          width={1920}
+          height={600}
+          className={styles.bannerImage}
+          priority
+        />
       </div>
 
-      <div className={styles.linksContainer}>
+      <div className={styles.contentContainer}>
+        <div className={styles.profileSection}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/assets/logoDourada.svg"
+              alt="Advocacia Fonseca"
+              width={120}
+              height={60}
+              className={styles.profileImage}
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        </div>
+        <div className={styles.linksContainer}>
         <Link href="https://advogacia-fonseca.vercel.app/" className={styles.cardLink}>
           <Image
             src="/assets/card1Link.webp"
@@ -128,7 +139,7 @@ export default function LinksBio() {
           />
         </Link>
 
-        <Link href="https://wa.me/5565999954884?text=Ol%C3%A1%21%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Fonseca%20Advocacia." target="_blank" rel="noopener noreferrer" className={styles.cardLink} style={{ marginTop: '-1rem' }}>
+        <Link href="https://wa.me/5565999954884?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Fonseca%20Advocacia." target="_blank" rel="noopener noreferrer" className={styles.cardLink} style={{ marginTop: '-1rem' }}>
           <Image
             src="/assets/cardLink7.webp"
             alt="Sétimo card"
@@ -140,6 +151,7 @@ export default function LinksBio() {
             unoptimized
           />
         </Link>
+      </div>
       </div>
     </main>
     <Footer />

@@ -5,23 +5,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 10px;
   font-family: var(--font-inter), sans-serif;
   position: relative;
   z-index: 10;
 }
 
+.bannerContainer {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.bannerContainer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(24, 23, 20, 0) 0%, #181714 100%);
+  pointer-events: none;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px 2rem 10px;
+}
+
 .profileSection {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   width: 100%;
-  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
 }
 
 .imageWrapper {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1.5rem;
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--accent-gold);
@@ -30,7 +65,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.2);
+}
+
+.profileImage {
+  object-fit: contain;
 }
 
 .profileImage {
