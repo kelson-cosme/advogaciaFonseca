@@ -1,7 +1,6 @@
 .container {
   min-height: 100vh;
-  background-color: var(--primary-bg);
-  background-image: linear-gradient(135deg, rgba(201, 168, 92, 0.05) 0%, rgba(18, 18, 18, 1) 100%);
+  background-color: #181714;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +173,7 @@
 .cardOverlayText {
   color: #fff;
   font-family: var(--font-playfair), serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 500;
   line-height: 1.3;
   margin: 0;
@@ -187,9 +186,9 @@
 .cardBadge {
   border: 1px solid var(--accent-gold);
   border-radius: 20px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.6rem;
   color: #fff;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
