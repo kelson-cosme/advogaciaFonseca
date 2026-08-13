@@ -93,7 +93,7 @@
 
 @media (max-width: 900px) {
   .section {
-    padding: 0 5%;
+    padding: 3rem 5%;
   }
 
   .container {
@@ -102,9 +102,11 @@
   }
 
   .imageContainer {
-    width: 100%;
-    height: 400px;
-    margin-top: -80px;
+    display: none;
+  }
+
+  .lightBackground {
+    display: none;
   }
 
   .content {
