@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import heroBgImg from '../../public/assets/hero2.webp';
 import ProblemSection from "@/components/ProblemSection";
 import SecuritySection from "@/components/SecuritySection";
 import AreasSection from "@/components/AreasSection";
@@ -21,7 +20,7 @@ export default function Home() {
         {/* Background Image */}
         <div className={styles.heroBackground}>
           <Image
-            src={heroBgImg}
+            src="/assets/hero2.webp"
             alt="Fundo Advocacia Fonseca"
             fill
             priority

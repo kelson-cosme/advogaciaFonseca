@@ -46,52 +46,52 @@ export default function SplashScreen() {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setTimeout(() => setShow(false), 200);
+        setTimeout(() => setShow(false), 100);
       }
     });
 
-    // 1. Aparece o ícone base girando (velocidade média)
+    // 1. Aparece o ícone base girando (rápido e fluído)
     tl.fromTo(iconBaseRef.current, 
       { opacity: 0, rotation: -180, transformOrigin: "center center" },
-      { opacity: 1, rotation: 0, duration: 0.9, ease: "power2.out" }
+      { opacity: 1, rotation: 0, duration: 0.4, ease: "power2.out" }
     )
     
-    // 2. Aparecem as folhas caindo como um pingo e quicando
+    // 2. Aparecem as folhas caindo
     .fromTo([iconLeaf1Ref.current, iconLeaf2Ref.current],
-      { opacity: 0, y: -150 }, 
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "bounce.out" },
-      "-=0.2" 
+      { opacity: 0, y: -100 }, 
+      { opacity: 1, y: 0, duration: 0.35, stagger: 0.08, ease: "bounce.out" },
+      "-=0.1" 
     )
 
-    // 3. Move o SVG inteiro para a esquerda
+    // 3. Move o SVG para a esquerda
     .to(svgWrapperRef.current, {
       x: "0%",
-      duration: 1.0,
+      duration: 0.4,
       ease: "power3.inOut"
-    }, "+=0.2") 
+    }, "+=0.05") 
 
     // 4. Efeito de desenho "escrito à mão" no texto
     .to(textPaths, {
       strokeDashoffset: 0,
-      duration: 0.8,
-      stagger: 0.02, // Desenha cada letra em sequência mais rápido
+      duration: 0.35,
+      stagger: 0.01,
       ease: "power2.inOut"
-    }, "-=0.8") // Começa a escrever antes
+    }, "-=0.3")
     
-    // Preenche as letras com a cor sólida depois de desenhar
+    // Preenche as letras
     .to(textPaths, {
       fill: "#C9A85C",
       stroke: "transparent",
-      duration: 0.4,
+      duration: 0.2,
       ease: "power2.out"
-    }, "-=0.3")
+    }, "-=0.1")
 
     // 5. Fade out de toda a tela preta
     .to(containerRef.current, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.3,
       ease: "power2.inOut",
-    }, "+=0.3"); 
+    }, "+=0.1"); 
 
     return () => {
       tl.kill();

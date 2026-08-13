@@ -10,11 +10,13 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const georgia = localFont({
@@ -30,12 +32,14 @@ const georgia = localFont({
       style: 'normal',
     }
   ],
-  variable: '--font-georgia'
+  variable: '--font-georgia',
+  display: 'swap',
 });
 
 const madeTommy = localFont({
   src: '../../public/fonts/MADE TOMMY Bold_PERSONAL USE.otf',
-  variable: '--font-madetommy'
+  variable: '--font-madetommy',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -76,28 +80,41 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${georgia.variable} ${madeTommy.variable}`}>
       <head>
         <link rel="preload" as="image" href="/assets/hero2.webp" />
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-KEW9MWE068"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
+        {/* Scripts de métricas de alta performance (sem travar LCP) */}
+        <Script id="analytics-and-clarity" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            function initThirdParty() {
+              if (window.__thirdPartyLoaded) return;
+              window.__thirdPartyLoaded = true;
 
-            gtag('config', 'G-KEW9MWE068');
-          `}
-        </Script>
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "xwb9rb4rfq");
+              // Google Analytics
+              var gtagScript = document.createElement('script');
+              gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-KEW9MWE068';
+              gtagScript.async = true;
+              document.head.appendChild(gtagScript);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KEW9MWE068');
+
+              // Microsoft Clarity
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "xwb9rb4rfq");
+            }
+
+            if (typeof window !== 'undefined') {
+              var events = ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'];
+              var handler = function() {
+                initThirdParty();
+                events.forEach(function(e) { window.removeEventListener(e, handler); });
+              };
+              events.forEach(function(e) { window.addEventListener(e, handler, { passive: true }); });
+              setTimeout(initThirdParty, 3500);
+            }
           `}
         </Script>
       </head>
