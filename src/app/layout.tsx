@@ -39,8 +39,32 @@ const madeTommy = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Advocacia Fonseca | Excelência e Dedicação",
-  description: "Escritório de advocacia focado em excelência, ética e dedicação na defesa dos seus direitos.",
+  metadataBase: new URL('https://fonsecaadvocacia.com.br'), // Ajuste se for outro domínio
+  title: "Fonseca Advocacia | Excelência e Dedicação",
+  description: "Escritório de advocacia focado em excelência, ética e dedicação na defesa dos seus direitos. Atendimento especializado presencial e online para todo o Brasil.",
+  keywords: ["Advocacia", "Advogado", "Direito", "Fonseca Advocacia", "Cuiabá", "Mato Grosso", "Direito Agrário", "Direito de Família", "Regularização Ambiental", "Inventário"],
+  openGraph: {
+    title: "Fonseca Advocacia | Excelência e Dedicação",
+    description: "Escritório de advocacia focado em excelência, ética e dedicação na defesa dos seus direitos.",
+    url: 'https://fonsecaadvocacia.com.br',
+    siteName: 'Fonseca Advocacia',
+    images: [
+      {
+        url: '/assets/banner2.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Fonseca Advocacia',
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Fonseca Advocacia",
+    description: "Escritório de advocacia focado em excelência e ética na defesa dos seus direitos.",
+    images: ['/assets/banner2.webp'],
+  },
 };
 
 export default function RootLayout({
