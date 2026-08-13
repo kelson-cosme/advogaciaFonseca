@@ -25,7 +25,6 @@ export default function Home() {
             alt="Fundo Advocacia Fonseca"
             fill
             priority
-            quality={100}
             unoptimized
             style={{ objectFit: 'cover' }}
           />
