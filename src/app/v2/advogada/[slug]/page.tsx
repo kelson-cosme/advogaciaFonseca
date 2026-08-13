@@ -338,6 +338,12 @@ interface Props {
   }>;
 }
 
+export function generateStaticParams() {
+  return Object.keys(lawyers).map((slug) => ({
+    slug,
+  }));
+}
+
 export default async function LawyerPage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
