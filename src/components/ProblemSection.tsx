@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './ProblemSection.module.css';
-import documentosImg from '../../public/assets/documentos.webp';
+import arquivosImg from '../../public/assets/arquivos.webp';
 
 export default function ProblemSection() {
   const problems = [
@@ -16,7 +16,7 @@ export default function ProblemSection() {
     <section className={styles.problemSection} id="sua-situacao">
       <div className={styles.rightBackgroundImageWrapper}>
         <Image 
-          src={documentosImg}
+          src={arquivosImg}
           alt="Documentos e processos"
           className={styles.documentosBgImage}
         />
