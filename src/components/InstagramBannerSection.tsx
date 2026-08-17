@@ -36,7 +36,7 @@ const InstagramBannerSection = ({ leftBackgroundImage = "/assets/fundoEsquerda.w
           <h2 className={styles.title}>
             Acompanhe os conteúdos jurídicos produzidos pela nossa equipe.
           </h2>
-          <a href="#" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
+          <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
             Siga nosso perfil
           </a>
         </div>

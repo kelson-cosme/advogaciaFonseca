@@ -66,7 +66,7 @@ const InstagramSection = () => {
         </div>
 
         <div className={styles.actionContainer}>
-          <a href="#" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
+          <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
             Siga nosso perfil @advocaciafonseca
           </a>
         </div>

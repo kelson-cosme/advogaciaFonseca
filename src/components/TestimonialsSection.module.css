@@ -19,6 +19,14 @@
 
 .badgeWrapper {
   flex-shrink: 0;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.badgeWrapper:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 14px rgba(197, 160, 89, 0.5));
 }
 
 .googleBadge {
@@ -233,6 +241,76 @@
   .cardsWrapper {
     --cards-visible: 2;
   }
+}
+
+.googleCtaWrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.googleBadgeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  background-color: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.googleBadgeButton:hover {
+  background-color: #303030;
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.googleIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.googleButtonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.googleButtonTop {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.googleRatingScore {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.googleStarsInline {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.googleButtonLabel {
+  font-size: 0.78rem;
+  color: #cccccc;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
 }
 
 @media (max-width: 768px) {

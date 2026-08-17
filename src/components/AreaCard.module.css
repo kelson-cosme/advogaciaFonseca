@@ -94,35 +94,6 @@
   border-radius: 50%;
 }
 
-.verMaisContainer {
-  display: flex;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-.verMaisButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: #c5a059;
-  /* Gold */
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.verMaisButton svg {
-  transition: transform 0.2s ease;
-}
-
-.verMaisButton:hover svg {
-  transform: translateX(4px);
-}
 
 @media (max-width: 768px) {
   .tagsGrid {

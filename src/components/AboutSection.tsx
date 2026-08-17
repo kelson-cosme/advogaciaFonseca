@@ -36,7 +36,7 @@ export default function AboutSection() {
             <h3 className={styles.name}>Dra. Carla Fonseca</h3>
             <span className={styles.infoText}>+12 anos de experiência</span>
             <span className={styles.infoText}>Especialista em regularização Urbana, Fundiária e Ambiental</span>
-            <span className={styles.oab}>OAB/MT nº 18972</span>
+            <span className={styles.oab}>OAB/MT 18.972</span>
             <p className={styles.bio}>
               Atuação estratégica na regularização urbana, fundiária e ambiental, com segurança jurídica para proteger imóveis, propriedades e patrimônios.
             </p>
@@ -57,7 +57,7 @@ export default function AboutSection() {
             <h3 className={styles.name}>Dra. Cimone Fonseca</h3>
             <span className={styles.infoText}>+8 anos de experiência</span>
             <span className={styles.infoText}>Família & Previdenciário (Inventário, Divórcio e Sucessões)</span>
-            <span className={styles.oab}>OAB/MT 25561</span>
+            <span className={styles.oab}>OAB/MT 25.561</span>
             <p className={styles.bio}>
               Atuação dedicada em Direito de Família e Previdenciário, com especialidade destacada em Inventários, Divórcios e Sucessões para a proteção do patrimônio familiar.
             </p>

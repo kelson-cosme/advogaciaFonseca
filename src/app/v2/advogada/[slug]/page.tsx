@@ -15,7 +15,7 @@ const lawyers = {
     heroBadge: "ADVOCACIA AGROFLORESTAL",
     heroTitle: "Segurança jurídica\npara a sua propriedade",
     heroSubtitle: "Especialista em Regularização Ambiental, Fundiária e Urbana em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
-    heroButtonText: "Fale com a especialista!",
+    heroButtonText: "Fale com a Especialista!",
     marqueeItems: [
       "REGULARIZAÇÃO AMBIENTAL",
       "REGULARIZAÇÃO FUNDIÁRIA",
@@ -63,7 +63,7 @@ const lawyers = {
       }
     ],
     aboutOabTop: "OAB/MT",
-    aboutOabBottom: "Nº 18972",
+    aboutOabBottom: "Nº 18.972",
     ctaTitle: "Regularizar hoje é proteger o\nseu patrimônio amanhã!",
     ctaSubtitle: "Estou pronta para ajudar você a resolver pendências ambientais, fundiárias e urbanas com segurança jurídica e acompanhamento em todas as etapas.",
     ctaButtonText: "Falar com a Dra. Carla Fonseca",
@@ -134,7 +134,7 @@ const lawyers = {
     locationButton1Text: "VER ENDEREÇO",
     locationButton2Text: "AGENDAR REUNIÃO",
     docsOverline: "FALE COM A ESPECIALISTA AGORA",
-    docsBackgroundRight: "/assets/fundoCtaDireitaV2.webp",
+    docsBackgroundRight: "/assets/ctaWhatsapp_v3.webp",
     docsTitleNormal1: "Envie os documentos pelo WhatsApp\npara uma ",
     docsTitleHighlight: "análise inicial",
     docsTitleNormal2: " do seu caso.",
@@ -222,7 +222,7 @@ const lawyers = {
       }
     ],
     aboutOabTop: "OAB/MT",
-    aboutOabBottom: "Nº 25561",
+    aboutOabBottom: "Nº 25.561",
     ctaTitle: "Você não precisa enfrentar\nesse momento sozinho.",
     ctaSubtitle: "Atuação especializada em Inventários, Divórcios e Direito Previdenciário, com atendimento humanizado e acompanhamento em cada etapa.",
     ctaButtonText: "Agende uma Reunião",
@@ -353,6 +353,33 @@ export default async function LawyerPage({ params }: Props) {
     notFound();
   }
 
+  const getWhatsappLink = (section: string) => {
+    const number = slug === 'carla' ? "5565999404884" : "5565999977272";
+    let text = "Olá! Gostaria de mais informações.";
+    
+    if (slug === 'carla') {
+      switch (section) {
+        case 'hero': text = "Olá, Dra. Carla. Gostaria de uma análise inicial do meu caso."; break;
+        case 'about': text = "Olá, Dra. Carla. Quero saber mais sobre como você pode me ajudar."; break;
+        case 'areas': text = "Olá, Dra. Carla. Preciso de ajuda com a regularização do meu imóvel."; break;
+        case 'problems': text = "Olá, Dra. Carla. Me identifiquei com uma das situações e preciso de orientação."; break;
+        case 'location': text = "Olá, Dra. Carla. Gostaria de agendar uma reunião."; break;
+        case 'docs': text = "Olá, Dra. Carla. Estou enviando meus documentos para análise inicial."; break;
+      }
+    } else {
+      switch (section) {
+        case 'hero': text = "Olá, Dra. Cimone. Gostaria de uma análise inicial do meu caso."; break;
+        case 'about': text = "Olá, Dra. Cimone. Quero saber mais sobre como você pode me ajudar."; break;
+        case 'areas': text = "Olá, Dra. Cimone. Preciso de ajuda jurídica para minha família e patrimônio."; break;
+        case 'problems': text = "Olá, Dra. Cimone. Me identifiquei com uma das situações e preciso de orientação."; break;
+        case 'location': text = "Olá, Dra. Cimone. Gostaria de agendar uma reunião."; break;
+        case 'docs': text = "Olá, Dra. Cimone. Estou enviando meus documentos para análise inicial."; break;
+      }
+    }
+    
+    return `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(text)}`;
+  };
+
   return (
     <main className={`${styles.container} ${styles[`theme_${slug}`]}`}>
       
@@ -396,7 +423,7 @@ export default async function LawyerPage({ params }: Props) {
           )}
 
           {lawyer.heroButtonText && (
-            <Link href="#contato" className={styles.heroButton}>
+            <Link href={getWhatsappLink('hero')} target="_blank" rel="noopener noreferrer" className={styles.heroButton}>
               <svg className={styles.whatsappIcon} viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
               </svg>
@@ -504,7 +531,7 @@ export default async function LawyerPage({ params }: Props) {
                   </div>
                 )}
 
-                <Link href="#contato" className={styles.outlineButton}>
+                <Link href={getWhatsappLink('about')} target="_blank" rel="noopener noreferrer" className={styles.outlineButton}>
                   ENTRE EM CONTATO
                 </Link>
               </FadeIn>
@@ -544,7 +571,7 @@ export default async function LawyerPage({ params }: Props) {
                 ))}
               </p>
               
-              <Link href="#contato" className={styles.ctaButton}>
+              <Link href={getWhatsappLink('areas')} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
                 <svg className={styles.ctaIcon} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                 </svg>
@@ -591,7 +618,7 @@ export default async function LawyerPage({ params }: Props) {
             </div>
 
             <FadeIn direction="up" delay={0.2}>
-              <Link href="#contato" className={styles.problemsButton}>
+              <Link href={getWhatsappLink('problems')} target="_blank" rel="noopener noreferrer" className={styles.problemsButton}>
                 <svg className={styles.problemsButtonIcon} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                 </svg>
@@ -620,7 +647,7 @@ export default async function LawyerPage({ params }: Props) {
       )}
 
       {lawyer.areasList && (
-        <AnimatedAreas lawyer={lawyer} />
+        <AnimatedAreas lawyer={{ ...lawyer, areasLink: getWhatsappLink('areas') }} />
       )}
 
       {lawyer.locationTitleNormal1 && (
@@ -650,7 +677,7 @@ export default async function LawyerPage({ params }: Props) {
                 <Link href="#endereco" className={styles.locationBtnOutline}>
                   {lawyer.locationButton1Text}
                 </Link>
-                <Link href="#contato" className={styles.locationBtnSolid}>
+                <Link href={getWhatsappLink('location')} target="_blank" rel="noopener noreferrer" className={styles.locationBtnSolid}>
                   {lawyer.locationButton2Text}
                   <span className={styles.locationBtnArrow}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -663,7 +690,7 @@ export default async function LawyerPage({ params }: Props) {
       )}
 
       {lawyer.stepsList && (
-        <AnimatedSteps lawyer={lawyer} />
+        <AnimatedSteps lawyer={{ ...lawyer, stepsLink: getWhatsappLink('steps') }} />
       )}
 
       {lawyer.docsTitleNormal1 && (
@@ -702,7 +729,7 @@ export default async function LawyerPage({ params }: Props) {
               </h2>
               <p className={styles.docsDescription}>{lawyer.docsDescription}</p>
               
-              <Link href="#contato" className={styles.docsButton}>
+              <Link href={getWhatsappLink('docs')} target="_blank" rel="noopener noreferrer" className={styles.docsButton}>
                 <svg className={styles.docsButtonIcon} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 1.764.457 3.42 1.258 4.887l-1.39 4.382 4.545-1.332A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.405 14.16c-.227.64-1.312 1.205-1.802 1.284-.44.07-.98.15-2.915-.653-2.337-.966-3.842-3.35-3.93-3.468-.088-.117-.938-1.25-.938-2.385s.59-1.696.8-1.922c.197-.216.428-.27.57-.27.142 0 .285 0 .408.006.126.006.295-.047.46.353.175.422.595 1.455.648 1.56.053.106.088.23.018.37-.07.14-.105.228-.21.345-.106.117-.223.252-.316.345-.105.105-.216.222-.094.433.123.21.547.904 1.176 1.465.81.724 1.492.946 1.703 1.05.21.106.333.088.456-.052.123-.14.526-.607.666-.818.14-.21.28-.175.474-.105.193.07 1.228.58 1.44.685.21.105.35.158.4.246.053.088.053.51-.174 1.15z"/>
                 </svg>
@@ -715,7 +742,7 @@ export default async function LawyerPage({ params }: Props) {
         </section>
       )}
 
-      <Footer />
+      <Footer variant={slug as 'carla' | 'cimone'} />
     </main>
   );
 }

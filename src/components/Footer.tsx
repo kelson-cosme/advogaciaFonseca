@@ -2,7 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './Footer.module.css';
 
-const Footer = () => {
+interface FooterProps {
+  variant?: 'default' | 'carla' | 'cimone';
+}
+
+const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -29,16 +33,43 @@ const Footer = () => {
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>CONTATO</h4>
             <div className={styles.contactInfo}>
-              <p>(65) 99995-4884</p>
-              <p>carla@fonsecaadvogados.com.br</p>
-              <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.socialIcon}>
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                <span>@advocaciafonseca.cf</span>
-              </a>
+              {(variant === 'default' || variant === 'carla') && (
+                <div className={styles.contactGroup}>
+                  <span className={styles.contactName}>Dra. Carla Fonseca</span>
+                  <a href={variant === 'carla' ? "tel:+556599404884" : "tel:+5565999954884"} className={styles.contactLink}>
+                    {variant === 'carla' ? "+55 65 9940-4884" : "(65) 99995-4884"}
+                  </a>
+                  <a href="mailto:Dra.carlarachel@gmail.com" className={styles.contactLink}>Dra.carlarachel@gmail.com</a>
+                </div>
+              )}
+
+              {(variant === 'default' || variant === 'cimone') && (
+                <div className={styles.contactGroup}>
+                  <span className={styles.contactName}>Dra. Cimone Fonseca</span>
+                  <a href="tel:+5565999977272" className={styles.contactLink}>+55 65 9997-7272</a>
+                  <a href="mailto:drcimone@gmail.com" className={styles.contactLink}>drcimone@gmail.com</a>
+                </div>
+              )}
+
+              {variant === 'carla' ? (
+                <a href="https://www.instagram.com/carlarachelf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.socialIcon}>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>@carlarachelf</span>
+                </a>
+              ) : (
+                <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.socialIcon}>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>@advocaciafonseca.cf</span>
+                </a>
+              )}
             </div>
 
             <h4 className={styles.columnTitle}>HORÁRIO DE ATENDIMENTO</h4>

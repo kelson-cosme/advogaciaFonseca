@@ -52,22 +52,6 @@ export default function AreaCard({ data }: AreaCardProps) {
             </div>
           ))}
         </div>
-
-        {/* Ver mais Button (hidden initially, appears on hover) */}
-        <motion.div 
-          className={styles.verMaisContainer}
-          variants={{
-            initial: { opacity: 0, height: 0, marginTop: 0 },
-            hover: { opacity: 1, height: "auto", marginTop: "1.5rem", transition: { duration: 0.3 } }
-          }}
-        >
-          <button className={styles.verMaisButton}>
-            Ver mais
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </motion.div>
       </div>
     </motion.div>
   );
