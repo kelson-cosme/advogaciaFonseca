@@ -11,7 +11,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const numberRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -22,30 +21,12 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
         ease: "power2.out"
       });
     }
-    if (numberRefs.current[index]) {
-      gsap.to(numberRefs.current[index], {
-        color: "#c9a847",
-        opacity: 0.4,
-        scale: 1.1,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
   };
 
   const handleMouseLeave = (index: number) => {
     if (iconRefs.current[index]) {
       gsap.to(iconRefs.current[index], {
         color: "#c9a847",
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
-    if (numberRefs.current[index]) {
-      gsap.to(numberRefs.current[index], {
-        color: "#f5f5f5",
-        opacity: 1,
-        scale: 1,
         duration: 0.3,
         ease: "power2.out"
       });
@@ -63,9 +44,9 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
             alt="Background"
             fill
             unoptimized={true}
-            style={{ objectFit: 'cover', objectPosition: '75% top', transform: 'scale(1.35) translateX(6%)', transformOrigin: 'top center' }}
+            style={lawyer.areasBackgroundStyle || { objectFit: 'cover', objectPosition: '75% 70%', transform: 'scale(1.35) translateX(6%)', transformOrigin: 'top center' }}
           />
-          <div className={styles.areasOverlay}></div>
+          <div className={styles.areasOverlay} style={lawyer.areasOverlayStyle || {}}></div>
         </div>
       )}
       <div className={styles.leafTopRight}>
@@ -78,10 +59,12 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
         <FadeIn direction="up">
           <div className={styles.areasHeader}>
             <span className={styles.areasOverline}>{lawyer.areasOverline}</span>
-            <h2 className={styles.areasTitle}>
+            <h2 className={styles.areasTitle} style={{ whiteSpace: 'pre-line' }}>
               {lawyer.areasTitleNormal1}
-              <span className={styles.areasTitleHighlight}>{lawyer.areasTitleHighlight}</span>
+              {lawyer.areasTitleHighlight && <span className={styles.areasTitleHighlight}>{lawyer.areasTitleHighlight}</span>}
               {lawyer.areasTitleNormal2}
+              {lawyer.areasTitleHighlight2 && <span className={styles.areasTitleHighlight}>{lawyer.areasTitleHighlight2}</span>}
+              {lawyer.areasTitleNormal3}
             </h2>
             <hr className={styles.areasDivider} />
           </div>
@@ -136,10 +119,6 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
                     height: '100%'
                   }}
                 >
-                  <span 
-                    className={styles.areaNumber}
-                    ref={(el) => { numberRefs.current[index] = el; }}
-                  >{area.number}</span>
                   <div className={styles.areaHeaderTop}>
                     <div 
                       className={styles.areaIconBox}
