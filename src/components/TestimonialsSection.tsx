@@ -62,6 +62,8 @@ const StarRating = () => (
   </div>
 );
 
+import FadeIn from './FadeIn';
+
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsVisible, setCardsVisible] = useState(3);
@@ -84,6 +86,13 @@ const TestimonialsSection = () => {
 
   const maxIndex = Math.max(0, testimonials.length - cardsVisible);
 
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 4000); // Muda a cada 4 segundos
+    return () => clearInterval(interval);
+  }, [maxIndex, currentIndex]);
+
   const next = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
@@ -94,7 +103,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className={styles.testimonialsSection}>
-      <div className={styles.header}>
+      <FadeIn direction="up" width="100%" className={styles.header}>
         <a 
           href="https://share.google/R2v7qsmR5fYefIlSF" 
           target="_blank" 
@@ -108,9 +117,9 @@ const TestimonialsSection = () => {
           <span className={styles.subtitle}>NOTA MÁXIMA NAS AVALIAÇÕES</span>
           <h2 className={styles.title}>O que dizem nossos clientes</h2>
         </div>
-      </div>
+      </FadeIn>
 
-      <div className={styles.carouselContainer}>
+      <FadeIn direction="up" delay={0.2} width="100%" className={styles.carouselContainer}>
         <button className={styles.navButton} onClick={prev} aria-label="Anterior">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -149,9 +158,9 @@ const TestimonialsSection = () => {
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </button>
-      </div>
+      </FadeIn>
 
-      <div className={styles.pagination}>
+      <FadeIn direction="up" delay={0.3} className={styles.pagination}>
         {Array.from({ length: maxIndex + 1 }).map((_, index) => (
           <span 
             key={index} 
@@ -159,7 +168,7 @@ const TestimonialsSection = () => {
             onClick={() => setCurrentIndex(index)}
           ></span>
         ))}
-      </div>
+      </FadeIn>
 
       <div className={styles.googleCtaWrapper}>
         <a 

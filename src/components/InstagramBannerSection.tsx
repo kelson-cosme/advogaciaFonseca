@@ -6,6 +6,8 @@ type Props = {
   leftBackgroundImage?: string;
 };
 
+import FadeIn from './FadeIn';
+
 const InstagramBannerSection = ({ leftBackgroundImage = "/assets/fundoEsquerda.webp" }: Props = {}) => {
   return (
     <section className={styles.section}>
@@ -31,7 +33,7 @@ const InstagramBannerSection = ({ leftBackgroundImage = "/assets/fundoEsquerda.w
       </div>
 
       <div className={styles.container}>
-        <div className={styles.content}>
+        <FadeIn direction="right" className={styles.content}>
           <div className={styles.subtitle}>Nosso Instagram</div>
           <h2 className={styles.title}>
             Acompanhe os conteúdos jurídicos produzidos pela nossa equipe.
@@ -39,16 +41,18 @@ const InstagramBannerSection = ({ leftBackgroundImage = "/assets/fundoEsquerda.w
           <a href="https://www.instagram.com/advocaciafonseca.cf/" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
             Siga nosso perfil
           </a>
-        </div>
+        </FadeIn>
 
         <div className={styles.imageContainer}>
-          <Image
-            src="/assets/instagram.webp"
-            alt="Instagram Advocacia Fonseca"
-            fill
-            style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-            quality={100}
-          />
+          <FadeIn direction="up" delay={0.2} width="100%" className={styles.imageFadeIn}>
+            <Image
+              src="/assets/instagram.webp"
+              alt="Instagram Advocacia Fonseca"
+              fill
+              style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+              quality={100}
+            />
+          </FadeIn>
         </div>
       </div>
     </section>

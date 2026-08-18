@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './AboutSection.module.css';
 import cimoneImg from '../../public/assets/cimone.webp';
 import carlaImg from '../../public/assets/carla.webp';
+import FadeIn from './FadeIn';
 
 export default function AboutSection() {
   return (
@@ -16,15 +17,15 @@ export default function AboutSection() {
         />
       </div>
 
-      <div className={styles.header}>
+      <FadeIn direction="up" className={styles.header}>
         <span className={styles.subtitle}>Nossa Equipe</span>
         <h2 className={styles.title}>Advogadas com formação sólida e experiência <br />
           para a sua segurança jurídica.</h2>
-      </div>
+      </FadeIn>
 
       <div className={styles.grid}>
         {/* Profile 1 */}
-        <div className={styles.profileCard}>
+        <FadeIn direction="up" delay={0.1} className={styles.profileCard}>
           <div className={styles.imageWrapper}>
             <Image
               src={carlaImg}
@@ -42,10 +43,10 @@ export default function AboutSection() {
             </p>
             <Link href="/advogada/carla" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</Link>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Profile 2 */}
-        <div className={styles.profileCard}>
+        <FadeIn direction="up" delay={0.3} className={styles.profileCard}>
           <div className={styles.imageWrapper}>
             <Image
               src={cimoneImg}
@@ -63,7 +64,7 @@ export default function AboutSection() {
             </p>
             <Link href="/advogada/cimone" className={styles.seeMoreButton}>CONHEÇA A ESPECIALISTA</Link>
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       <div className={styles.leafLeft}>

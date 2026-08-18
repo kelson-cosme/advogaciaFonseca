@@ -46,6 +46,8 @@ const faqs = [
   }
 ];
 
+import FadeIn from './FadeIn';
+
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -56,12 +58,12 @@ const FaqSection = () => {
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
-        <div className={styles.header}>
+        <FadeIn direction="up" className={styles.header}>
           <div className={styles.titleBackground}>DÚVIDAS</div>
           <h2 className={styles.titleForeground}>Perguntas Frequentes</h2>
-        </div>
+        </FadeIn>
 
-        <div className={styles.faqList}>
+        <FadeIn direction="up" delay={0.2} className={styles.faqList}>
           {faqs.map((faq, index) => (
             <div 
               key={index} 
@@ -92,7 +94,7 @@ const FaqSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

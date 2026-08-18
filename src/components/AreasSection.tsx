@@ -3,6 +3,7 @@ import styles from './AreasSection.module.css';
 import AreaCard, { AreaData } from './AreaCard';
 import rostoCarlaImg from '../../public/assets/rostoCarla.webp';
 import rostoCimoneImg from '../../public/assets/rostoCimone.webp';
+import FadeIn from './FadeIn';
 
 
 const areasData: AreaData[] = [
@@ -89,18 +90,20 @@ export default function AreasSection({ hideFaces = false }: Props) {
         </>
       )}
 
-      <div className={styles.header}>
+      <FadeIn direction="up" className={styles.header}>
         <span className={styles.subtitle}>COMO PODEMOS TE AJUDAR?</span>
         <h2 className={styles.title}>Conheça nossas áreas de atuação</h2>
-      </div>
+      </FadeIn>
 
-      <div className={styles.grid}>
-        {areasData.map((area) => (
-          <AreaCard key={area.id} data={area} />
-        ))}
-      </div>
+      <FadeIn direction="up">
+        <div className={styles.grid}>
+          {areasData.map((area) => (
+            <AreaCard key={area.id} data={area} />
+          ))}
+        </div>
+      </FadeIn>
 
-      <div className={styles.ctaContainer}>
+      <FadeIn direction="up" className={styles.ctaContainer}>
         {/* User will add WhatsApp link later */}
         <a href="#" className={styles.ctaButton}>
           <svg className={styles.whatsappIcon} viewBox="0 0 24 24">
@@ -108,7 +111,7 @@ export default function AreasSection({ hideFaces = false }: Props) {
           </svg>
           FALAR COM UMA ESPECIALISTA
         </a>
-      </div>
+      </FadeIn>
 
       {/* Marquee / Ticker Section */}
       <div className={styles.marqueeContainer}>

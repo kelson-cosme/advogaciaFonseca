@@ -2,11 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './CoverageSection.module.css';
 
+import FadeIn from './FadeIn';
+
 const CoverageSection = () => {
   return (
     <section className={styles.coverageSection}>
       <div className={styles.container}>
-        <div className={styles.content}>
+        <FadeIn direction="right" className={styles.content}>
           <div className={styles.header}>
             <span className={styles.subtitle}>ONDE VOCÊ ESTIVER</span>
             <h2 className={styles.title}>
@@ -63,8 +65,19 @@ const CoverageSection = () => {
               ou visite-nos em Cuiabá, MT
             </span>
           </div>
-        </div>
+        </FadeIn>
 
+        <div className={styles.imageContainer}>
+          <FadeIn direction="left" delay={0.2} width="100%" className={styles.imageFadeIn}>
+            <Image
+              src="/assets/mapa-brasil.webp"
+              alt="Mapa do Brasil"
+              fill
+              className={styles.mapImage}
+              quality={90}
+            />
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

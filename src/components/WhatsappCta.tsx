@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './WhatsappCta.module.css';
 
+import FadeIn from './FadeIn';
+
 const WhatsappCta = ({ hideImageRight = false }: { hideImageRight?: boolean }) => {
   return (
     <section id="contato" className={styles.ctaSection}>
@@ -16,7 +18,7 @@ const WhatsappCta = ({ hideImageRight = false }: { hideImageRight?: boolean }) =
       </div>
 
       <div className={styles.container}>
-        <div className={styles.content}>
+        <FadeIn direction="up" className={styles.content}>
           <h2 className={styles.title}>
             Não deixe problemas jurídicos<br className={styles.desktopBreak} />
             comprometerem seu patrimônio.
@@ -31,18 +33,20 @@ const WhatsappCta = ({ hideImageRight = false }: { hideImageRight?: boolean }) =
             </svg>
             ENTRAR EM CONTATO AGORA
           </a>
-        </div>
+        </FadeIn>
       </div>
 
       {!hideImageRight && (
         <div className={styles.imageRight}>
-          <Image
-            src="/assets/irmas.webp"
-            alt="Especialistas Advocacia"
-            fill
-            style={{ objectFit: 'contain', objectPosition: 'bottom right' }}
-            quality={90}
-          />
+          <FadeIn direction="left" width="100%" className={styles.imageFadeIn}>
+            <Image
+              src="/assets/irmas.webp"
+              alt="Especialistas Advocacia"
+              fill
+              style={{ objectFit: 'contain', objectPosition: 'bottom right' }}
+              quality={90}
+            />
+          </FadeIn>
         </div>
       )}
     </section>

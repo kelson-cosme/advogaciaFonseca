@@ -2,6 +2,8 @@ import Image from 'next/image';
 import styles from './ProblemSection.module.css';
 import arquivosImg from '../../public/assets/arquivos.webp';
 
+import FadeIn from './FadeIn';
+
 export default function ProblemSection() {
   const problems = [
     <>Imóvel urbano ou rural com <strong>pendências na regularização</strong> documental.</>,
@@ -23,19 +25,23 @@ export default function ProblemSection() {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.subtitle}>— O PROBLEMA</span>
-          <h2 className={styles.title}>
-            Seu <span className={styles.highlight}>patrimônio ou direitos</span> estão passando por isso?
-          </h2>
-        </div>
+        <FadeIn direction="up">
+          <div className={styles.header}>
+            <span className={styles.subtitle}>— O PROBLEMA</span>
+            <h2 className={styles.title}>
+              Seu <span className={styles.highlight}>patrimônio ou direitos</span> estão passando por isso?
+            </h2>
+          </div>
+        </FadeIn>
 
         <div className={styles.content}>
           <ul className={styles.problemList}>
             {problems.map((problem, index) => (
-              <li key={index} className={styles.problemItem}>
-                {problem}
-              </li>
+              <FadeIn key={index} direction="left" delay={index * 0.1}>
+                <li className={styles.problemItem}>
+                  {problem}
+                </li>
+              </FadeIn>
             ))}
           </ul>
         </div>
