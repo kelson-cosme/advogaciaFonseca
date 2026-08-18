@@ -1190,7 +1190,12 @@
 
 .areasGrid>div {
   display: flex;
-  height: 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.carouselArrows {
+  display: none;
 }
 
 .areaItem {
@@ -2305,5 +2310,174 @@
 
   100% {
     transform: translateX(-25%);
+  }
+}
+
+.problemsCtaBox {
+  border-radius: 16px;
+  padding: 3rem 4rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problemsCtaOverline {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--theme-accent);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.theme_carla .problemsCtaBox {
+  background: linear-gradient(135deg, rgba(24, 46, 34, 0.95) 0%, rgba(12, 22, 16, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.theme_cimone .problemsCtaBox {
+  background: linear-gradient(135deg, rgba(95, 25, 42, 0.95) 0%, rgba(45, 10, 18, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.problemsCtaText {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .problemsCtaBox {
+    padding: 2rem 1.5rem;
+  }
+  .problemsCtaText {
+    font-size: 1.6rem;
+  }
+
+  /* Transform areasGrid into a carousel */
+  .areasGrid {
+    display: flex;
+    flex-direction: row; /* Override previous column direction */
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden; /* Prevent vertical scroll */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding-bottom: 2rem; /* Restore padding so shadow is not clipped/overflowing */
+    margin-bottom: 0; /* Override desktop margin */
+    margin-left: -2rem; /* Extend to the left edge */
+    margin-right: -2rem; /* Extend to the right edge */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: none;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .areasGrid::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .carouselArrows {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: -1.5rem; /* Pull arrows up over the padding */
+    margin-bottom: 2rem;
+    position: relative; /* Ensure it stays above other elements if needed */
+    z-index: 5;
+  }
+
+  .carouselArrowBtn {
+    background: transparent;
+    border: 1px solid var(--theme-accent);
+    color: var(--theme-accent);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carouselArrowBtn:hover {
+    background: var(--theme-accent);
+    color: var(--theme-dark-bg);
+  }
+
+  .carouselArrowBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .areasGrid > div {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
+  }
+
+  .areaItem {
+    border-radius: 12px;
+    padding: 2.5rem 1.8rem;
+    background: rgba(12, 22, 16, 0.45); /* More transparent for Carla (default) */
+  }
+
+  .theme_cimone .areaItem {
+    background: rgba(60, 8, 20, 0.45); /* More transparent for Cimone */
+  }
+
+  .areaTitle {
+    font-size: 1.8rem;
+  }
+
+  .areaDescription {
+    font-size: 1.15rem;
+  }
+
+  .mobileWatermarkLocation {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.4; /* Increased visibility */
+    z-index: 1; /* Above background but behind content */
+    pointer-events: none;
+  }
+}
+
+.hasWatermark {
+  position: relative;
+  overflow: hidden;
+}
+
+.locationContentWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.mobileWatermarkLocation {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .theme_cimone .heroTitle br {
+    display: none;
+  }
+  
+  .problemsBackgroundImage {
+    object-position: 80% 100% !important; /* Move slightly to the left of bottom right */
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from '../app/advogada/[slug]/page.module.css';
 import FadeIn from './FadeIn';
 import Link from 'next/link';
@@ -11,6 +11,19 @@ import { AnimatePresence, motion } from 'framer-motion';
 export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
@@ -73,11 +86,12 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
         <div 
           className={styles.areasGrid}
           onMouseLeave={() => setHoveredIndex(null)}
+          ref={carouselRef}
         >
           {lawyer.areasList.map((area: any, index: number) => (
             <FadeIn key={index} direction="up" delay={index * 0.1}>
               <div 
-                style={{ position: 'relative', height: '100%', display: 'block' }}
+                style={{ position: 'relative', display: 'flex', flexDirection: 'column', width: '100%', flexGrow: 1 }}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
               >
@@ -116,7 +130,7 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
                     cursor: 'pointer',
                     position: 'relative',
                     zIndex: 1,
-                    height: '100%'
+                    flexGrow: 1
                   }}
                 >
                   <div className={styles.areaHeaderTop}>
@@ -134,6 +148,15 @@ export default function AnimatedAreas({ lawyer }: { lawyer: any }) {
               </div>
             </FadeIn>
           ))}
+        </div>
+
+        <div className={styles.carouselArrows}>
+          <button className={styles.carouselArrowBtn} onClick={scrollLeft} aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button className={styles.carouselArrowBtn} onClick={scrollRight} aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
 
         <FadeIn direction="up" delay={0.2}>

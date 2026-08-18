@@ -81,7 +81,7 @@ const lawyers = {
       "Possui um imóvel urbano sem escritura ou registro?",
       "Precisa realizar usucapião, adjudicação compulsória ou retificação de matrícula?"
     ],
-    problemsButtonText: "Falar com uma especialista",
+    problemsButtonText: "CONVERSAR COM A DRA. CARLA",
     areasOverline: "ÁREAS DE ATUAÇÃO",
     areasBackground: "/assets/fundo6.webp",
     areasTitleNormal1: "Soluções jurídicas para ",
@@ -171,7 +171,7 @@ const lawyers = {
   },
   cimone: {
     heroBadge: "DIREITO DE FAMÍLIA E PREVIDENCIÁRIO",
-    heroTitle: "Soluções jurídicas para\na sua família e seu patrimônio", 
+    heroTitle: "Soluções jurídicas para \na sua família e seu patrimônio", 
     heroSubtitle: "Especialista em Direito de Família, Previdenciário, Inventários, Divórcios e Sucessões em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
     heroButtonText: "Fale com a especialista!",
     marqueeItems: [
@@ -240,7 +240,7 @@ const lawyers = {
       "Possui um imóvel urbano sem escritura ou registro?",
       "Precisa realizar usucapião, adjudicação compulsória ou retificação de matrícula?"
     ],
-    problemsButtonText: "Quero orientação jurídica",
+    problemsButtonText: "CONVERSAR COM A DRA. CIMONE",
     areasOverline: "ÁREAS DE ATUAÇÃO",
     areasBackground: "/assets/fundo11.webp",
     areasBackgroundStyle: { objectFit: 'cover', objectPosition: 'bottom right' },
@@ -591,6 +591,7 @@ export default async function LawyerPage({ params }: Props) {
               alt="Fundo Problemas"
               fill
               style={{ objectFit: 'cover' }}
+              className={styles.problemsBackgroundImage}
             />
             <div className={styles.problemsOverlay}></div>
           </div>
@@ -645,8 +646,11 @@ export default async function LawyerPage({ params }: Props) {
               />
             </div>
           )}
-          <div className={styles.locationContainer}>
-            <FadeIn direction="up">
+          <div className={`${styles.locationContainer} ${styles.hasWatermark}`}>
+            <div className={styles.mobileWatermarkLocation}>
+              <Image src="/assets/marcaDagua.webp" alt="Marca d'água" fill style={{ objectFit: 'contain' }} />
+            </div>
+            <FadeIn direction="up" className={styles.locationContentWrapper}>
               <span className={styles.locationOverline}>{lawyer.locationOverline}</span>
               <h2 className={styles.locationTitle}>
                 <span className={styles.locationTitleTop}>{lawyer.locationTitleNormal1.split('\n')[0]}</span>
