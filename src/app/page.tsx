@@ -17,11 +17,23 @@ export default function Home() {
   return (
     <main>
       <section className={styles.hero}>
-        {/* Background Image */}
-        <div className={styles.heroBackground}>
+        {/* Background Image Desktop */}
+        <div className={`${styles.heroBackground} ${styles.heroBackgroundDesktop}`}>
           <Image
             src="/assets/hero3.webp"
             alt="Fundo Advocacia Fonseca"
+            fill
+            priority
+            unoptimized
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+
+        {/* Background Image Mobile */}
+        <div className={`${styles.heroBackground} ${styles.heroBackgroundMobile}`}>
+          <Image
+            src="/assets/backgroundMobile.webp"
+            alt="Fundo Advocacia Fonseca Mobile"
             fill
             priority
             unoptimized

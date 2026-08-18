@@ -18,6 +18,14 @@
   z-index: 1;
 }
 
+.heroBackgroundDesktop {
+  display: block;
+}
+
+.heroBackgroundMobile {
+  display: none;
+}
+
 .heroBackground img {
   object-fit: cover;
   width: 100%;
@@ -41,7 +49,7 @@
   border-radius: 50px;
   font-size: 0.75rem;
   color: #ccc;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   background: rgba(0, 0, 0, 0.2);
   -webkit-text-size-adjust: 100%;
 }
@@ -177,6 +185,14 @@
 
   .heroBackground {
     opacity: 1;
+  }
+
+  .heroBackgroundDesktop {
+    display: none;
+  }
+
+  .heroBackgroundMobile {
+    display: block;
   }
 
   .heroBackground::after {
