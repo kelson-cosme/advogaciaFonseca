@@ -98,8 +98,6 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
             <div className={styles.mapContainer}>
               <iframe 
                 src="https://maps.google.com/maps?q=Rua%2013%20de%20Junho,%201150%20-%20Centro,%20Cuiab%C3%A1%20-%20MT&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                width="100%" 
-                height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen={false} 
                 loading="lazy" 

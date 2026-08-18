@@ -42,6 +42,10 @@ const madeTommy = localFont({
   display: 'swap',
 });
 
+export const viewport = {
+  themeColor: '#0d0d0d',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://fonsecaadvocacia.com.br'), // Ajuste se for outro domínio
   title: "Fonseca Advocacia | Excelência e Dedicação",

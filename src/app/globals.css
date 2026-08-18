@@ -20,6 +20,9 @@
 html {
   zoom: 0.8;
   --zoom-level: 0.8;
+  --inverse-zoom: 1.25;
+  background-color: #0d0d0d; /* Cor do footer para a tarja do zoom */
+  overflow-x: hidden;
 }
 
 .splash-overlay {
@@ -34,23 +37,25 @@ html {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  zoom: 1.25; /* Cancela o zoom: 0.8 do HTML (1 / 0.8 = 1.25) */
+  zoom: var(--inverse-zoom);
 }
 
 @media (max-width: 1366px) {
   html {
     zoom: 0.67;
     --zoom-level: 0.67;
+    --inverse-zoom: 1.49253;
   }
+
   .splash-overlay {
     zoom: 1.49253; /* Cancela o zoom: 0.67 do HTML (1 / 0.67) */
   }
 }
 
-html,
 body {
   overflow-x: hidden;
   background-color: var(--primary-bg);
+  min-height: 100vh;
   color: var(--text-primary);
   font-family: var(--font-inter), sans-serif;
   scroll-behavior: smooth;
