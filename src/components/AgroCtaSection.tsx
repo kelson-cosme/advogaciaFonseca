@@ -32,7 +32,7 @@ const AgroCtaSection = () => {
             Conte com uma atuação jurídica especializada para encontrar a melhor conduta em cada situação.
           </p>
           <a 
-            href="https://wa.me/5500000000000" 
+            href="https://wa.me/5565999954884?text=Olá! Gostaria de falar com uma especialista sobre soluções jurídicas para os meus desafios." 
             target="_blank" 
             rel="noopener noreferrer" 
             className={styles.whatsappButton}
