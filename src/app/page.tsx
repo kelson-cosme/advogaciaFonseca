@@ -46,7 +46,7 @@ export default function Home() {
 
           <div className={styles.heroActions}>
             <a 
-              href="https://wa.me/5565999954884?text=Olá! Vim pelo site e gostaria de agendar uma reunião com a Fonseca Advocacia." 
+              href="https://wa.me/5565999977272?text=Olá! Vim pelo site e gostaria de agendar uma reunião com a Fonseca Advocacia." 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.primaryButton}
@@ -56,7 +56,14 @@ export default function Home() {
               </svg>
               AGENDAR UMA REUNIÃO
             </a>
-            <a href="#sua-situacao" className={styles.secondaryButton}>CONHECER NOSSAS ÁREAS</a>
+            <a 
+              href="https://wa.me/5565999954884?text=Olá! Gostaria de saber mais sobre as áreas de atuação da Fonseca Advocacia." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.secondaryButton}
+            >
+              CONHECER NOSSAS ÁREAS
+            </a>
           </div>
 
           {/* <div className={styles.features}>
