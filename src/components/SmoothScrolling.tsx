@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export default function SmoothScrolling({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const [lenis, setLenis] = useState<any>(null);
+
   useEffect(() => {
-    const lenis = new Lenis({
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const lenisInstance = new Lenis({
       lerp: 0.1, // Suavidade da rolagem (quanto menor, mais suave)
       duration: 1.5, // Duração
       smoothWheel: true,
@@ -13,17 +21,25 @@ export default function SmoothScrolling({ children }: { children: React.ReactNod
       touchMultiplier: 2, // Acelera um pouco no touch pra não ficar pesado
     });
 
+    setLenis(lenisInstance);
+
     function raf(time: number) {
-      lenis.raf(time);
+      lenisInstance.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy();
+      lenisInstance.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [pathname, lenis]);
 
   return <>{children}</>;
 }

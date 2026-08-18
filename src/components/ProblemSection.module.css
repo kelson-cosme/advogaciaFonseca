@@ -109,17 +109,18 @@
 @media (max-width: 900px) {
   .problemSection {
     padding: 4rem 5%;
-  }
-  .content {
+    display: flex;
     flex-direction: column;
   }
-  .title {
-    font-size: 2.2rem;
+  .container {
+    display: contents; /* Allows children to be flex items of .problemSection */
   }
-  .problemList {
-    max-width: 100%;
+  .header {
+    order: 1;
+    margin-bottom: 0; /* Remove bottom margin to tighten space with the image */
   }
   .rightBackgroundImageWrapper {
+    order: 2;
     position: relative;
     top: auto;
     transform: none;
@@ -129,5 +130,15 @@
     height: auto;
     display: flex;
     justify-content: center;
+  }
+  .content {
+    order: 3;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .problemList {
+    max-width: 100%;
   }
 }
