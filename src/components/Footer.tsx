@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
             <p className={styles.addressText}>
               Fonseca Advocacia<br />
               Rua 13 de Junho, 1150 - Centro<br />
-              Cuiabá - MT, 78020-170
+              Cuiabá - MT, CEP: 78020-000
             </p>
           </div>
 
@@ -36,17 +36,17 @@ const Footer: React.FC<FooterProps> = ({ variant = 'default' }) => {
               {(variant === 'default' || variant === 'carla') && (
                 <div className={styles.contactGroup}>
                   <span className={styles.contactName}>Dra. Carla Fonseca</span>
-                  <a href={variant === 'carla' ? "tel:+556599404884" : "tel:+5565999954884"} className={styles.contactLink}>
-                    {variant === 'carla' ? "+55 65 9940-4884" : "(65) 99995-4884"}
+                  <a href="https://wa.me/5565999954884" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                    (65) 9 9995-4884
                   </a>
-                  <a href="mailto:Dra.carlarachel@gmail.com" className={styles.contactLink}>Dra.carlarachel@gmail.com</a>
+                  <a href="mailto:dra.carlarachel@gmail.com" className={styles.contactLink}>dra.carlarachel@gmail.com</a>
                 </div>
               )}
 
               {(variant === 'default' || variant === 'cimone') && (
                 <div className={styles.contactGroup}>
                   <span className={styles.contactName}>Dra. Cimone Fonseca</span>
-                  <a href="tel:+556599977272" className={styles.contactLink}>+55 65 9997-7272</a>
+                  <a href="https://wa.me/5565999467272" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>(65) 99946-7272</a>
                   <a href="mailto:drcimone@gmail.com" className={styles.contactLink}>drcimone@gmail.com</a>
                 </div>
               )}

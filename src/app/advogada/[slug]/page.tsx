@@ -15,7 +15,7 @@ const lawyers = {
   carla: {
     heroBadge: "ADVOCACIA AGROFLORESTAL",
     heroTitle: "Segurança jurídica\npara a sua propriedade",
-    heroSubtitle: "Especialista em Regularização Ambiental, Fundiária e Urbana em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
+    heroSubtitle: "Especialista em regularização ambiental, fundiária e urbana. Atendimento presencial em Cuiabá ou on-line para todo o Brasil.",
     heroButtonText: "Fale com a Especialista!",
     marqueeItems: [
       "REGULARIZAÇÃO AMBIENTAL",
@@ -51,7 +51,7 @@ const lawyers = {
         icon: (
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
         ),
-        title: "Pós-graduação em Processo Civil e Direito Ambiental",
+        title: "Pós-graduação em Direito Ambiental e Urbanístico, Processo Civil, Notarial e Registral",
         subtitle: "Fundação Escola Superior do Ministério Público de Mato Grosso"
       },
       {
@@ -172,7 +172,7 @@ const lawyers = {
   cimone: {
     heroBadge: "DIREITO DE FAMÍLIA E PREVIDENCIÁRIO",
     heroTitle: "Soluções jurídicas para \na sua família e seu patrimônio", 
-    heroSubtitle: "Especialista em Direito de Família, Previdenciário, Inventários, Divórcios e Sucessões em Cuiabá, Mato Grosso. Atendimento presencial ou online para todo o Brasil.",
+    heroSubtitle: "Especialista em Direito de Família, Previdenciário, Inventários, Divórcios e Sucessões. Atendimento presencial em Cuiabá ou on-line para todo o Brasil.",
     heroButtonText: "Fale com a especialista!",
     marqueeItems: [
       "INVENTÁRIO E PARTILHA",
