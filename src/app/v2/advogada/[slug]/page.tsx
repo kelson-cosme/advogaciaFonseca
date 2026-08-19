@@ -359,7 +359,7 @@ export default async function LawyerPage({ params }: Props) {
   }
 
   const getWhatsappLink = (section: string) => {
-    const number = slug === 'carla' ? "5565999404884" : "5565999977272";
+    const number = slug === 'carla' ? "5565999954884" : "5565999467272";
     let text = "Olá! Gostaria de mais informações.";
     
     if (slug === 'carla') {
@@ -662,7 +662,7 @@ export default async function LawyerPage({ params }: Props) {
               <p className={styles.locationDescription}>{lawyer.locationDescription}</p>
               
               <div className={styles.locationButtons}>
-                <Link href="#endereco" className={styles.locationBtnOutline}>
+                <Link href="https://share.google/V15AvkGaM3yyIwScY" target="_blank" rel="noopener noreferrer" className={styles.locationBtnOutline}>
                   {lawyer.locationButton1Text}
                 </Link>
                 <Link href={getWhatsappLink('location')} target="_blank" rel="noopener noreferrer" className={styles.locationBtnSolid}>

@@ -107,7 +107,7 @@ export default function Navbar() {
           </>
         )}
         <a 
-          href={isCarla ? "https://api.whatsapp.com/send?phone=5565999954884&text=" + encodeURIComponent("Olá, Dra. Carla. Gostaria de entrar em contato.") : isCimone ? "https://api.whatsapp.com/send?phone=5565999977272&text=" + encodeURIComponent("Olá, Dra. Cimone. Gostaria de entrar em contato.") : "https://wa.me/5565999954884?text=" + encodeURIComponent("Olá! Gostaria de entrar em contato com a Fonseca Advocacia.")} 
+          href={isCarla ? "https://api.whatsapp.com/send?phone=5565999954884&text=" + encodeURIComponent("Olá, Dra. Carla. Gostaria de entrar em contato.") : isCimone ? "https://api.whatsapp.com/send?phone=5565999467272&text=" + encodeURIComponent("Olá, Dra. Cimone. Gostaria de entrar em contato.") : "https://wa.me/5565999954884?text=" + encodeURIComponent("Olá! Gostaria de entrar em contato com a Fonseca Advocacia.")} 
           className={styles.whatsappButton} 
           onClick={toggleMenu}
           target="_blank"

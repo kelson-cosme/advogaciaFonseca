@@ -59,7 +59,7 @@ const CoverageSection = () => {
 
           <div className={styles.actions}>
             <a 
-              href="https://wa.me/5565999977272?text=Olá! Vi que vocês atendem online em todo o Brasil e gostaria de agendar uma reunião com a Fonseca Advocacia." 
+              href="https://wa.me/5565999467272?text=Olá! Vi que vocês atendem online em todo o Brasil e gostaria de agendar uma reunião com a Fonseca Advocacia." 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.primaryButton}
