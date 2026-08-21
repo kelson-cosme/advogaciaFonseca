@@ -29,7 +29,7 @@ const AgroCtaSection = () => {
             Proteção e conhecimento para cuidar dos seus direitos, do seu patrimônio e da sua família.
           </p>
           <p className={styles.description}>
-            Conte com uma atuação jurídica especializada para encontrar a melhor conduta em cada situação.
+            Conte com uma atuação jurídica especializada para encontrar a melhor conduta em cada situação com a <span className={styles.highlight}>Fonseca Advocacia</span>.
           </p>
           <a 
             href="https://wa.me/5565999954884?text=Olá! Gostaria de falar com uma especialista sobre soluções jurídicas para os meus desafios." 

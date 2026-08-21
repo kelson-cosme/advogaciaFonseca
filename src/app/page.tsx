@@ -49,7 +49,7 @@ export default function Home() {
           </div>
 
           <h1 className={styles.heroTitle}>
-            Escritório de advocacia especializada em Cuiabá, Mato Grosso
+            <span className={styles.highlight}>Fonseca Advocacia</span> escritório especializado em Cuiabá, Mato Grosso
           </h1>
 
           <p className={styles.heroSubtitle}>

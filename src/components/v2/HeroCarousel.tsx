@@ -9,7 +9,7 @@ const slides = [
   {
     image: "/assets/hero1v2.webp",
     badge: "Atendimento presencial e online em todo o Brasil.",
-    title: "Escritório de advocacia especializada em Cuiabá, Mato Grosso",
+    title: <><span className={pageStyles.highlight}>Fonseca Advocacia</span> escritório especializado em Cuiabá, Mato Grosso</>,
     subtitle: "Segurança jurídica para Direito Ambiental, Imobiliário, Família, Inventários e Previdenciário."
   },
   {

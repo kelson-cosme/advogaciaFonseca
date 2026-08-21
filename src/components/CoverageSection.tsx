@@ -17,7 +17,7 @@ const CoverageSection = () => {
           </div>
           
           <p className={styles.description}>
-            A distância não é uma barreira. Reuniões, audiências e assinaturas de
+            A distância não é uma barreira para a <span className={styles.highlight}>Fonseca Advocacia</span>. Reuniões, audiências e assinaturas de
             contratos acontecem de forma totalmente digital, com a mesma segurança
             do presencial.
           </p>

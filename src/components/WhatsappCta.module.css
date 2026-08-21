@@ -133,7 +133,13 @@
   .desktopBreak {
     display: none;
   }
+}
 
+.highlight {
+  color: #c5a059;
+}
+
+@media (max-width: 768px) {
   .bgImage {
     object-fit: cover !important;
     object-position: 100% center !important;

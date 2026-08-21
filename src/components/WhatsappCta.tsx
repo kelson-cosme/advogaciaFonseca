@@ -24,7 +24,7 @@ const WhatsappCta = ({ hideImageRight = false }: { hideImageRight?: boolean }) =
             comprometerem seu patrimônio.
           </h2>
           <p className={styles.subtitle}>
-            Solicite agora uma análise personalizada e tenha a tranquilidade que sua<br className={styles.desktopBreak} />
+            Solicite agora uma análise personalizada com a <span className={styles.highlight}>Fonseca Advocacia</span> e tenha a tranquilidade que sua<br className={styles.desktopBreak} />
             propriedade merece.
           </p>
           <a href="https://wa.me/5565999467272?text=Olá! Gostaria de uma análise personalizada para o meu caso com a Fonseca Advocacia." target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
